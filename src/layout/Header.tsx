@@ -5,12 +5,19 @@ import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
+import logo from '../assets/Brunch-logo.png'
 
 type Props = {}
 
 const Header = (props: Props) => {
     return (
-        <AppBar position="static">
+        <AppBar
+            position="static"
+            sx={{
+                backgroundColor: '#f7f7f2',
+                color: 'black',
+            }}
+        >
             <Container maxWidth="lg">
                 <Toolbar>
                     <IconButton
@@ -27,7 +34,7 @@ const Header = (props: Props) => {
                         component="div"
                         sx={{ flexGrow: 1 }}
                     >
-                        News
+                        <img src={logo} alt="Logo" />
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
