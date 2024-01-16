@@ -1,0 +1,111 @@
+.top-navbar {
+    background-color: #f7f7f2;
+    color: black;
+    padding: 20px 0px;
+}
+
+.search-follow-btns {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.topnavbar-subscribe-btn {
+    height: 36px;
+    width: 143px;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: '';
+        background-color: #ccccac;
+        position: absolute;
+        width: 0;
+        height: 108%;
+        top: -1px;
+        bottom: -1px;
+        left: -65px;
+        z-index: -1;
+        transform: skew(50deg);
+        transform-origin: top left;
+        transition: all 0.4s ease 0s;
+    }
+
+    &:hover {
+        border: 1px solid #ccccac;
+
+        .topnavbar-subscribe-link {
+            color: white;
+        }
+
+        .email-icon {
+            background-image: url(./icons/white_email.svg);
+        }
+    }
+
+    &:hover::before {
+        width: 200%;
+    }
+}
+
+.topnavbar-subscribe-link {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.email-icon {
+    background-image: url(./icons/email__icon.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: contain;
+    width: 18px;
+}
+
+.logo-link {
+    display: flex;
+}
+
+.topnavbar-social-links {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 15px;
+}
+
+.topnavbar-soc-link {
+    text-decoration: none;
+    display: flex;
+    gap: 4px;
+    color: #a8aab2;
+    font-size: 12px;
+}
+
+.social-icon {
+    background-size: contain;
+    width: 18px;
+    filter: grayscale(100%);
+
+    &:hover {
+        filter: grayscale(0%);
+    }
+}
+
+.si-facebook {
+    background-image: url(./icons/facebook_logo.svg);
+}
+.si-twitter {
+    background-image: url(./icons/twitter_icon.svg);
+}
+.si-instagram {
+    background-image: url(./icons/instagram_icon.svg);
+}
