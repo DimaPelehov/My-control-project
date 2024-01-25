@@ -1,7 +1,9 @@
+import Home from 'pages/Home/Home'
+
 type Props = {}
 
 const Main = (props: Props) => {
-    return <div style={{ backgroundColor: 'yellow' }}>Main</div>
+    return <Home />
 }
 
 export default Main
