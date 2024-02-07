@@ -1,5 +1,9 @@
+import FooterSection from 'components/FooterSection/FooterSection'
+
 type Props = {}
+
 const Footer = (props: Props) => {
-    return <div>Footer</div>
+    return <FooterSection />
 }
+
 export default Footer

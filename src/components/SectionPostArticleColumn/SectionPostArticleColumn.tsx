@@ -14,7 +14,7 @@ const SectionPostArticleColumn = (props: Props) => {
                     image,
                     category,
                     title,
-                    hrefCategory,
+                    hrefArticle,
                     hrefAuthor,
                     views,
                     shares,
@@ -25,7 +25,7 @@ const SectionPostArticleColumn = (props: Props) => {
                             image={image}
                             category={category}
                             title={title}
-                            hrefCategory={hrefCategory}
+                            hrefArticle={hrefArticle}
                             hrefAuthor={hrefAuthor}
                             views={views}
                             shares={shares}

@@ -3,7 +3,7 @@ export type SectionPostColumnItem={
     image:string
     category:string
     title:string
-    hrefCategory:string
+    hrefArticle:string
     hrefAuthor:string
     views:number
     shares:number
@@ -15,7 +15,7 @@ export const sectionColumnItemsArr:SectionPostColumnItem[]=[{
     image:'/images/sec-post-article-col-img1.jpg',
     category:'Etiam',
     title:'Quis Nascetur Aenean Ipsum Vici',
-    hrefCategory:'quis nasqetur',
+    hrefArticle:'quis nasqetur',
     hrefAuthor:"joanna-author",
     authorName:'Joanna Wellick',
     views:2.8,
@@ -26,7 +26,7 @@ export const sectionColumnItemsArr:SectionPostColumnItem[]=[{
     image:'/images/sec-post-article-col-img2.jpg',
     category:'Vulputate',
     title:'Tellus Etiam Commodo Pellentesque Nec Elit Quis Massa',
-    hrefCategory:'tellus etiam',
+    hrefArticle:'tellus etiam',
     hrefAuthor:"elliot-author",
     authorName:'Elliot Anderson',
     views:2.1,
@@ -36,7 +36,7 @@ export const sectionColumnItemsArr:SectionPostColumnItem[]=[{
     image:'/images/sec-post-article-col-img3.jpg',
     category:'Maecenas',
     title:'Vitae Nec Adipiscing Quis Semper Quam Tellus Nascetur',
-    hrefCategory:'vitae nec',
+    hrefArticle:'vitae nec',
     hrefAuthor:"elliot-author",
     authorName:'Elliot Anderson',
     views:1.3,
@@ -46,7 +46,7 @@ export const sectionColumnItemsArr:SectionPostColumnItem[]=[{
     image:'/images/sec-post-article-col-img4.jpg',
     category:'Rhoncus',
     title:'Et Tellus Id Magnis Nisi Maecenas Eget Nam',
-    hrefCategory:'et tellus',
+    hrefArticle:'et tellus',
     hrefAuthor:"joanna-author",
     authorName:'Joanna Wellick',
     views:2.9,
@@ -56,7 +56,7 @@ export const sectionColumnItemsArr:SectionPostColumnItem[]=[{
     image:'/images/sec-post-article-col-img5.jpg',
     category:'Aenean Eleifend',
     title:'Tempus Vitae Quis Rutrum Vel Ut Eget Eu Pulvinar Blandit',
-    hrefCategory:'tempus vitae',
+    hrefArticle:'tempus vitae',
     hrefAuthor:"elliot-author",
     authorName:'Elliot Anderson',
     views:3.2,

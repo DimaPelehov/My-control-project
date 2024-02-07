@@ -6,7 +6,7 @@ type SectionPostArticleColumnItemType = {
     image: string
     category: string
     title: string
-    hrefCategory: string
+    hrefArticle: string
     hrefAuthor: string
     views: number
     shares: number
@@ -24,7 +24,7 @@ class SectionPostArticleColumnItem extends Component<
             image,
             category,
             title,
-            hrefCategory,
+            hrefArticle,
             hrefAuthor,
             views,
             shares,
@@ -36,13 +36,13 @@ class SectionPostArticleColumnItem extends Component<
                     sx={{ padding: '0 ', display: 'flex', gap: '20px' }}
                 >
                     <div className="sectionpost-article-column-item-img">
-                        <a href={hrefCategory}>
+                        <a href={hrefArticle}>
                             <img src={image} alt={title} />
                         </a>
                     </div>
                     <div className="sectionpost-article-column-item-content">
                         <h2 className="sectionpost-article-column-item-header">
-                            <a href={hrefCategory}>
+                            <a href={hrefArticle}>
                                 <span className="sectionpost-article-column-item-category">
                                     {category}
                                 </span>

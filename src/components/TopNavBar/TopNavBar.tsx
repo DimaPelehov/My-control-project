@@ -29,7 +29,7 @@ class TopNavBar extends Component<TopNavBarType, State> {
         return (
             <AppBar className="top-navbar" position="static">
                 <Container maxWidth="lg">
-                    <Grid container spacing={4}>
+                    <Grid container>
                         <Grid item xs={12} sm={6} md={4}>
                             <div className="search-follow-btns">
                                 <IconButton
