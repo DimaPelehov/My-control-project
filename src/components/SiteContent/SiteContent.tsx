@@ -3,9 +3,9 @@ import './SiteContent.scss'
 import SiteContentArticleColumn from 'components/SiteContentArticleColumn/SiteContentArticleColumn'
 import SiteContentSidebarLatest from 'components/SiteContentSidebarLatest/SiteContentSidebarLatest'
 
-type Props = {}
+type Props = { addArticleToFavorites: (totalCount: number) => void }
 
-const SiteContent = (props: Props) => {
+const SiteContent = ({ addArticleToFavorites }: Props) => {
     return (
         <div className="site-content-margin">
             <Container maxWidth="lg">
@@ -13,7 +13,9 @@ const SiteContent = (props: Props) => {
                     {/* articles column */}
                     <div className="site-content-area">
                         <div className="site-post-arhive">
-                            <SiteContentArticleColumn />
+                            <SiteContentArticleColumn
+                                addArticleToFavorites={addArticleToFavorites}
+                            />
                         </div>
                         <div className="site-post-navigation">
                             <button className="slide-btn load-more-btn">

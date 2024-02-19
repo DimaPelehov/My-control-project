@@ -16,7 +16,7 @@ export type SiteContentArticleItem={
     shares:number
     facebookCount:number
     instaCount:number
-
+    count:number 
 }
 
 export const siteContentArticlesArr:SiteContentArticleItem[]=[{
@@ -36,7 +36,8 @@ export const siteContentArticlesArr:SiteContentArticleItem[]=[{
     text:'Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat  justo enim.…',
     shares:757,
     facebookCount:56,
-    instaCount:45
+    instaCount:45,
+    count:1    
 },{
     id:2,
     image:'/images/site-cont-article-col-img2.jpg',
@@ -54,7 +55,8 @@ export const siteContentArticlesArr:SiteContentArticleItem[]=[{
     text:'This is test text pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat  justo enim.…',
     shares:743,
     facebookCount:121,
-    instaCount:5
+    instaCount:5,
+    count:1    
 },{
     id:3,
     image:'/images/site-cont-article-col-img3.jpg',
@@ -72,7 +74,8 @@ export const siteContentArticlesArr:SiteContentArticleItem[]=[{
     text:'This is test text pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat  justo enim.…',
     shares:71,
     facebookCount:1231,
-    instaCount:23
+    instaCount:23,
+    count:1
 },{
     id:4,
     image:'/images/site-cont-article-col-img4.jpg',
@@ -90,7 +93,8 @@ export const siteContentArticlesArr:SiteContentArticleItem[]=[{
     text:'This is test text pulvinar montes lorem et pede dis it`s just a text dolor pretium donec dictum.Harry Potter Jack Daniels John Wick Vici consequat  justo enim.…',
     shares:566,
     facebookCount:231,
-    instaCount:69
+    instaCount:69,
+    count:1
 },{
     id:5,
     image:'/images/site-cont-article-col-img5.jpg',
@@ -108,7 +112,8 @@ export const siteContentArticlesArr:SiteContentArticleItem[]=[{
     text:'This is test text pulvinar montes lorem et pede dis it`s just a text dolor pretium donec dictum.Harry Potter Jack Daniels John Wick Vici consequat  justo enim.…',
     shares:566,
     facebookCount:231,
-    instaCount:69
+    instaCount:69,
+    count:1
 },{
     id:6,
     image:'/images/site-cont-article-col-img6.jpg',
@@ -126,7 +131,8 @@ export const siteContentArticlesArr:SiteContentArticleItem[]=[{
     text:'This is test text pulvinar montes text dolor pretium donec dictum lorem et pede dis it`s just a text dolor pretium donec dictum.Harry Potter Jack Daniels John Wick Vici consequat  justo enim.…',
     shares:566,
     facebookCount:231,
-    instaCount:69
+    instaCount:69,
+    count:1
 },{
     id:7,
     image:'/images/site-cont-article-col-img7.jpg',
@@ -144,7 +150,8 @@ export const siteContentArticlesArr:SiteContentArticleItem[]=[{
     text:'This is test text pulvinar  pede dis it`s just a text dolor pretium .Harry Potter Jack Daniels John Wick Vici consequat  justo enim.…',
     shares:566,
     facebookCount:231,
-    instaCount:69
+    instaCount:69,
+    count:1
 },{
     id:8,
     image:'/images/site-cont-article-col-img8.jpg',
@@ -162,7 +169,8 @@ export const siteContentArticlesArr:SiteContentArticleItem[]=[{
     text:'This is test text pulvinar  pede dis it`s just a text dolor pretium .Harry Potter Jack Daniels John Wick Vici consequat  justo enim.…',
     shares:566,
     facebookCount:231,
-    instaCount:69
+    instaCount:69,
+    count:1
 },{
     id:9,
     image:'/images/site-cont-article-col-img9.jpg',
@@ -180,7 +188,8 @@ export const siteContentArticlesArr:SiteContentArticleItem[]=[{
     text:'This is test text pulvinar  pede dis it`s just a text dolor pretium .Harry Potter Jack Daniels John Wick Vici consequat  justo enim.…',
     shares:566,
     facebookCount:231,
-    instaCount:69
+    instaCount:69,
+    count:1
 },{
     id:10,
     image:'/images/site-cont-article-col-img10.jpg',
@@ -198,7 +207,8 @@ export const siteContentArticlesArr:SiteContentArticleItem[]=[{
     text:'This is test text pulvinar  pede dis it`s just a text dolor pretium .Harry Potter Jack Daniels John Wick Vici consequat  justo enim.…',
     shares:566,
     facebookCount:231,
-    instaCount:69
+    instaCount:69,
+    count:1
 },{
     id:11,
     image:'/images/site-cont-article-col-img11.jpg',
@@ -216,7 +226,8 @@ export const siteContentArticlesArr:SiteContentArticleItem[]=[{
     text:'This is test text pulvinar  pede dis it`s just a text dolor pretium .Harry Potter Jack Daniels John Wick Vici consequat  justo enim.…',
     shares:566,
     facebookCount:231,
-    instaCount:69
+    instaCount:69,
+    count:1
 },{
     id:12,
     image:'/images/site-cont-article-col-img12.jpg',
@@ -234,5 +245,6 @@ export const siteContentArticlesArr:SiteContentArticleItem[]=[{
     text:'This is test text pulvinar  pede dis it`s just a text dolor pretium .Harry Potter Jack Daniels John Wick Vici consequat  justo enim.…',
     shares:566,
     facebookCount:231,
-    instaCount:69
+    instaCount:69,
+    count:1
 }]

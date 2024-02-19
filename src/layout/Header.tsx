@@ -1,14 +1,15 @@
 import { StyledEngineProvider } from '@mui/material/styles'
 import BottomNavBar from '../components/BottomNavBar/BottomNavBar'
 import TopNavBar from '../components/TopNavBar/TopNavBar'
+import HeaderSlideMenu from 'components/HeaderSlideMenu/HeaderSlideMenu'
 
-type Props = {}
+type Props = { favoritesData: { totalCount: number } }
 
-const Header = (props: Props) => {
+const Header = ({ favoritesData }: Props) => {
     return (
         <StyledEngineProvider injectFirst>
             <TopNavBar />
-            <BottomNavBar />
+            <BottomNavBar favoritesData={favoritesData} />
         </StyledEngineProvider>
     )
 }

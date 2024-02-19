@@ -1,9 +1,11 @@
 import Home from 'pages/Home/Home'
 
-type Props = {}
+type Props = {
+    addArticleToFavorites: (totalCount: number) => void
+}
 
-const Main = (props: Props) => {
-    return <Home />
+const Main = ({ addArticleToFavorites }: Props) => {
+    return <Home addArticleToFavorites={addArticleToFavorites} />
 }
 
 export default Main

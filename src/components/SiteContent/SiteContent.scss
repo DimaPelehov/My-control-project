@@ -38,6 +38,12 @@ button {
     justify-content: center;
 }
 
+.sitecontent-article-author-like {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+}
+
 .section-post-tile-author,
 .section-post-tile-author-info {
     font-size: 11px;
@@ -47,6 +53,28 @@ button {
             color: #ccccac;
         }
     }
+}
+
+.like {
+    width: 20px;
+    height: 20px;
+    background-image: url(./icons/like_icon.svg);
+    background-size: contain;
+    filter: grayscale(100%);
+    cursor: pointer;
+
+    &:hover {
+        filter: grayscale(0%);
+    }
+}
+
+.like-active {
+    filter: grayscale(0%);
+    width: 20px;
+    height: 20px;
+    background-image: url(./icons/like_icon.svg);
+    background-size: contain;
+    cursor: pointer;
 }
 
 .sitecontent-article-column-item-header {

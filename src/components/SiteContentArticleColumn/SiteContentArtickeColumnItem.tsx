@@ -1,5 +1,6 @@
 import { Card, CardContent } from '@mui/material'
 import '../SiteContent/SiteContent.scss'
+import { useState } from 'react'
 
 type SiteContentArtickeColumnItemType = {
     image: string
@@ -18,6 +19,8 @@ type SiteContentArtickeColumnItemType = {
     shares: number
     facebookCount: number
     instaCount: number
+    addArticleToFavorites: (totalCount: number) => void
+    count: number
 }
 
 const SiteContentArtickeColumnItem = ({
@@ -37,7 +40,16 @@ const SiteContentArtickeColumnItem = ({
     shares,
     facebookCount,
     instaCount,
+    addArticleToFavorites,
+    count,
 }: SiteContentArtickeColumnItemType) => {
+    // зміна кольору лайк
+    const [likeVariant, setLike] = useState<string>('like')
+
+    const changeLike = () => {
+        setLike((prevState) => (prevState === 'like' ? 'like-active' : 'like'))
+    }
+
     return (
         <Card className="sitecontent-article-item">
             <CardContent sx={{ padding: '0', display: 'flex', gap: '40px' }}>
@@ -47,15 +59,26 @@ const SiteContentArtickeColumnItem = ({
                     </a>
                 </div>
                 <div className="sitecontent-article-content">
-                    <div className="section-post-tile-author">
-                        <a className="author-img" href={hrefAuthor}>
-                            <img src={imageAuthor} alt={authorName} />
-                        </a>
-                        <div className="section-post-tile-author-info">
-                            <a href={hrefAuthor}>{authorName}</a>
-                            {months} {day}, {year}
+                    <div className="sitecontent-article-author-like">
+                        <div className="section-post-tile-author">
+                            <a className="author-img" href={hrefAuthor}>
+                                <img src={imageAuthor} alt={authorName} />
+                            </a>
+                            <div className="section-post-tile-author-info">
+                                <a href={hrefAuthor}>{authorName}</a>
+                                {months} {day}, {year}
+                            </div>
                         </div>
+
+                        <div
+                            className={likeVariant}
+                            onClick={() => {
+                                addArticleToFavorites(count)
+                                changeLike()
+                            }}
+                        ></div>
                     </div>
+
                     <h2 className="sitecontent-article-column-item-header">
                         <a href={hrefArticle}>
                             <span className="sectionpost-article-column-item-category">

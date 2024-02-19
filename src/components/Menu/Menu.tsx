@@ -1,4 +1,7 @@
+import CategoryAeneanRow from 'components/CategoryAeneanRow/CategoryAeneanRow'
 import '../BottomNavBar/BottomNavBar.scss'
+import CategoryVulputateRow from 'components/CategoryVulputateRow/CategoryVulputateRow'
+import CategoryEtiamRow from 'components/CategoryEtiamRow/CategoryEtiamRow'
 
 type Props = {}
 
@@ -92,10 +95,33 @@ const Menu = (props: Props) => {
                     <span>Features</span>
                 </a>
             </li>
-            <li>
+            <li className="bottom-navbar-menu_list">
                 <a href="categories" className="bottom-navbar-menu_link">
                     <span>Categories</span>
                 </a>
+                {/* categories */}
+                <div className="categories">
+                    <ul className="categories-names">
+                        <li>
+                            <a href="aenean"> Aenean Eleifend</a>
+                            <div className="categories-content cat-aenean">
+                                <CategoryAeneanRow />
+                            </div>
+                        </li>
+                        <li>
+                            <a href="vulputate"> Vulputate</a>
+                            <div className=" categories-content cat-vulputate">
+                                <CategoryVulputateRow />
+                            </div>
+                        </li>
+                        <li>
+                            <a href="etiam"> Etiam</a>
+                            <div className=" categories-content cat-etiam ">
+                                <CategoryEtiamRow />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li className="bottom-navbar-menu_list">
                 <a href="shop" className="bottom-navbar-menu_link">
