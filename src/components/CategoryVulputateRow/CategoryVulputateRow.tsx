@@ -1,13 +1,14 @@
 import { Grid } from '@mui/material'
-import { categoryVulputateArr } from 'utils/categoryVulputateRowItemsArr'
 import CategoryVulputateRowItem from './CategoryVulputateRowItem'
+import { articlesArray } from 'utils/articlesArray'
 
 type Props = {}
 const CategoryVulputateRow = (props: Props) => {
     return (
         <Grid container sx={{ borderBottom: '1px solid #e9ecef' }}>
-            {categoryVulputateArr.map(
-                ({ id, image, hrefArticle, title, views }) => (
+            {articlesArray
+                .filter((item) => item.isMenuCategoryVulputate === true)
+                .map(({ id, image, hrefArticle, title, views }) => (
                     <Grid
                         item
                         xs={12}
@@ -24,8 +25,7 @@ const CategoryVulputateRow = (props: Props) => {
                             views={views}
                         />
                     </Grid>
-                )
-            )}
+                ))}
         </Grid>
     )
 }

@@ -57,27 +57,27 @@ class TopNavBar extends Component<TopNavBarType, State> {
                             <Logo />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4}>
-                            <div className="topnavbar-social-links">
+                            <div className="topnavbar-social social-links">
                                 <a
                                     href="https://uk-ua.facebook.com/"
                                     className="topnavbar-soc-link"
                                 >
                                     <span className="social-icon si-facebook"></span>
-                                    53
+                                    <span className="social-count">53</span>
                                 </a>
                                 <a
                                     href="https://twitter.com/?lang=ru"
                                     className="topnavbar-soc-link"
                                 >
                                     <span className="social-icon si-twitter"></span>
-                                    71K
+                                    <span className="social-count">71K</span>
                                 </a>
                                 <a
                                     href="https://www.instagram.com/"
                                     className="topnavbar-soc-link"
                                 >
                                     <span className="social-icon si-instagram"></span>
-                                    51
+                                    <span className="social-count">51</span>
                                 </a>
                             </div>
                         </Grid>

@@ -201,6 +201,7 @@ const SiteContent = ({ addArticleToFavorites }: Props) => {
                                 </label>
                             </div>
                         </div>
+
                         <div className="sidebar-ads">
                             <a href="my resume">
                                 <p>Тут я розташую посилання на своє резюме</p>

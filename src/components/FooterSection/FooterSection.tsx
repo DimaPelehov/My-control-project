@@ -1,6 +1,7 @@
 import { Container, Grid } from '@mui/material'
 import './FooterSection.scss'
 import Logo from 'components/Logo/Logo'
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
@@ -17,28 +18,28 @@ const FooterSection = (props: Props) => {
                                     className="topnavbar-soc-link"
                                 >
                                     <span className="social-icon si-facebook"></span>
-                                    53
+                                    <span className="social-count">53</span>
                                 </a>
                                 <a
                                     href="https://twitter.com/?lang=ru"
                                     className="topnavbar-soc-link"
                                 >
                                     <span className="social-icon si-twitter"></span>
-                                    71K
+                                    <span className="social-count">71K</span>
                                 </a>
                                 <a
                                     href="https://www.instagram.com/"
                                     className="topnavbar-soc-link"
                                 >
                                     <span className="social-icon si-instagram"></span>
-                                    51
+                                    <span className="social-count">51</span>
                                 </a>
                                 <a
                                     href="https://ru.pinterest.com/"
                                     className="topnavbar-soc-link"
                                 >
                                     <span className="social-icon si-pinterest"></span>
-                                    13K
+                                    <span className="social-count">13K</span>
                                 </a>
                             </div>
                             <div className="footer-copyright">
@@ -59,13 +60,15 @@ const FooterSection = (props: Props) => {
                         <nav className="footer-navigation">
                             <ul>
                                 <li>
-                                    <a href="home">Home</a>
+                                    <Link to="home">Home</Link>
                                 </li>
                                 <li>
-                                    <a href="contact">Contact Form</a>
+                                    <Link to="our_contacts_page">
+                                        Contact Form
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="sample">Sample Page</a>
+                                    <Link to="about_me_page">About Me</Link>
                                 </li>
                             </ul>
                         </nav>

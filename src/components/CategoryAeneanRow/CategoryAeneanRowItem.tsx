@@ -5,7 +5,7 @@ type CategoryAeneanRowItemType = {
     image: string
     hrefArticle: string
     title: string
-    views: string
+    views?: string
 }
 
 const CategoryAeneanRowItem = ({

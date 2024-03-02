@@ -3,14 +3,14 @@ import '../SiteContent/SiteContent.scss'
 
 type SiteContentSidebarLatestItemType = {
     hrefArticle: string
-    hrefAuthor: string
-    authorName: string
-    months: string
-    day: number
-    year: number
+    hrefAuthor?: string
+    authorName?: string
+    months?: string
+    day?: number
+    year?: number
     title: string
     image: string
-    itemNumber: string
+    itemNumber?: string
 }
 
 const SiteContentSidebarLatestItem = ({

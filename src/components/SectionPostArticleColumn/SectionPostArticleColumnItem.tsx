@@ -4,13 +4,13 @@ import { Card, CardContent } from '@mui/material'
 
 type SectionPostArticleColumnItemType = {
     image: string
-    category: string
+    category?: string
     title: string
     hrefArticle: string
-    hrefAuthor: string
-    views: number
-    shares: number
-    authorName: string
+    hrefAuthor?: string
+    views?: string
+    shares?: number
+    authorName?: string
 }
 
 type State = {}

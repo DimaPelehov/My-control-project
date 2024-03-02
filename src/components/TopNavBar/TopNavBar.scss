@@ -79,30 +79,36 @@
 }
 
 // social links
-.topnavbar-social-links {
+.social-links {
     height: 100%;
     display: flex;
-    align-items: center;
+}
+
+.topnavbar-social {
     justify-content: flex-end;
     gap: 15px;
+    align-items: center;
 }
 
 .topnavbar-soc-link {
     text-decoration: none;
     display: flex;
+    align-items: center;
     gap: 4px;
-    color: #a8aab2;
-    font-size: 12px;
+
+    &:hover {
+        .social-icon {
+            filter: grayscale(0%);
+        }
+    }
 }
 
 .social-icon {
     background-size: contain;
+    background-repeat: no-repeat;
     width: 18px;
+    height: 18px;
     filter: grayscale(100%);
-
-    &:hover {
-        filter: grayscale(0%);
-    }
 }
 
 .si-facebook {
@@ -113,6 +119,11 @@
 }
 .si-instagram {
     background-image: url(./icons/instagram_icon.svg);
+}
+
+.social-count {
+    color: #a8aab2;
+    font-size: 12px;
 }
 
 // search field

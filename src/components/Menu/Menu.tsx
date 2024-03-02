@@ -2,6 +2,7 @@ import CategoryAeneanRow from 'components/CategoryAeneanRow/CategoryAeneanRow'
 import '../BottomNavBar/BottomNavBar.scss'
 import CategoryVulputateRow from 'components/CategoryVulputateRow/CategoryVulputateRow'
 import CategoryEtiamRow from 'components/CategoryEtiamRow/CategoryEtiamRow'
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
@@ -103,19 +104,19 @@ const Menu = (props: Props) => {
                 <div className="categories">
                     <ul className="categories-names">
                         <li>
-                            <a href="aenean"> Aenean Eleifend</a>
+                            <Link to="aenean_category">Aenean Eleifend</Link>
                             <div className="categories-content cat-aenean">
                                 <CategoryAeneanRow />
                             </div>
                         </li>
                         <li>
-                            <a href="vulputate"> Vulputate</a>
+                            <Link to="vulputate_category">Vulputate</Link>
                             <div className=" categories-content cat-vulputate">
                                 <CategoryVulputateRow />
                             </div>
                         </li>
                         <li>
-                            <a href="etiam"> Etiam</a>
+                            <Link to="etiam_category">Etiam</Link>
                             <div className=" categories-content cat-etiam ">
                                 <CategoryEtiamRow />
                             </div>

@@ -5,7 +5,7 @@ type CategoryVulputateRowItemType = {
     image: string
     hrefArticle: string
     title: string
-    views: string
+    views?: string
 }
 
 const CategoryVulputateRowItem = ({

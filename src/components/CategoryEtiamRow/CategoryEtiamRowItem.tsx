@@ -5,7 +5,7 @@ type CategoryEtiamRowItemType = {
     image: string
     hrefArticle: string
     title: string
-    views: string
+    views?: string
 }
 
 const CategoryEtiamRowItem = ({

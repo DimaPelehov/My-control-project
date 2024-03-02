@@ -5,20 +5,20 @@ import { useState } from 'react'
 type SiteContentArtickeColumnItemType = {
     image: string
     hrefArticle: string
-    hrefAuthor: string
-    imageAuthor: string
-    authorName: string
-    months: string
-    day: number
-    year: number
-    category: string
+    hrefAuthor?: string
+    imageAuthor?: string
+    authorName?: string
+    months?: string
+    day?: number
+    year?: number
+    category?: string
     title: string
-    views: number
-    minuteRead: number
-    text: string
-    shares: number
-    facebookCount: number
-    instaCount: number
+    views?: string
+    minuteRead?: number
+    text?: string
+    shares?: number
+    facebookCount?: number
+    instaCount?: number
     addArticleToFavorites: (totalCount: number) => void
     count: number
 }
@@ -44,10 +44,12 @@ const SiteContentArtickeColumnItem = ({
     count,
 }: SiteContentArtickeColumnItemType) => {
     // зміна кольору лайк
-    const [likeVariant, setLike] = useState<string>('like')
+    const [likeVariant, setLikeVariant] = useState<string>('like')
 
     const changeLike = () => {
-        setLike((prevState) => (prevState === 'like' ? 'like-active' : 'like'))
+        setLikeVariant((prevState) =>
+            prevState === 'like' ? 'like-active' : 'like'
+        )
     }
 
     return (

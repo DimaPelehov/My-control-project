@@ -1,14 +1,15 @@
 import { Grid } from '@mui/material'
-import { categoryAeneanArr } from 'utils/categoryAeneanRowItemsArr'
 import CategoryAeneanRowItem from './CategoryAeneanRowItem'
+import { articlesArray } from 'utils/articlesArray'
 
 type Props = {}
 
 const CategoryAeneanRow = (props: Props) => {
     return (
         <Grid container sx={{ borderBottom: '1px solid #e9ecef' }}>
-            {categoryAeneanArr.map(
-                ({ id, image, hrefArticle, title, views }) => (
+            {articlesArray
+                .filter((item) => item.isMenuCategoryAenenan === true)
+                .map(({ id, image, hrefArticle, title, views }) => (
                     <Grid
                         item
                         xs={12}
@@ -25,8 +26,7 @@ const CategoryAeneanRow = (props: Props) => {
                             views={views}
                         />
                     </Grid>
-                )
-            )}
+                ))}
         </Grid>
     )
 }

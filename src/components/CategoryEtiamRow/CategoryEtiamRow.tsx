@@ -1,13 +1,14 @@
 import { Grid } from '@mui/material'
-import { categoryEtiamArr } from 'utils/categoryEtiamRowItemsArr'
 import CategoryEtiamRowItem from './CategoryEtiamRowItem'
+import { articlesArray } from 'utils/articlesArray'
 
 type Props = {}
 const CategoryEtiamRow = (props: Props) => {
     return (
         <Grid container sx={{ borderBottom: '1px solid #e9ecef' }}>
-            {categoryEtiamArr.map(
-                ({ id, image, hrefArticle, title, views }) => (
+            {articlesArray
+                .filter((item) => item.isMenuCategoryEtiam === true)
+                .map(({ id, image, hrefArticle, title, views }) => (
                     <Grid
                         item
                         xs={12}
@@ -24,8 +25,7 @@ const CategoryEtiamRow = (props: Props) => {
                             views={views}
                         />
                     </Grid>
-                )
-            )}
+                ))}
         </Grid>
     )
 }

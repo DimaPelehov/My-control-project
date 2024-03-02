@@ -1,6 +1,7 @@
 import SectionPostArticleColumn from 'components/SectionPostArticleColumn/SectionPostArticleColumn'
 import './SectionPost.scss'
 import { Container } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
@@ -20,12 +21,13 @@ const SectionPost = (props: Props) => {
                             </a>
                         </div>
                         <div className="section-post-tile-content">
-                            <a
+                            <Link
+                                to="etiam_category"
                                 className="sec-post-tile-category-link"
-                                href="category-etiam"
                             >
                                 Etiam
-                            </a>
+                            </Link>
+
                             <a
                                 className="section-post-tile-title"
                                 href="Maecenas Tincidunt Eget Libero Massa Vitae"
@@ -50,15 +52,13 @@ const SectionPost = (props: Props) => {
                             </p>
                             <div className="section-post-tile-details">
                                 <div className="section-post-tile-author">
-                                    <a
-                                        className="author-img"
-                                        href="joanna-author"
-                                    >
+                                    <Link to="joanna_page">
                                         <img
                                             src="/images/author-joanna.jpeg"
                                             alt="Joanna"
                                         />
-                                    </a>
+                                    </Link>
+
                                     <div className="section-post-tile-author-info">
                                         <a href="joanna-author">
                                             Joanna Wellick

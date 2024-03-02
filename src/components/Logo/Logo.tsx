@@ -1,6 +1,7 @@
 import Typography from '@mui/material/Typography'
 import logo from 'assets/Brunch-logo.png'
 import '../TopNavBar/TopNavBar.scss'
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
@@ -11,9 +12,9 @@ const Logo = (props: Props) => {
             component="div"
             sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}
         >
-            <a href="Home" className="logo-link">
-                <img src={logo} alt="Logo" />{' '}
-            </a>
+            <Link to="home" className="logo-link">
+                <img src={logo} alt="Logo" />
+            </Link>
         </Typography>
     )
 }
