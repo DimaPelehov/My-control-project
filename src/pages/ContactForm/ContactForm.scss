@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+}
+
+.our-contacts-page {
+    margin: 64px 0;
+}
+
+.our-contacts-body {
+    display: flex;
+    gap: 60px;
+}
+
+.our-contacts-content {
+    width: 75%;
+}
+
+.our-contacts-cont_header {
+    margin-bottom: 40px;
+
+    h1 {
+        margin: 0;
+        font-size: 48px;
+    }
+}
+
+.our-contacts-cont_body {
+    hr {
+        margin: 45px 0;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}
+
+.our-contacts-row {
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    line-height: 1.25;
+}
+
+.our-contacts-row-title {
+    max-width: 33%;
+    min-width: 33%;
+
+    h3 {
+        margin: 0;
+
+        font-weight: 400;
+        font-size: 28px;
+    }
+}
+
+.our-contacts-row-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    p {
+        margin: 0;
+        font-size: 14px;
+        text-align: justify;
+    }
+}
+
+.our-contacts-form {
+    width: 100%;
+
+    button {
+        border: 1px solid black;
+        background-color: inherit;
+        padding: 10px 20px;
+        margin-top: 15px;
+        text-transform: uppercase;
+        transition: all 0.4s ease 0s;
+
+        &:hover {
+            border-color: #e3e5e7;
+            color: #495057;
+        }
+    }
+}
+
+.form-field {
+    font-size: 11px;
+    margin-bottom: 8px;
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input {
+        padding: 8px 12px;
+        color: #495057;
+        border: 1px solid #e3e5e7;
+        outline: none;
+    }
+
+    textarea {
+        outline: none;
+        resize: none;
+        border: 1px solid #e3e5e7;
+        width: 100%;
+        padding: 8px 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #495057;
+    }
+}
+
+.download {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border: 2px solid rgba(168, 170, 178, 0.25);
+    margin-left: 20px;
+    border-top-color: #495057;
+    border-radius: 50%;
+    vertical-align: middle;
+    animation: loader-rotate 1s linear infinite;
+}
+
+@keyframes loader-rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.info-sended {
+    background: #d8f6df;
+    color: #145523;
+    padding: 10px;
+}

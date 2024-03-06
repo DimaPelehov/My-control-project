@@ -63,7 +63,7 @@ const FooterSection = (props: Props) => {
                                     <Link to="home">Home</Link>
                                 </li>
                                 <li>
-                                    <Link to="our_contacts_page">
+                                    <Link to="contact-form-page">
                                         Contact Form
                                     </Link>
                                 </li>

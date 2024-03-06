@@ -36,7 +36,7 @@ const CategoryAeneanRowItem = ({
                 <ul className="activity">
                     <li>
                         <span className="activity-icon views"></span>
-                        {views} views
+                        {views}K views
                     </li>
                 </ul>
             </CardContent>

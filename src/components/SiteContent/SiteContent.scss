@@ -30,6 +30,12 @@ button {
     a {
         display: flex;
     }
+
+    img {
+        width: 380px;
+        height: 475px;
+        object-fit: cover;
+    }
 }
 
 .sitecontent-article-content {

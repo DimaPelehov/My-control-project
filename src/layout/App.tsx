@@ -12,8 +12,8 @@ import VulputateCategoryPage from 'pages/VulputateCategoryPage/VulputateCategory
 import EtiamCategoryPage from 'pages/EtiamCategoryPage/EtiamCategoryPage'
 import JoannaAuthorPage from 'pages/JoannaAuthorPage/JoannaAuthorPage'
 import '../components/BottomNavBar/BottomNavBar.scss'
-import OurContacts from 'pages/OurContacts/OurContacts'
 import AboutMePage from 'pages/AboutMePage/AboutMePage'
+import ContactForm from 'pages/ContactForm/ContactForm'
 
 type Props = {}
 
@@ -63,20 +63,35 @@ const App = (props: Props) => {
                 <Route path="favorites" element={<FavoritesPage />} />
                 <Route
                     path="aenean_category"
-                    element={<AeneanCategoryPage />}
+                    element={
+                        <AeneanCategoryPage
+                            addArticleToFavorites={addArticleToFavorites}
+                        />
+                    }
                 />
                 <Route
                     path="vulputate_category"
-                    element={<VulputateCategoryPage />}
+                    element={
+                        <VulputateCategoryPage
+                            addArticleToFavorites={addArticleToFavorites}
+                        />
+                    }
                 />
-                <Route path="etiam_category" element={<EtiamCategoryPage />} />
+                <Route
+                    path="etiam_category"
+                    element={
+                        <EtiamCategoryPage
+                            addArticleToFavorites={addArticleToFavorites}
+                        />
+                    }
+                />
                 <Route
                     path="joanna_page"
                     element={<JoannaAuthorPage />}
                 ></Route>
                 <Route
-                    path="our_contacts_page"
-                    element={<OurContacts />}
+                    path="contact-form-page"
+                    element={<ContactForm />}
                 ></Route>
                 <Route path="about_me_page" element={<AboutMePage />}></Route>
             </Routes>

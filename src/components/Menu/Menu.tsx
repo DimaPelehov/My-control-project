@@ -126,7 +126,7 @@ const Menu = (props: Props) => {
             </li>
             <li className="bottom-navbar-menu_list">
                 <a href="shop" className="bottom-navbar-menu_link">
-                    <span>Shop</span>
+                    <span>Articles</span>
                 </a>
                 {/* submenu 1 */}
                 <ul className="bottom-navbar-submenu bt-submenu-one">
@@ -137,7 +137,10 @@ const Menu = (props: Props) => {
                         <a href="checkout">Checkout</a>
                     </li>
                     <li>
-                        <a href="cart">Cart</a>
+                        <Link to="favorites">Favorites</Link>
+                    </li>
+                    <li>
+                        <Link to="contact-form-page">Contact Form</Link>
                     </li>
                 </ul>
             </li>

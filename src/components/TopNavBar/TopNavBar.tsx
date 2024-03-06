@@ -44,7 +44,7 @@ class TopNavBar extends Component<TopNavBarType, State> {
                                 </IconButton>
                                 <div className="topnavbar-subscribe-btn">
                                     <a
-                                        href="test"
+                                        href="subscribe_page"
                                         className="topnavbar-subscribe-link"
                                     >
                                         <span className="email-icon"></span>
