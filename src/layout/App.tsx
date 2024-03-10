@@ -17,23 +17,36 @@ import ContactForm from 'pages/ContactForm/ContactForm'
 
 type Props = {}
 
-type FavoritesDataType = {
-    totalCount: number
-}
+// type FavoritesDataType = {
+//     totalCount: number
+// }
+
+type ArticlesInFavoritesType = { [id: number]: number }
 
 const App = (props: Props) => {
     // збільшення числа лайків
-    const [favoritesData, setFavoritesData] = useState<FavoritesDataType>({
-        totalCount: 0,
-    })
 
-    const addArticleToFavorites = (count: number) => {
-        setFavoritesData((prevState) => ({
-            // totalCount: prevState.totalCount + count,
-            totalCount:
-                prevState.totalCount === 0
-                    ? prevState.totalCount + count
-                    : prevState.totalCount - count,
+    // const [favoritesData, setFavoritesData] = useState<FavoritesDataType>({
+    //     totalCount: 0,
+    // })
+
+    const [articlesInFavorites, setArticlesInFavorites] =
+        useState<ArticlesInFavoritesType>({})
+
+    // const addArticleToFavorites = (count: number) => {
+    //     setFavoritesData((prevState) => ({
+    //         // totalCount: prevState.totalCount + count,
+    //         totalCount:
+    //             prevState.totalCount === 0
+    //                 ? prevState.totalCount + count
+    //                 : prevState.totalCount - count,
+    //     }))
+    // }
+
+    const addArticleToFavorites = (id: number, count: number) => {
+        setArticlesInFavorites((prevState) => ({
+            ...prevState,
+            [id]: (prevState[id] || 0) + count,
         }))
     }
 
@@ -50,7 +63,7 @@ const App = (props: Props) => {
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header
-                favoritesData={favoritesData}
+                articlesInFavorites={articlesInFavorites}
                 changeOverlay={changeOverlay}
             />
             <Routes>
@@ -60,7 +73,14 @@ const App = (props: Props) => {
                         <Home addArticleToFavorites={addArticleToFavorites} />
                     }
                 />
-                <Route path="favorites" element={<FavoritesPage />} />
+                <Route
+                    path="favorites"
+                    element={
+                        <FavoritesPage
+                            articlesInFavorites={articlesInFavorites}
+                        />
+                    }
+                />
                 <Route
                     path="aenean_category"
                     element={

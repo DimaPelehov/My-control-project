@@ -3,6 +3,7 @@ import '../SiteContent/SiteContent.scss'
 import { useState } from 'react'
 
 type SiteContentArtickeColumnItemType = {
+    id: number
     image: string
     hrefArticle: string
     hrefAuthor?: string
@@ -19,11 +20,12 @@ type SiteContentArtickeColumnItemType = {
     shares?: number
     facebookCount?: number
     instaCount?: number
-    addArticleToFavorites: (totalCount: number) => void
+    addArticleToFavorites: (id: number, count: number) => void
     count: number
 }
 
 const SiteContentArtickeColumnItem = ({
+    id,
     image,
     hrefArticle,
     hrefAuthor,
@@ -46,7 +48,7 @@ const SiteContentArtickeColumnItem = ({
     // зміна кольору лайк
     const [likeVariant, setLikeVariant] = useState<string>('like')
 
-    const changeLike = () => {
+    const changeColorLike = () => {
         setLikeVariant((prevState) =>
             prevState === 'like' ? 'like-active' : 'like'
         )
@@ -75,8 +77,8 @@ const SiteContentArtickeColumnItem = ({
                         <div
                             className={likeVariant}
                             onClick={() => {
-                                addArticleToFavorites(count)
-                                changeLike()
+                                addArticleToFavorites(id, count)
+                                changeColorLike()
                             }}
                         ></div>
                     </div>

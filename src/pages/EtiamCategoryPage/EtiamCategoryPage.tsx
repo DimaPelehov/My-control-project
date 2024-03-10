@@ -3,7 +3,7 @@ import '../AeneanCategoryPage/AeneanCategoryPage.scss'
 import SiteContentSidebar from 'components/SiteContentSidebar/SiteContentSidebar'
 import EtiamCategoryArticles from 'components/EtiamCategoryArticles/EtiamCategoryArticles'
 
-type Props = { addArticleToFavorites: (totalCount: number) => void }
+type Props = { addArticleToFavorites: (id: number, count: number) => void }
 
 const EtiamCategoryPage = ({ addArticleToFavorites }: Props) => {
     return (

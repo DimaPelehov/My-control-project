@@ -3,7 +3,7 @@ import SectionSubscribe from 'components/SectionSubscribe/SectionSubscribe'
 import SiteContent from 'components/SiteContent/SiteContent'
 
 type Props = {
-    addArticleToFavorites: (totalCount: number) => void
+    addArticleToFavorites: (id: number, count: number) => void
 }
 
 const Home = ({ addArticleToFavorites }: Props) => {

@@ -4,7 +4,7 @@ import SiteContentArticleColumn from 'components/SiteContentArticleColumn/SiteCo
 import SiteContentSidebar from 'components/SiteContentSidebar/SiteContentSidebar'
 // import SiteContentSidebarLatest from 'components/SiteContentSidebarLatest/SiteContentSidebarLatest'
 
-type Props = { addArticleToFavorites: (totalCount: number) => void }
+type Props = { addArticleToFavorites: (id: number, count: number) => void }
 
 const SiteContent = ({ addArticleToFavorites }: Props) => {
     return (

@@ -3,13 +3,14 @@ import BottomNavBar from '../components/BottomNavBar/BottomNavBar'
 import TopNavBar from '../components/TopNavBar/TopNavBar'
 import '../components/BottomNavBar/BottomNavBar.scss'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 type Props = {
-    favoritesData: { totalCount: number }
+    articlesInFavorites: { [id: number]: number }
     changeOverlay: () => void
 }
 
-const Header = ({ favoritesData, changeOverlay }: Props) => {
+const Header = ({ articlesInFavorites, changeOverlay }: Props) => {
     // виїзд бокового меню
     const [sidebarOpen, setSidebarOpen] = useState<boolean>()
 
@@ -21,7 +22,7 @@ const Header = ({ favoritesData, changeOverlay }: Props) => {
         <StyledEngineProvider injectFirst>
             <div className={`header-sidebar ${sidebarOpen ? 'active' : ''}`}>
                 <div className="sidebar-title">
-                    <a href="home">BRUNCH</a>
+                    <Link to="home">BRUNCH</Link>
                     <button
                         onClick={() => {
                             changeOverlay()
@@ -126,7 +127,7 @@ const Header = ({ favoritesData, changeOverlay }: Props) => {
             </div>
             <TopNavBar />
             <BottomNavBar
-                favoritesData={favoritesData}
+                articlesInFavorites={articlesInFavorites}
                 changeOverlay={changeOverlay}
                 openCloseSidebar={openCloseSidebar}
             />

@@ -1,0 +1,21 @@
+.favorites-fon {
+    background-color: #f8f9fa;
+    padding: 64px 0;
+}
+
+.favorites-pages {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background-color: #f8f9fa;
+
+    h1 {
+        margin: 0;
+    }
+}
+
+.favorites-page-item {
+    display: flex;
+    gap: 40px;
+    width: 75%;
+}

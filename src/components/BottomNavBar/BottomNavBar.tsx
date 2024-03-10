@@ -12,13 +12,13 @@ import FavoritesHeader from 'components/FavoritesHeader/FavoritesHeader'
 import { Link } from 'react-router-dom'
 
 type Props = {
-    favoritesData: { totalCount: number }
+    articlesInFavorites: { [id: number]: number }
     changeOverlay: () => void
     openCloseSidebar: () => void
 }
 
 const BottomNavBar = ({
-    favoritesData,
+    articlesInFavorites,
     changeOverlay,
     openCloseSidebar,
 }: Props) => {
@@ -51,7 +51,9 @@ const BottomNavBar = ({
                         </IconButton>
                         <Menu />
                         <Link to="favorites">
-                            <FavoritesHeader favoritesData={favoritesData} />
+                            <FavoritesHeader
+                                articlesInFavorites={articlesInFavorites}
+                            />
                         </Link>
                     </div>
                 </Container>

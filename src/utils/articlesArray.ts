@@ -439,3 +439,9 @@ export const articlesArray: Article[] = [
         text: 'This is test text pulvinar  pede dis it`s just a text dolor pretium .Harry Potter Jack Daniels John Wick Vici consequat  justo enim.…',
     },
 ]
+
+export const getArticlesObject = (array: Article[]) =>
+    array.reduce(
+        (object, article) => ({ ...object, [article.id]: article }),
+        {}
+    )

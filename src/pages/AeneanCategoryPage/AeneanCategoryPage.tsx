@@ -3,7 +3,7 @@ import './AeneanCategoryPage.scss'
 import AeneanCategoryArticles from 'components/AeneanCategoryArticles/AeneanCategoryArticles'
 import SiteContentSidebar from 'components/SiteContentSidebar/SiteContentSidebar'
 
-type Props = { addArticleToFavorites: (totalCount: number) => void }
+type Props = { addArticleToFavorites: (id: number, count: number) => void }
 
 const AeneanCategoryPage = ({ addArticleToFavorites }: Props) => {
     return (

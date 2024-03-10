@@ -3,7 +3,7 @@ import '../AeneanCategoryPage/AeneanCategoryPage.scss'
 import SiteContentSidebar from 'components/SiteContentSidebar/SiteContentSidebar'
 import VulputateCategoryArticles from 'components/VulputateCategoryArticles/VulputateCategoryArticles'
 
-type Props = { addArticleToFavorites: (totalCount: number) => void }
+type Props = { addArticleToFavorites: (id: number, count: number) => void }
 
 const VulputateCategoryPage = ({ addArticleToFavorites }: Props) => {
     return (

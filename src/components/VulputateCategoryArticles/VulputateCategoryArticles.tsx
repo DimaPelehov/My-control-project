@@ -2,7 +2,7 @@ import { Grid } from '@mui/material'
 import { articlesArray } from 'utils/articlesArray'
 import SiteContentArtickeColumnItem from '../SiteContentArticleColumn/SiteContentArtickeColumnItem'
 
-type Props = { addArticleToFavorites: (totalCount: number) => void }
+type Props = { addArticleToFavorites: (id: number, count: number) => void }
 
 const VulputateCategoryArticles = ({ addArticleToFavorites }: Props) => {
     return (
@@ -32,6 +32,7 @@ const VulputateCategoryArticles = ({ addArticleToFavorites }: Props) => {
                     }) => (
                         <Grid item xs={1} key={id}>
                             <SiteContentArtickeColumnItem
+                                id={id}
                                 image={image}
                                 hrefArticle={hrefArticle}
                                 hrefAuthor={hrefAuthor}
