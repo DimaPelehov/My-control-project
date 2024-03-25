@@ -1,7 +1,7 @@
 import { Container, Grid } from '@mui/material'
 import './FooterSection.scss'
 import Logo from 'components/Logo/Logo'
-import { Link } from 'react-router-dom'
+import FooterNavigationItem from './FooterNavigationItem'
 
 type Props = {}
 
@@ -59,17 +59,15 @@ const FooterSection = (props: Props) => {
                     <Grid item xs={12} sm={6} md={4}>
                         <nav className="footer-navigation">
                             <ul>
-                                <li>
-                                    <Link to="home">Home</Link>
-                                </li>
-                                <li>
-                                    <Link to="contact-form-page">
-                                        Contact Form
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="about_me_page">About Me</Link>
-                                </li>
+                                <FooterNavigationItem to="/">
+                                    Home
+                                </FooterNavigationItem>
+                                <FooterNavigationItem to="/contact-form-page">
+                                    Contact Form
+                                </FooterNavigationItem>
+                                <FooterNavigationItem to="/about_me_page">
+                                    About Me
+                                </FooterNavigationItem>
                             </ul>
                         </nav>
                     </Grid>

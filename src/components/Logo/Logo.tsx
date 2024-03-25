@@ -12,7 +12,7 @@ const Logo = (props: Props) => {
             component="div"
             sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}
         >
-            <Link to="home" className="logo-link">
+            <Link to="/" className="logo-link">
                 <img src={logo} alt="Logo" />
             </Link>
         </Typography>

@@ -36,7 +36,7 @@ const BottomNavBar = ({
                 <Container maxWidth="lg">
                     <div className="bottom-navbar-row">
                         <IconButton
-                            className="bottom-navbar-menu_btn"
+                            className="bottom-navbar-sidebar_btn"
                             size="large"
                             edge="start"
                             color="inherit"

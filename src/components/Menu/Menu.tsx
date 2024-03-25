@@ -2,121 +2,125 @@ import CategoryAeneanRow from 'components/CategoryAeneanRow/CategoryAeneanRow'
 import '../BottomNavBar/BottomNavBar.scss'
 import CategoryVulputateRow from 'components/CategoryVulputateRow/CategoryVulputateRow'
 import CategoryEtiamRow from 'components/CategoryEtiamRow/CategoryEtiamRow'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 type Props = {}
 
 const Menu = (props: Props) => {
     return (
         <ul className="bottom-navbar-menu">
+            {/* Demos */}
             <li className="bottom-navbar-menu_list">
-                <a href="demos" className="bottom-navbar-menu_link">
+                <button className="bottom-navbar-menu_btn">
                     <span>Demos</span>
-                </a>
+                </button>
                 {/* submenu 1 */}
                 <ul className="bottom-navbar-submenu bt-submenu-one">
                     <li>
-                        <a href="lifestyle">
+                        <NavLink to="lifestyle">
                             Lifestyle <span>test</span>
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
-                        <a href="wallspaper">
+                        <NavLink to="wallspaper">
                             Wallspaper <span>interior</span>
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
-                        <a href="travel">
+                        <NavLink to="travel">
                             Travel <span>perfect</span>
-                        </a>
+                        </NavLink>
                     </li>
                 </ul>
             </li>
+            {/* Home */}
             <li className="bottom-navbar-menu_list">
-                <a href="home" className="bottom-navbar-menu_link">
+                <button className="bottom-navbar-menu_btn">
                     <span>Home</span>
-                </a>
+                </button>
                 {/* submenu 1 */}
                 <ul className="bottom-navbar-submenu bt-submenu-one">
                     <li>
-                        <a
-                            href="featured"
-                            className="bottom-navbar-submenu_link"
-                        >
+                        <button className="bottom-navbar-submenu_btn">
                             Featured Posts
-                        </a>
+                        </button>
                         {/* submenu 2 */}
                         <ul className="bottom-navbar-submenu bt-submenu-two">
                             <li>
-                                <a href="1">One</a>
+                                <NavLink to="1">One</NavLink>
                             </li>
                             <li>
-                                <a href="2">Two</a>
+                                <NavLink to="2">Two</NavLink>
                             </li>
                             <li>
-                                <a href="3">Three</a>
+                                <NavLink to="3">Three</NavLink>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="ads" className="bottom-navbar-submenu_link">
+                        <button className="bottom-navbar-submenu_btn">
                             Ads <span className="red-span">hot</span>
-                        </a>
+                        </button>
                         {/* submenu 2 */}
                         <ul className="bottom-navbar-submenu bt-submenu-two">
                             <li>
-                                <a href="4">It`s</a>
+                                <NavLink to="4">It`s</NavLink>
                             </li>
                             <li>
-                                <a href="5">just</a>
+                                <NavLink to="5">just</NavLink>
                             </li>
                             <li>
-                                <a href="6">text</a>
+                                <NavLink to="6">text</NavLink>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="latest">
+                        <NavLink to="latest">
                             Latest Products
                             <span className="blue-span">new</span>
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
-                        <a href="expert">Expert</a>
+                        <NavLink to="expert">Expert</NavLink>
                     </li>
                 </ul>
             </li>
-            <li>
-                <a href="post" className="bottom-navbar-menu_link">
-                    <span>Post</span>
-                </a>
-            </li>
-            <li>
-                <a href="features" className="bottom-navbar-menu_link">
-                    <span>Features</span>
-                </a>
-            </li>
+            {/* Post */}
             <li className="bottom-navbar-menu_list">
-                <a href="categories" className="bottom-navbar-menu_link">
+                <button className="bottom-navbar-menu_btn">
+                    <span>Post</span>
+                </button>
+            </li>
+            {/* Features */}
+            <li className="bottom-navbar-menu_list">
+                <button className="bottom-navbar-menu_btn">
+                    <span>Features</span>
+                </button>
+            </li>
+            {/* Categories */}
+            <li className="bottom-navbar-menu_list">
+                <button className="bottom-navbar-menu_btn">
                     <span>Categories</span>
-                </a>
-                {/* categories */}
+                </button>
+                {/* categories div */}
                 <div className="categories">
                     <ul className="categories-names">
                         <li>
-                            <Link to="aenean_category">Aenean Eleifend</Link>
+                            <NavLink to="aenean_category">
+                                Aenean Eleifend
+                            </NavLink>
                             <div className="categories-content cat-aenean">
                                 <CategoryAeneanRow />
                             </div>
                         </li>
                         <li>
-                            <Link to="vulputate_category">Vulputate</Link>
+                            <NavLink to="vulputate_category">Vulputate</NavLink>
                             <div className=" categories-content cat-vulputate">
                                 <CategoryVulputateRow />
                             </div>
                         </li>
                         <li>
-                            <Link to="etiam_category">Etiam</Link>
+                            <NavLink to="etiam_category">Etiam</NavLink>
                             <div className=" categories-content cat-etiam ">
                                 <CategoryEtiamRow />
                             </div>
@@ -124,30 +128,34 @@ const Menu = (props: Props) => {
                     </ul>
                 </div>
             </li>
+            {/* Articles */}
             <li className="bottom-navbar-menu_list">
-                <a href="shop" className="bottom-navbar-menu_link">
+                <button className="bottom-navbar-menu_btn">
                     <span>Articles</span>
-                </a>
+                </button>
                 {/* submenu 1 */}
                 <ul className="bottom-navbar-submenu bt-submenu-one">
                     <li>
-                        <a href="account">My account</a>
+                        <NavLink to="account">My account</NavLink>
                     </li>
                     <li>
-                        <a href="checkout">Checkout</a>
+                        <NavLink to="checkout">Checkout</NavLink>
                     </li>
                     <li>
-                        <Link to="favorites">Favorites</Link>
+                        <NavLink to="favorites">Favorites</NavLink>
                     </li>
                     <li>
-                        <Link to="contact-form-page">Contact Form</Link>
+                        <NavLink to="contact-form-page">Contact Form</NavLink>
                     </li>
                 </ul>
             </li>
-            <li>
-                <a href="buynow">
-                    <span>Buy Now</span>
-                </a>
+            {/* Buy Now */}
+            <li className="bottom-navbar-menu_list">
+                <button className="bottom-navbar-menu_btn">
+                    <NavLink to="buy-now">
+                        <span>Buy Now</span>
+                    </NavLink>
+                </button>
             </li>
         </ul>
     )

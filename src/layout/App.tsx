@@ -68,7 +68,7 @@ const App = (props: Props) => {
             />
             <Routes>
                 <Route
-                    path="home"
+                    path="/"
                     element={
                         <Home addArticleToFavorites={addArticleToFavorites} />
                     }

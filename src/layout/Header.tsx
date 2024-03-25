@@ -22,7 +22,7 @@ const Header = ({ articlesInFavorites, changeOverlay }: Props) => {
         <StyledEngineProvider injectFirst>
             <div className={`header-sidebar ${sidebarOpen ? 'active' : ''}`}>
                 <div className="sidebar-title">
-                    <Link to="home">BRUNCH</Link>
+                    <Link to="/">BRUNCH</Link>
                     <button
                         onClick={() => {
                             changeOverlay()
