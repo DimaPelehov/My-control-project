@@ -7,11 +7,16 @@
     display: flex;
     flex-direction: column;
     gap: 60px;
-    background-color: #f8f9fa;
+    // background-color: #f8f9fa;
 
     h1 {
         margin: 0;
     }
+}
+
+.favorites-pages-count {
+    display: flex;
+    gap: 10px;
 }
 
 .favorites-page-item {
