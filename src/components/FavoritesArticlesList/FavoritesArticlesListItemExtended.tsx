@@ -1,9 +1,18 @@
 import { Article } from 'utils/articlesArray'
 import 'pages/FavoritesPage/FavoritesPage.scss'
+import DeleteIcon from '@mui/icons-material/Delete'
+import { IconButton } from '@mui/material'
 
-type Props = { article: Article; articleCount: number }
+type Props = {
+    article: Article
+    articleCount: number
+    removeArticleFromFavorites: (id: number) => void
+}
 
-const FavoritesArticlesListItemExtended = ({ article }: Props) => {
+const FavoritesArticlesListItemExtended = ({
+    article,
+    removeArticleFromFavorites,
+}: Props) => {
     return (
         <div className="favorites-page-item">
             <div className="sitecontent-article-img">
@@ -12,18 +21,28 @@ const FavoritesArticlesListItemExtended = ({ article }: Props) => {
                 </a>
             </div>
             <div className="sitecontent-article-content">
-                <div className="section-post-tile-author">
-                    <a className="author-img" href={article.hrefAuthor}>
-                        <img
-                            src={article.imageAuthor}
-                            alt={article.authorName}
-                        />
-                    </a>
-                    <div className="section-post-tile-author-info">
-                        <a href={article.hrefAuthor}>{article.authorName}</a>
-                        {article.months}
-                        {article.day},{article.year}
+                <div className="favorites-page-author-delete">
+                    <div className="section-post-tile-author">
+                        <a className="author-img" href={article.hrefAuthor}>
+                            <img
+                                src={article.imageAuthor}
+                                alt={article.authorName}
+                            />
+                        </a>
+                        <div className="section-post-tile-author-info">
+                            <a href={article.hrefAuthor}>
+                                {article.authorName}
+                            </a>
+                            {article.months}
+                            {article.day},{article.year}
+                        </div>
                     </div>
+                    <IconButton
+                        aria-label="delete"
+                        onClick={() => removeArticleFromFavorites(article.id)}
+                    >
+                        <DeleteIcon />
+                    </IconButton>
                 </div>
 
                 <h2 className="sitecontent-article-column-item-header">

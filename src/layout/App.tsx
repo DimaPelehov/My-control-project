@@ -14,6 +14,7 @@ import JoannaAuthorPage from 'pages/JoannaAuthorPage/JoannaAuthorPage'
 import '../components/BottomNavBar/BottomNavBar.scss'
 import AboutMePage from 'pages/AboutMePage/AboutMePage'
 import ContactForm from 'pages/ContactForm/ContactForm'
+import { omit } from 'lodash'
 
 type Props = {}
 
@@ -59,6 +60,25 @@ const App = (props: Props) => {
         )
     }
 
+    // видалення статей з сторінки вподобаних
+
+    // варіант 1 - самостійно пишемо всі дії
+    // const removeArticleFromFavorites = (id: number) => {
+    //     setArticlesInFavorites((prevState) => {
+    //         let prevArticlesInFavorites = { ...articlesInFavorites }
+    // створюємо копію об'єкта articlesInFavorites
+    // delete prevArticlesInFavorites[id]
+    // видяляемо з копії об'єкта необхідний елемент
+    // return prevArticlesInFavorites
+    // повертаємо цю копію об'єкта
+    //     })
+    // }
+
+    // варіант 2
+    const removeArticleFromFavorites = (id: number) => {
+        setArticlesInFavorites((prevState) => omit(prevState, id))
+    }
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
@@ -78,6 +98,9 @@ const App = (props: Props) => {
                     element={
                         <FavoritesPage
                             articlesInFavorites={articlesInFavorites}
+                            removeArticleFromFavorites={
+                                removeArticleFromFavorites
+                            }
                         />
                     }
                 />

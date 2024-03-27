@@ -6,9 +6,13 @@ import FavoritesTotal from 'components/FavoritesTotal/FavoritesTotal'
 
 type Props = {
     articlesInFavorites: { [id: number]: number }
+    removeArticleFromFavorites: (id: number) => void
 }
 
-const FavoritesPage = ({ articlesInFavorites }: Props) => {
+const FavoritesPage = ({
+    articlesInFavorites,
+    removeArticleFromFavorites,
+}: Props) => {
     return (
         <div className="favorites-fon">
             <Container maxWidth="lg">
@@ -25,6 +29,7 @@ const FavoritesPage = ({ articlesInFavorites }: Props) => {
                         articlesInFavorites={articlesInFavorites}
                         FavoritesItem={FavoritesArticlesListItemExtended}
                         // виводимо розширену версію FavoritesArticlesList
+                        removeArticleFromFavorites={removeArticleFromFavorites}
                     />
                 </div>
             </Container>
