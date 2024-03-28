@@ -96,6 +96,11 @@ const Menu = (props: Props) => {
                 <button className="bottom-navbar-menu_btn">
                     <span>Features</span>
                 </button>
+                <ul className="bottom-navbar-submenu bt-submenu-one">
+                    <li>
+                        <NavLink to="contact-form-page">Contact Form</NavLink>
+                    </li>
+                </ul>
             </li>
             {/* Categories */}
             <li className="bottom-navbar-menu_list">
@@ -143,9 +148,6 @@ const Menu = (props: Props) => {
                     </li>
                     <li>
                         <NavLink to="favorites">Favorites</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="contact-form-page">Contact Form</NavLink>
                     </li>
                 </ul>
             </li>

@@ -2,6 +2,7 @@ import { Container } from '@mui/material'
 import './AeneanCategoryPage.scss'
 import AeneanCategoryArticles from 'components/AeneanCategoryArticles/AeneanCategoryArticles'
 import SiteContentSidebar from 'components/SiteContentSidebar/SiteContentSidebar'
+import { Link } from 'react-router-dom'
 
 type Props = { addArticleToFavorites: (id: number, count: number) => void }
 
@@ -29,7 +30,7 @@ const AeneanCategoryPage = ({ addArticleToFavorites }: Props) => {
                     <div className="subcategories">
                         <p className="category-subtitle">Subcategories</p>
                         <div className="subcategories-items">
-                            <a href="Aliquam"> Aliquam </a>
+                            <Link to="aliquam_subcategory"> Aliquam </Link>
                             <a href="Metus"> Metus Vidi </a>
                             <a href="Rhoncus"> Rhoncus </a>
                         </div>

@@ -15,6 +15,8 @@ import '../components/BottomNavBar/BottomNavBar.scss'
 import AboutMePage from 'pages/AboutMePage/AboutMePage'
 import ContactForm from 'pages/ContactForm/ContactForm'
 import { omit } from 'lodash'
+import AliquamSubcategoryPage from 'pages/AliquamSubcategoryPage/AliquamSubcategoryPage'
+import SubscribePage from 'pages/SubscribePage/SubscribePage'
 
 type Props = {}
 
@@ -113,6 +115,14 @@ const App = (props: Props) => {
                     }
                 />
                 <Route
+                    path="aliquam_subcategory"
+                    element={
+                        <AliquamSubcategoryPage
+                            addArticleToFavorites={addArticleToFavorites}
+                        />
+                    }
+                />
+                <Route
                     path="vulputate_category"
                     element={
                         <VulputateCategoryPage
@@ -128,15 +138,10 @@ const App = (props: Props) => {
                         />
                     }
                 />
-                <Route
-                    path="joanna_page"
-                    element={<JoannaAuthorPage />}
-                ></Route>
-                <Route
-                    path="contact-form-page"
-                    element={<ContactForm />}
-                ></Route>
-                <Route path="about_me_page" element={<AboutMePage />}></Route>
+                <Route path="joanna_page" element={<JoannaAuthorPage />} />
+                <Route path="contact-form-page" element={<ContactForm />} />
+                <Route path="about_me_page" element={<AboutMePage />} />
+                <Route path="subscribe_page" element={<SubscribePage />} />
             </Routes>
             {/* <Main addArticleToFavorites={addArticleToFavorites} /> */}
             <Footer />

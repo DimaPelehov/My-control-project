@@ -46,9 +46,10 @@ class SectionPostArticleColumnItem extends Component<
                                 <span className="sectionpost-article-column-item-category">
                                     {category}
                                 </span>
-                                <span className="sectionpost-article-column-item-title">
-                                    {title}
-                                </span>
+                                <span
+                                    className="sectionpost-article-column-item-title"
+                                    dangerouslySetInnerHTML={{ __html: title }}
+                                ></span>
                             </a>
                         </h2>
                         <ul className="activity">

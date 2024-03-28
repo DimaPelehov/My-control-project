@@ -31,7 +31,11 @@ const CategoryAeneanRowItem = ({
                         fontWeight: '800',
                     }}
                 >
-                    <a href={hrefArticle}>{title}</a>
+                    <a
+                        href={hrefArticle}
+                        dangerouslySetInnerHTML={{ __html: title }}
+                        className="menu-category-link"
+                    ></a>
                 </Typography>
                 <ul className="activity">
                     <li>

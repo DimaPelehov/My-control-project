@@ -50,9 +50,10 @@ const FavoritesArticlesListItemExtended = ({
                         <span className="sectionpost-article-column-item-category">
                             {article.category}
                         </span>
-                        <span className="sectionpost-article-column-item-title">
-                            {article.title}
-                        </span>
+                        <span
+                            className="sectionpost-article-column-item-title"
+                            dangerouslySetInnerHTML={{ __html: article.title }}
+                        ></span>
                     </a>
                 </h2>
                 <ul className="activity">

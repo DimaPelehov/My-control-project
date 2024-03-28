@@ -39,9 +39,10 @@ const SiteContentSidebarLatestItem = ({
                                 {months} {day}, {year}
                             </div>
                         </div>
-                        <div className="sidebar-latest-content-body">
-                            {title}
-                        </div>
+                        <div
+                            className="sidebar-latest-content-body"
+                            dangerouslySetInnerHTML={{ __html: title }}
+                        ></div>
                     </div>
                     <div className="sidebar-latest-img">
                         <img src={image} alt={title} />

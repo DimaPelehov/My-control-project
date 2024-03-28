@@ -8,6 +8,7 @@ import Logo from 'components/Logo/Logo'
 import './TopNavBar.scss'
 import { Grid } from '@mui/material'
 import { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 type TopNavBarType = {}
 
@@ -43,13 +44,13 @@ class TopNavBar extends Component<TopNavBarType, State> {
                                     <SearchIcon />
                                 </IconButton>
                                 <div className="topnavbar-subscribe-btn">
-                                    <a
-                                        href="subscribe_page"
+                                    <Link
+                                        to="subscribe_page"
                                         className="topnavbar-subscribe-link"
                                     >
                                         <span className="email-icon"></span>
                                         SUBSCRIBE
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </Grid>
