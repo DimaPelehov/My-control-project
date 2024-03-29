@@ -2,7 +2,9 @@ import { Container } from '@mui/material'
 import './SiteContent.scss'
 import SiteContentArticleColumn from 'components/SiteContentArticleColumn/SiteContentArticleColumn'
 import SiteContentSidebar from 'components/SiteContentSidebar/SiteContentSidebar'
-// import SiteContentSidebarLatest from 'components/SiteContentSidebarLatest/SiteContentSidebarLatest'
+import SiteContentSidebarAuthor from 'components/SiteContentSidebarAuthor/SiteContentSidebarAuthor'
+import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/SiteContentSidebarSubscribe'
+import SiteContentSidebarLatest from 'components/SiteContentSidebarLatest/SiteContentSidebarLatest'
 
 type Props = { addArticleToFavorites: (id: number, count: number) => void }
 
@@ -25,7 +27,17 @@ const SiteContent = ({ addArticleToFavorites }: Props) => {
                         </div>
                     </div>
                     {/* sidebar */}
-                    <SiteContentSidebar />
+                    <div className="sidebar-column">
+                        <SiteContentSidebarAuthor />
+                        <SiteContentSidebar />
+                        <SiteContentSidebarLatest />
+                        <SiteContentSidebarSubscribe />
+                        <div className="sidebar-ads">
+                            <a href="my resume">
+                                <p>Тут я розташую посилання на своє резюме</p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </Container>
         </div>

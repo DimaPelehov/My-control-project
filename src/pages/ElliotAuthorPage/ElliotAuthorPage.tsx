@@ -1,20 +1,23 @@
 import { Container } from '@mui/material'
-import './JoannaAuthorPage.scss'
-import JoannaArticles from 'components/JoannaArticles/JoannaArticles'
+import '../JoannaAuthorPage/JoannaAuthorPage.scss'
+// import JoannaArticles from 'components/JoannaArticles/JoannaArticles'
 import SiteContentSidebar from 'components/SiteContentSidebar/SiteContentSidebar'
 import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/SiteContentSidebarSubscribe'
-import JoannaPageLatest from 'components/JoannaPageLatest/JoannaPageLatest'
+// import JoannaPageLatest from 'components/JoannaPageLatest/JoannaPageLatest'
+import ElliotArticles from 'components/ElliotArticles/ElliotArticles'
+import SiteContentSidebarAuthor from 'components/SiteContentSidebarAuthor/SiteContentSidebarAuthor'
+import ElliotPageLatest from 'components/ElliotPageLatest/ElliotPageLatest'
 
 type Props = { addArticleToFavorites: (id: number, count: number) => void }
 
-const JoannaAuthorPage = ({ addArticleToFavorites }: Props) => {
+const ElliotAuthorPage = ({ addArticleToFavorites }: Props) => {
     return (
         <>
             <div className="page-fon">
                 <Container maxWidth="lg" sx={{ padding: '64px 0' }}>
                     <div className="author-page-content">
                         <div className="author-page-image">
-                            <img src="images/author-joanna.jpeg" alt="" />
+                            <img src="images/author-eliot.jpeg" alt="" />
                             <div className="author-page-social-links">
                                 <a
                                     href="https://uk-ua.facebook.com/"
@@ -37,14 +40,13 @@ const JoannaAuthorPage = ({ addArticleToFavorites }: Props) => {
                             </div>
                         </div>
                         <div className="author-page-info">
-                            <h1>Joanna Wellick</h1>
-                            <p className="author-page-count">11 posts</p>
+                            <h1>Elliot Anderson</h1>
+                            <p className="author-page-count">20 posts</p>
                             <p>
-                                Lorem, ipsum dolor sit amet consectetur
-                                adipisicing elit. Amet nihil quis nisi odio ab
-                                porro dolor tempore nemo rem. Deleniti nesciunt,
-                                sed numquam ex mollitia amet minima porro unde
-                                similique?
+                                Bla-bla-bla-bla sit amet consectetur adipisicing
+                                elit. Amet nihil quis nisi odio ab porro dolor
+                                tempore nemo rem. Deleniti nesciunt, sed numquam
+                                ex mollitia amet minima porro unde similique?
                             </p>
                         </div>
                     </div>
@@ -55,7 +57,7 @@ const JoannaAuthorPage = ({ addArticleToFavorites }: Props) => {
                 <div className="site-content">
                     <div className="site-content-area">
                         <div className="site-post-arhive">
-                            <JoannaArticles
+                            <ElliotArticles
                                 addArticleToFavorites={addArticleToFavorites}
                             />
                         </div>
@@ -66,8 +68,9 @@ const JoannaAuthorPage = ({ addArticleToFavorites }: Props) => {
                         </div>
                     </div>
                     <div className="sidebar-column">
+                        <SiteContentSidebarAuthor />
                         <SiteContentSidebar />
-                        <JoannaPageLatest />
+                        <ElliotPageLatest />
                         <SiteContentSidebarSubscribe />
                         <div className="sidebar-ads">
                             <a href="my resume">
@@ -81,4 +84,4 @@ const JoannaAuthorPage = ({ addArticleToFavorites }: Props) => {
     )
 }
 
-export default JoannaAuthorPage
+export default ElliotAuthorPage

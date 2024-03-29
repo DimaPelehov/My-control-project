@@ -85,11 +85,19 @@ const Menu = (props: Props) => {
                     </li>
                 </ul>
             </li>
-            {/* Post */}
+            {/* Authors */}
             <li className="bottom-navbar-menu_list">
                 <button className="bottom-navbar-menu_btn">
-                    <span>Post</span>
+                    <span>Authors</span>
                 </button>
+                <ul className="bottom-navbar-submenu bt-submenu-one">
+                    <li>
+                        <NavLink to="joanna_page">Joanna Wellick</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="elliot_page">Elliot Anderson</NavLink>
+                    </li>
+                </ul>
             </li>
             {/* Features */}
             <li className="bottom-navbar-menu_list">

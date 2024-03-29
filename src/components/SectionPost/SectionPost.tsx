@@ -60,9 +60,9 @@ const SectionPost = (props: Props) => {
                                     </Link>
 
                                     <div className="section-post-tile-author-info">
-                                        <a href="joanna-author">
+                                        <Link to="joanna_page">
                                             Joanna Wellick
-                                        </a>
+                                        </Link>
                                         December 12, 2024
                                     </div>
                                 </div>

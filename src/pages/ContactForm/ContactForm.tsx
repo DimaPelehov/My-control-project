@@ -1,6 +1,9 @@
 import { Container } from '@mui/material'
 import './ContactForm.scss'
 import SiteContentSidebar from 'components/SiteContentSidebar/SiteContentSidebar'
+import SiteContentSidebarAuthor from 'components/SiteContentSidebarAuthor/SiteContentSidebarAuthor'
+import SiteContentSidebarLatest from 'components/SiteContentSidebarLatest/SiteContentSidebarLatest'
+import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/SiteContentSidebarSubscribe'
 
 type Props = {}
 
@@ -81,7 +84,17 @@ const ContactForm = (props: Props) => {
                             </div>
                         </div>
                     </div>
-                    <SiteContentSidebar />
+                    <div className="sidebar-column">
+                        <SiteContentSidebarAuthor />
+                        <SiteContentSidebar />
+                        <SiteContentSidebarLatest />
+                        <SiteContentSidebarSubscribe />
+                        <div className="sidebar-ads">
+                            <a href="my resume">
+                                <p>Тут я розташую посилання на своє резюме</p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </Container>
         </div>

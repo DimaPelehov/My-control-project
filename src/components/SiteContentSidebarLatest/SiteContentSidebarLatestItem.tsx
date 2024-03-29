@@ -1,5 +1,6 @@
 import { Card, CardContent } from '@mui/material'
 import '../SiteContent/SiteContent.scss'
+import { Link } from 'react-router-dom'
 
 type SiteContentSidebarLatestItemType = {
     hrefArticle: string
@@ -35,7 +36,7 @@ const SiteContentSidebarLatestItem = ({
                                 data-content={itemNumber}
                             ></div>
                             <div className="section-post-tile-author-info">
-                                <a href={hrefAuthor}>{authorName}</a>
+                                <Link to={`${hrefAuthor}`}>{authorName}</Link>
                                 {months} {day}, {year}
                             </div>
                         </div>

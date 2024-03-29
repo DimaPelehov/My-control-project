@@ -1,38 +1,13 @@
+import { Link } from 'react-router-dom'
 import '../SiteContent/SiteContent.scss'
-import SiteContentSidebarLatest from 'components/SiteContentSidebarLatest/SiteContentSidebarLatest'
+// import SiteContentSidebarLatest from 'components/SiteContentSidebarLatest/SiteContentSidebarLatest'
+// import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/SiteContentSidebarSubscribe'
 
 type Props = {}
 
 const SiteContentSidebar = (props: Props) => {
     return (
         <aside className="site-content-sidebar">
-            <div className=" sidebar-item sidebar-author">
-                <div className="sidebar-item-header">
-                    <h5>AUTHOR</h5>
-                    <div className="horizontal-line"></div>
-                </div>
-                <div className="sidebar-author-body">
-                    <div className="sidebar-author-info">
-                        <a href="joanna-author">
-                            <img
-                                src="images/author-joanna.jpeg"
-                                alt="joanna-author"
-                            />
-                        </a>
-
-                        <h5>
-                            <a href="joanna-author">
-                                Hello, I`m
-                                <span>Joanna Wellick</span>
-                            </a>
-                        </h5>
-                    </div>
-                    <p>
-                        Sed cras nec a nulla sapien adipiscing ut etiam. In sem
-                        viverra mollis metus quam adipiscing…
-                    </p>
-                </div>
-            </div>
             <div className="sidebar-item sidebar-trend ">
                 <div className="sidebar-item-header">
                     <h5>TRENDING NOW</h5>
@@ -47,7 +22,7 @@ const SiteContentSidebar = (props: Props) => {
                     </h5>
                     <ul className="activity">
                         <li>
-                            <a href="joanna-author">Joanna Wellick</a>
+                            <Link to="joanna_page">Joanna Wellick</Link>
                         </li>
                         <li>
                             <span className="activity-icon read"></span>2 minute
@@ -140,49 +115,6 @@ const SiteContentSidebar = (props: Props) => {
                         </a>
                     </div>
                 </div>
-            </div>
-            <div className="sidebar-latest">
-                <div className="sidebar-item-header">
-                    <h5>LATEST STORIES</h5>
-                    <div className="horizontal-line"></div>
-                </div>
-                <SiteContentSidebarLatest />
-            </div>
-            <div className=" sidebar-item sidebar-subscribe">
-                <div className="sidebar-item-header">
-                    <h5>SIGN UP TO UPDATE</h5>
-                    <div className="horizontal-line"></div>
-                </div>
-                <div className="sidebar-subscribe-title">
-                    <h3>
-                        Subscribe to Our <br />
-                        <span>Newsletter</span>
-                    </h3>
-                </div>
-                <div className="sidebar-subscribe-form">
-                    <form action="" className="subscribe-form">
-                        <input
-                            type="email"
-                            name="mail"
-                            placeholder="Enter your mail"
-                        />
-                        <button>Subscribe</button>
-                    </form>
-                </div>
-                <div className="subscribe-privacy">
-                    <input type="checkbox" id="sidebar-privacy" />
-                    <label htmlFor="sidebar-privacy">
-                        By checking this box, you confirm that you have read and
-                        are agreeing to our terms of use regarding the storage
-                        of the data submitted through this form.
-                    </label>
-                </div>
-            </div>
-
-            <div className="sidebar-ads">
-                <a href="my resume">
-                    <p>Тут я розташую посилання на своє резюме</p>
-                </a>
             </div>
         </aside>
     )

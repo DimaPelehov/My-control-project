@@ -1,11 +1,9 @@
 import { Grid } from '@mui/material'
-import SiteContentSidebarLatestItem from './SiteContentSidebarLatestItem'
+import SiteContentSidebarLatestItem from 'components/SiteContentSidebarLatest/SiteContentSidebarLatestItem'
 import { articlesArray } from 'utils/articlesArray'
-import '../SiteContent/SiteContent.scss'
 
 type Props = {}
-
-const SiteContentSidebarLatest = (props: Props) => {
+const JoannaPageLatest = (props: Props) => {
     return (
         <div className="sidebar-latest">
             <div className="sidebar-item-header">
@@ -14,7 +12,7 @@ const SiteContentSidebarLatest = (props: Props) => {
             </div>
             <Grid container columns={1}>
                 {articlesArray
-                    .filter((item) => item.isLatest === true)
+                    .filter((item) => item.isJoannaPageLatest === true)
                     .map(
                         ({
                             id,
@@ -47,5 +45,4 @@ const SiteContentSidebarLatest = (props: Props) => {
         </div>
     )
 }
-
-export default SiteContentSidebarLatest
+export default JoannaPageLatest

@@ -2,6 +2,9 @@ import { Container } from '@mui/material'
 import '../AeneanCategoryPage/AeneanCategoryPage.scss'
 import SiteContentSidebar from 'components/SiteContentSidebar/SiteContentSidebar'
 import EtiamCategoryArticles from 'components/EtiamCategoryArticles/EtiamCategoryArticles'
+import SiteContentSidebarAuthor from 'components/SiteContentSidebarAuthor/SiteContentSidebarAuthor'
+import SiteContentSidebarLatest from 'components/SiteContentSidebarLatest/SiteContentSidebarLatest'
+import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/SiteContentSidebarSubscribe'
 
 type Props = { addArticleToFavorites: (id: number, count: number) => void }
 
@@ -28,7 +31,7 @@ const EtiamCategoryPage = ({ addArticleToFavorites }: Props) => {
                     </div>
                 </Container>
             </div>
-            <Container maxWidth="lg">
+            <Container maxWidth="lg" sx={{ margin: '64px auto' }}>
                 <div className="site-content">
                     <div className="site-content-area">
                         <div className="site-post-arhive">
@@ -37,7 +40,17 @@ const EtiamCategoryPage = ({ addArticleToFavorites }: Props) => {
                             />
                         </div>
                     </div>
-                    <SiteContentSidebar />
+                    <div className="sidebar-column">
+                        <SiteContentSidebarAuthor />
+                        <SiteContentSidebar />
+                        <SiteContentSidebarLatest />
+                        <SiteContentSidebarSubscribe />
+                        <div className="sidebar-ads">
+                            <a href="my resume">
+                                <p>Тут я розташую посилання на своє резюме</p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </Container>
         </>

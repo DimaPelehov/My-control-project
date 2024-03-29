@@ -1,6 +1,7 @@
 import { Card, CardContent } from '@mui/material'
 import '../SiteContent/SiteContent.scss'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 type SiteContentArtickeColumnItemType = {
     id: number
@@ -65,11 +66,11 @@ const SiteContentArtickeColumnItem = ({
                 <div className="sitecontent-article-content">
                     <div className="sitecontent-article-author-like">
                         <div className="section-post-tile-author">
-                            <a className="author-img" href={hrefAuthor}>
+                            <Link className="author-img" to={`${hrefAuthor}`}>
                                 <img src={imageAuthor} alt={authorName} />
-                            </a>
+                            </Link>
                             <div className="section-post-tile-author-info">
-                                <a href={hrefAuthor}>{authorName}</a>
+                                <Link to={`${hrefAuthor}`}>{authorName}</Link>
                                 {months} {day}, {year}
                             </div>
                         </div>

@@ -17,6 +17,7 @@ import ContactForm from 'pages/ContactForm/ContactForm'
 import { omit } from 'lodash'
 import AliquamSubcategoryPage from 'pages/AliquamSubcategoryPage/AliquamSubcategoryPage'
 import SubscribePage from 'pages/SubscribePage/SubscribePage'
+import ElliotAuthorPage from 'pages/ElliotAuthorPage/ElliotAuthorPage'
 
 type Props = {}
 
@@ -138,7 +139,22 @@ const App = (props: Props) => {
                         />
                     }
                 />
-                <Route path="joanna_page" element={<JoannaAuthorPage />} />
+                <Route
+                    path="joanna_page"
+                    element={
+                        <JoannaAuthorPage
+                            addArticleToFavorites={addArticleToFavorites}
+                        />
+                    }
+                />
+                <Route
+                    path="elliot_page"
+                    element={
+                        <ElliotAuthorPage
+                            addArticleToFavorites={addArticleToFavorites}
+                        />
+                    }
+                />
                 <Route path="contact-form-page" element={<ContactForm />} />
                 <Route path="about_me_page" element={<AboutMePage />} />
                 <Route path="subscribe_page" element={<SubscribePage />} />

@@ -160,9 +160,14 @@ button {
 }
 
 // sidebar
-.site-content-sidebar {
+.sidebar-column {
     width: 25%;
     position: relative;
+}
+
+.site-content-sidebar {
+    width: 100%;
+
     display: flex;
     flex-direction: column;
 }

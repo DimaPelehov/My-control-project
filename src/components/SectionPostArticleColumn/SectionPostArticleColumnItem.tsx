@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import '../SectionPost/SectionPost.scss'
 import { Card, CardContent } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 type SectionPostArticleColumnItemType = {
     image: string
@@ -54,7 +55,7 @@ class SectionPostArticleColumnItem extends Component<
                         </h2>
                         <ul className="activity">
                             <li>
-                                <a href={hrefAuthor}>{authorName}</a>
+                                <Link to={`${hrefAuthor}`}>{authorName}</Link>
                             </li>
                             <li>
                                 <span className="activity-icon views"></span>

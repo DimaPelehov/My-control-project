@@ -279,14 +279,13 @@
     display: flex;
     flex-direction: column;
     border: 1px solid #e9ecef;
-    // border-bottom: none;
     background-color: white;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s;
     z-index: 2;
     width: 1152px;
-    right: -419px;
+    right: -408px;
 }
 
 .categories-names {
@@ -370,7 +369,7 @@
     left: -277px;
 }
 .cat-vulputate {
-    left: -176px;
+    left: -177px;
 }
 
 // favorites
