@@ -21,31 +21,13 @@ import ElliotAuthorPage from 'pages/ElliotAuthorPage/ElliotAuthorPage'
 
 type Props = {}
 
-// type FavoritesDataType = {
-//     totalCount: number
-// }
-
 type ArticlesInFavoritesType = { [id: number]: number }
 
 const App = (props: Props) => {
     // збільшення числа лайків
 
-    // const [favoritesData, setFavoritesData] = useState<FavoritesDataType>({
-    //     totalCount: 0,
-    // })
-
     const [articlesInFavorites, setArticlesInFavorites] =
         useState<ArticlesInFavoritesType>({})
-
-    // const addArticleToFavorites = (count: number) => {
-    //     setFavoritesData((prevState) => ({
-    //         // totalCount: prevState.totalCount + count,
-    //         totalCount:
-    //             prevState.totalCount === 0
-    //                 ? prevState.totalCount + count
-    //                 : prevState.totalCount - count,
-    //     }))
-    // }
 
     const addArticleToFavorites = (id: number, count: number) => {
         setArticlesInFavorites((prevState) => ({
@@ -82,12 +64,21 @@ const App = (props: Props) => {
         setArticlesInFavorites((prevState) => omit(prevState, id))
     }
 
+    // виїзд header-sidebar
+    const [sidebarOpen, setSidebarOpen] = useState<boolean>(false)
+
+    const openCloseSidebar = () => {
+        setSidebarOpen(!sidebarOpen)
+    }
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header
                 articlesInFavorites={articlesInFavorites}
                 changeOverlay={changeOverlay}
+                sidebarOpen={sidebarOpen}
+                openCloseSidebar={openCloseSidebar}
             />
             <Routes>
                 <Route

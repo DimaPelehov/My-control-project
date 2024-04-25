@@ -12,7 +12,9 @@ import { Link } from 'react-router-dom'
 
 type TopNavBarType = {}
 
-type State = { search_visibility: string }
+type State = {
+    search_visibility: string
+}
 
 class TopNavBar extends Component<TopNavBarType, State> {
     state = { search_visibility: 'topnavbar-search-field-unvisible' }

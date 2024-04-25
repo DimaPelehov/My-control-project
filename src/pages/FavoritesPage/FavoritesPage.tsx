@@ -25,12 +25,20 @@ const FavoritesPage = ({
                         article(s)
                     </h1>
 
-                    <FavoritesArticleList
-                        articlesInFavorites={articlesInFavorites}
-                        FavoritesItem={FavoritesArticlesListItemExtended}
-                        // виводимо розширену версію FavoritesArticlesList
-                        removeArticleFromFavorites={removeArticleFromFavorites}
-                    />
+                    {Object.keys(articlesInFavorites).length > 0 ? (
+                        <FavoritesArticleList
+                            articlesInFavorites={articlesInFavorites}
+                            FavoritesItem={FavoritesArticlesListItemExtended}
+                            // виводимо розширену версію FavoritesArticlesList
+                            removeArticleFromFavorites={
+                                removeArticleFromFavorites
+                            }
+                        />
+                    ) : (
+                        <div>
+                            <p>У вас немає вподобаних статей</p>
+                        </div>
+                    )}
                 </div>
             </Container>
         </div>

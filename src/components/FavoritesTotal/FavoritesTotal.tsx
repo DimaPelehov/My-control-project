@@ -1,7 +1,7 @@
 type Props = { articlesInFavorites: { [id: number]: number } }
 
 const FavoritesTotal = ({ articlesInFavorites }: Props) => {
-    console.log(articlesInFavorites)
+    // console.log(articlesInFavorites)
     // ключами об'єкту articlesInFavorites є id, а значеннями - count(котрий=1)
     return (
         <div className="favorites-count">

@@ -5,6 +5,7 @@ import SiteContentSidebar from 'components/SiteContentSidebar/SiteContentSidebar
 import SiteContentSidebarAuthor from 'components/SiteContentSidebarAuthor/SiteContentSidebarAuthor'
 import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/SiteContentSidebarSubscribe'
 import SiteContentSidebarLatest from 'components/SiteContentSidebarLatest/SiteContentSidebarLatest'
+import Reviews from 'components/Reviews/Reviews'
 
 type Props = { addArticleToFavorites: (id: number, count: number) => void }
 
@@ -39,6 +40,7 @@ const SiteContent = ({ addArticleToFavorites }: Props) => {
                         </div>
                     </div>
                 </div>
+                <Reviews />
             </Container>
         </div>
     )
