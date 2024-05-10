@@ -7,9 +7,15 @@ import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/
 import SiteContentSidebarLatest from 'components/SiteContentSidebarLatest/SiteContentSidebarLatest'
 import Reviews from 'components/Reviews/Reviews'
 
-type Props = { addArticleToFavorites: (id: number, count: number) => void }
+type Props = {
+    addArticleToFavorites: (id: number, count: number) => void
+    removeArticleFromFavorites: (id: number) => void
+}
 
-const SiteContent = ({ addArticleToFavorites }: Props) => {
+const SiteContent = ({
+    addArticleToFavorites,
+    removeArticleFromFavorites,
+}: Props) => {
     return (
         <div className="site-content-margin">
             <Container maxWidth="lg">
@@ -19,6 +25,9 @@ const SiteContent = ({ addArticleToFavorites }: Props) => {
                         <div className="site-post-arhive">
                             <SiteContentArticleColumn
                                 addArticleToFavorites={addArticleToFavorites}
+                                removeArticleFromFavorites={
+                                    removeArticleFromFavorites
+                                }
                             />
                         </div>
                         <div className="site-post-navigation">

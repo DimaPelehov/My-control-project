@@ -2,9 +2,15 @@ import { Grid } from '@mui/material'
 import { articlesArray } from 'utils/articlesArray'
 import SiteContentArtickeColumnItem from './SiteContentArtickeColumnItem'
 
-type Props = { addArticleToFavorites: (id: number, count: number) => void }
+type Props = {
+    addArticleToFavorites: (id: number, count: number) => void
+    removeArticleFromFavorites: (id: number) => void
+}
 
-const SiteContentArticleColumn = ({ addArticleToFavorites }: Props) => {
+const SiteContentArticleColumn = ({
+    addArticleToFavorites,
+    removeArticleFromFavorites,
+}: Props) => {
     return (
         <Grid container columns={1}>
             {articlesArray
@@ -50,6 +56,9 @@ const SiteContentArticleColumn = ({ addArticleToFavorites }: Props) => {
                                 facebookCount={facebookCount}
                                 instaCount={instaCount}
                                 addArticleToFavorites={addArticleToFavorites}
+                                removeArticleFromFavorites={
+                                    removeArticleFromFavorites
+                                }
                                 count={count}
                             />
                         </Grid>

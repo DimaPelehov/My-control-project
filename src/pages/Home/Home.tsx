@@ -4,14 +4,18 @@ import SiteContent from 'components/SiteContent/SiteContent'
 
 type Props = {
     addArticleToFavorites: (id: number, count: number) => void
+    removeArticleFromFavorites: (id: number) => void
 }
 
-const Home = ({ addArticleToFavorites }: Props) => {
+const Home = ({ addArticleToFavorites, removeArticleFromFavorites }: Props) => {
     return (
         <>
             <SectionPost />
             <SectionSubscribe />
-            <SiteContent addArticleToFavorites={addArticleToFavorites} />
+            <SiteContent
+                addArticleToFavorites={addArticleToFavorites}
+                removeArticleFromFavorites={removeArticleFromFavorites}
+            />
         </>
     )
 }

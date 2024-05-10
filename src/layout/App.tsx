@@ -18,14 +18,15 @@ import { omit } from 'lodash'
 import AliquamSubcategoryPage from 'pages/AliquamSubcategoryPage/AliquamSubcategoryPage'
 import SubscribePage from 'pages/SubscribePage/SubscribePage'
 import ElliotAuthorPage from 'pages/ElliotAuthorPage/ElliotAuthorPage'
+import ArticlePage from 'pages/ArticlePage/ArticlePage'
+import MaecenasCategoryPage from 'pages/MaecenasCategoryPage/MaecenasCategoryPage'
 
 type Props = {}
 
 type ArticlesInFavoritesType = { [id: number]: number }
 
 const App = (props: Props) => {
-    // збільшення числа лайків
-
+    // додавання до Favorite
     const [articlesInFavorites, setArticlesInFavorites] =
         useState<ArticlesInFavoritesType>({})
 
@@ -84,7 +85,12 @@ const App = (props: Props) => {
                 <Route
                     path="/"
                     element={
-                        <Home addArticleToFavorites={addArticleToFavorites} />
+                        <Home
+                            addArticleToFavorites={addArticleToFavorites}
+                            removeArticleFromFavorites={
+                                removeArticleFromFavorites
+                            }
+                        />
                     }
                 />
                 <Route
@@ -131,6 +137,10 @@ const App = (props: Props) => {
                     }
                 />
                 <Route
+                    path="maecenas_category"
+                    element={<MaecenasCategoryPage />}
+                />
+                <Route
                     path="joanna_page"
                     element={
                         <JoannaAuthorPage
@@ -149,6 +159,14 @@ const App = (props: Props) => {
                 <Route path="contact-form-page" element={<ContactForm />} />
                 <Route path="about_me_page" element={<AboutMePage />} />
                 <Route path="subscribe_page" element={<SubscribePage />} />
+                <Route
+                    path="/articles/:id"
+                    element={
+                        <ArticlePage
+                            addArticleToFavorites={addArticleToFavorites}
+                        />
+                    }
+                />
             </Routes>
             {/* <Main addArticleToFavorites={addArticleToFavorites} /> */}
             <Footer />

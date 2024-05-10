@@ -22,6 +22,7 @@ type SiteContentArtickeColumnItemType = {
     facebookCount?: number
     instaCount?: number
     addArticleToFavorites: (id: number, count: number) => void
+    removeArticleFromFavorites?: (id: number) => void
     count: number
 }
 
@@ -44,6 +45,7 @@ const SiteContentArtickeColumnItem = ({
     facebookCount,
     instaCount,
     addArticleToFavorites,
+    removeArticleFromFavorites,
     count,
 }: SiteContentArtickeColumnItemType) => {
     // зміна кольору лайк
@@ -59,9 +61,9 @@ const SiteContentArtickeColumnItem = ({
         <Card className="sitecontent-article-item">
             <CardContent sx={{ padding: '0', display: 'flex', gap: '40px' }}>
                 <div className="sitecontent-article-img">
-                    <a href={hrefArticle}>
+                    <Link to={`/articles/${id}`}>
                         <img src={image} alt={title} />
-                    </a>
+                    </Link>
                 </div>
                 <div className="sitecontent-article-content">
                     <div className="sitecontent-article-author-like">
@@ -85,7 +87,7 @@ const SiteContentArtickeColumnItem = ({
                     </div>
 
                     <h2 className="sitecontent-article-column-item-header">
-                        <a href={hrefArticle}>
+                        <Link to={`/articles/${id}`}>
                             <span className="sectionpost-article-column-item-category">
                                 {category}
                             </span>
@@ -93,7 +95,7 @@ const SiteContentArtickeColumnItem = ({
                                 className="sectionpost-article-column-item-title"
                                 dangerouslySetInnerHTML={{ __html: title }}
                             ></span>
-                        </a>
+                        </Link>
                     </h2>
                     <ul className="activity">
                         <li>

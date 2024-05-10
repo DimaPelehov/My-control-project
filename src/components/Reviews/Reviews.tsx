@@ -1,8 +1,9 @@
 import { TextareaAutosize, Typography } from '@mui/material'
 import React, { FormEvent, useState } from 'react'
 import '../SiteContent/SiteContent.scss'
+import { Article, articlesArray, getArticlesObject } from 'utils/articlesArray'
 
-type Props = {}
+type Props = { articlesObject?: { [id: number]: Article } }
 
 type Review = {
     name: string
@@ -10,18 +11,21 @@ type Review = {
     userImg?: string
     email?: string
 }
-const Reviews = (props: Props) => {
+
+const Reviews = ({
+    articlesObject = getArticlesObject(articlesArray),
+}: Props) => {
     const arrReviews: Review[] = [
-        {
-            name: 'Dima',
-            userImg: '/images/userImage.png',
-            text: 'It`s website so exciting!',
-        },
-        {
-            name: 'Dasha',
-            userImg: '/images/userImage.png',
-            text: 'All articles very interested.',
-        },
+        // {
+        //     name: 'Dima',
+        //     userImg: '/images/userImage.png',
+        //     text: 'It`s website so exciting!',
+        // },
+        // {
+        //     name: 'Dasha',
+        //     userImg: '/images/userImage.png',
+        //     text: 'All articles very interested.',
+        // },
     ]
 
     const [reviews, setReviews] = useState<Review[]>(arrReviews)
@@ -57,7 +61,7 @@ const Reviews = (props: Props) => {
     return (
         <>
             <Typography variant="h5" component="h2">
-                Reviews about website
+                Leave a reply
             </Typography>
             <div>
                 {reviews.map(({ userImg, name, text }, i) => (

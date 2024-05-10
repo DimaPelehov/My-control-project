@@ -5,14 +5,15 @@ const FavoritesTotal = ({ articlesInFavorites }: Props) => {
     // ключами об'єкту articlesInFavorites є id, а значеннями - count(котрий=1)
     return (
         <div className="favorites-count">
-            {Object.keys(articlesInFavorites).reduce(
+            {/* {Object.keys(articlesInFavorites).reduce(
                 (sum, articleId) =>
                     sum +
                     // articlesObject[+articleId].count
                     articlesInFavorites[+articleId],
                 // отримуємо сумарну кількість лайкнутих статей
                 0
-            )}
+            )} */}
+            {Object.keys(articlesInFavorites).length}
         </div>
     )
 }
