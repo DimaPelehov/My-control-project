@@ -34,7 +34,12 @@ export type Article = {
     isJoannaPageLatest?: boolean
     isElliotArticle?: boolean
     isElliotPageLatest?: boolean
-    articleReviews?: {}[]
+    articleReviews?: {
+        name: string
+        text: string
+        userImg?: string
+        email?: string
+    }[]
 }
 
 export const articlesArray: Article[] = [
@@ -44,12 +49,12 @@ export const articlesArray: Article[] = [
             {
                 name: 'Dima',
                 userImg: '/images/userImage.png',
-                text: 'It`s website so exciting!',
+                text: 'It`s 1 review in id 1',
             },
             {
                 name: 'Dasha',
                 userImg: '/images/userImage.png',
-                text: 'All articles very interested.',
+                text: 'It`s 2 review in id 1',
             },
         ],
         image: '/images/site-cont-article-col-img1.jpg',
@@ -80,6 +85,13 @@ export const articlesArray: Article[] = [
     },
     {
         id: 2,
+        articleReviews: [
+            {
+                name: 'Olga',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 2',
+            },
+        ],
         image: '/images/site-cont-article-col-img2.jpg',
         hrefArticle: 'donec cras',
         hrefAuthor: 'elliot_page',
@@ -106,6 +118,13 @@ export const articlesArray: Article[] = [
     },
     {
         id: 3,
+        articleReviews: [
+            {
+                name: 'Viktor',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 3',
+            },
+        ],
         image: '/images/site-cont-article-col-img3.jpg',
         hrefArticle: 'dictum dapibus',
         hrefAuthor: 'elliot_page',
@@ -136,6 +155,13 @@ export const articlesArray: Article[] = [
     },
     {
         id: 4,
+        articleReviews: [
+            {
+                name: 'Lida',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 4',
+            },
+        ],
         image: '/images/site-cont-article-col-img4.jpg',
         hrefArticle: 'nisi dolor',
         hrefAuthor: 'joanna_page',
@@ -162,6 +188,13 @@ export const articlesArray: Article[] = [
     },
     {
         id: 5,
+        articleReviews: [
+            {
+                name: 'Sergiy',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 5',
+            },
+        ],
         image: '/images/site-cont-article-col-img5.jpg',
         hrefArticle: 'nunc libero',
         hrefAuthor: 'joanna_page',
@@ -190,6 +223,13 @@ export const articlesArray: Article[] = [
     },
     {
         id: 6,
+        articleReviews: [
+            {
+                name: 'Ira',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 6',
+            },
+        ],
         image: '/images/site-cont-article-col-img6.jpg',
         hrefArticle: 'sapien lorem',
         hrefAuthor: 'elliot_page',
@@ -220,6 +260,13 @@ export const articlesArray: Article[] = [
     },
     {
         id: 7,
+        articleReviews: [
+            {
+                name: 'Liza',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 7',
+            },
+        ],
         image: '/images/site-cont-article-col-img7.jpg',
         hrefArticle: 'dapibus viverra',
         hrefAuthor: 'elliot_page',
@@ -248,6 +295,13 @@ export const articlesArray: Article[] = [
     },
     {
         id: 8,
+        articleReviews: [
+            {
+                name: 'Oleg',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 8',
+            },
+        ],
         image: '/images/site-cont-article-col-img8.jpg',
         hrefArticle: 'rhoncus ante',
         hrefAuthor: 'joanna_page',
@@ -278,6 +332,13 @@ export const articlesArray: Article[] = [
     },
     {
         id: 9,
+        articleReviews: [
+            {
+                name: 'Igor',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 9',
+            },
+        ],
         image: '/images/site-cont-article-col-img9.jpg',
         hrefArticle: 'etiam ante',
         hrefAuthor: 'joanna_page',
@@ -308,6 +369,13 @@ export const articlesArray: Article[] = [
     },
     {
         id: 10,
+        articleReviews: [
+            {
+                name: 'Natali',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 10',
+            },
+        ],
         image: '/images/site-cont-article-col-img10.jpg',
         hrefArticle: 'justo eleifend',
         hrefAuthor: 'elliot_page',
@@ -334,6 +402,13 @@ export const articlesArray: Article[] = [
     },
     {
         id: 11,
+        articleReviews: [
+            {
+                name: 'Evgenia',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 11',
+            },
+        ],
         image: '/images/site-cont-article-col-img11.jpg',
         hrefArticle: 'pellentesque porttitor',
         hrefAuthor: 'elliot_page',
@@ -361,6 +436,13 @@ export const articlesArray: Article[] = [
     },
     {
         id: 12,
+        articleReviews: [
+            {
+                name: 'Sam',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 12',
+            },
+        ],
         image: '/images/site-cont-article-col-img12.jpg',
         hrefArticle: 'integer maecenas',
         hrefAuthor: 'joanna_page',
@@ -390,6 +472,13 @@ export const articlesArray: Article[] = [
     // далі статті latest
     {
         id: 14,
+        articleReviews: [
+            {
+                name: 'Linda',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 14',
+            },
+        ],
         hrefArticle: 'vitae nec ',
         hrefAuthor: 'elliot_page',
         authorName: 'Elliot Anderson',
@@ -413,6 +502,13 @@ export const articlesArray: Article[] = [
     },
     {
         id: 15,
+        articleReviews: [
+            {
+                name: 'Bob',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 15',
+            },
+        ],
         hrefArticle: 'tempus vitae ',
         hrefAuthor: 'joanna_page',
         authorName: 'Joanna Wellick',
@@ -443,6 +539,13 @@ export const articlesArray: Article[] = [
     },
     {
         id: 16,
+        articleReviews: [
+            {
+                name: 'Derek',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 16',
+            },
+        ],
         hrefArticle: 'et tellus ',
         hrefAuthor: 'joanna_page',
         authorName: 'Joanna Wellick',
@@ -475,6 +578,13 @@ export const articlesArray: Article[] = [
     // sectionPostColumn
     {
         id: 17,
+        articleReviews: [
+            {
+                name: 'Bill',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 17',
+            },
+        ],
         image: '/images/sec-post-article-col-img1.jpg',
         category: 'Etiam',
         hrefCategory: 'etiam_category',
@@ -503,6 +613,13 @@ export const articlesArray: Article[] = [
     },
     {
         id: 18,
+        articleReviews: [
+            {
+                name: 'Suzan',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 18',
+            },
+        ],
         image: '/images/sec-post-article-col-img2.jpg',
         category: 'Vulputate',
         hrefCategory: 'vulputate_category',
@@ -534,6 +651,13 @@ export const articlesArray: Article[] = [
     // menuCategoryEtiam
     {
         id: 19,
+        articleReviews: [
+            {
+                name: 'Jimmy',
+                userImg: '/images/userImage.png',
+                text: 'It`s  review in id 19',
+            },
+        ],
         image: '/images/image-1.jpg',
         hrefArticle: 'maecenas tincidunt',
         title: 'Maecenas Tincidunt Eget Libero <span class="font-weight-400">Massa Vitae</span>',

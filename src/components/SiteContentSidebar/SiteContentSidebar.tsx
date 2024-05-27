@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom'
 import '../SiteContent/SiteContent.scss'
-// import SiteContentSidebarLatest from 'components/SiteContentSidebarLatest/SiteContentSidebarLatest'
-// import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/SiteContentSidebarSubscribe'
 
 type Props = {}
 
@@ -13,6 +11,7 @@ const SiteContentSidebar = (props: Props) => {
                     <h5>TRENDING NOW</h5>
                     <div className="horizontal-line"></div>
                 </div>
+
                 <div className="sidebar-trend-body">
                     <h5>
                         <a href="maecenas tincidunt">
@@ -20,6 +19,7 @@ const SiteContentSidebar = (props: Props) => {
                             <span>Libero Massa Vitae</span>
                         </a>
                     </h5>
+
                     <ul className="activity">
                         <li>
                             <Link to="joanna_page">Joanna Wellick</Link>
@@ -29,6 +29,7 @@ const SiteContentSidebar = (props: Props) => {
                             read
                         </li>
                     </ul>
+
                     <div className="sidebar-trend-img">
                         <a href="maecenas tincidunt">
                             <img
@@ -45,6 +46,7 @@ const SiteContentSidebar = (props: Props) => {
                     </div>
                 </div>
             </div>
+
             <div className="sidebar-item sidebar-social">
                 <div className="sidebar-item-header">
                     <h5>SOCIAL LINKS</h5>

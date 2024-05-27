@@ -25,6 +25,8 @@ type Props = {}
 
 type ArticlesInFavoritesType = { [id: number]: number }
 
+type ArticlesLikeStateType = { [id: number]: boolean }
+
 const App = (props: Props) => {
     // додавання до Favorite
     const [articlesInFavorites, setArticlesInFavorites] =
@@ -72,6 +74,17 @@ const App = (props: Props) => {
         setSidebarOpen(!sidebarOpen)
     }
 
+    // like
+    const [articlesLikeState, setArticlesLikeState] =
+        useState<ArticlesLikeStateType>({})
+
+    const toggleLikeState = (id: number) => {
+        setArticlesLikeState((prevState) => ({
+            ...prevState,
+            [id]: !prevState[id],
+        }))
+    }
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
@@ -90,6 +103,8 @@ const App = (props: Props) => {
                             removeArticleFromFavorites={
                                 removeArticleFromFavorites
                             }
+                            articlesLikeState={articlesLikeState}
+                            toggleLikeState={toggleLikeState}
                         />
                     }
                 />
@@ -101,6 +116,8 @@ const App = (props: Props) => {
                             removeArticleFromFavorites={
                                 removeArticleFromFavorites
                             }
+                            articlesLikeState={articlesLikeState}
+                            toggleLikeState={toggleLikeState}
                         />
                     }
                 />
@@ -109,6 +126,8 @@ const App = (props: Props) => {
                     element={
                         <AeneanCategoryPage
                             addArticleToFavorites={addArticleToFavorites}
+                            articlesLikeState={articlesLikeState}
+                            toggleLikeState={toggleLikeState}
                         />
                     }
                 />
@@ -125,6 +144,8 @@ const App = (props: Props) => {
                     element={
                         <VulputateCategoryPage
                             addArticleToFavorites={addArticleToFavorites}
+                            articlesLikeState={articlesLikeState}
+                            toggleLikeState={toggleLikeState}
                         />
                     }
                 />
@@ -133,6 +154,8 @@ const App = (props: Props) => {
                     element={
                         <EtiamCategoryPage
                             addArticleToFavorites={addArticleToFavorites}
+                            articlesLikeState={articlesLikeState}
+                            toggleLikeState={toggleLikeState}
                         />
                     }
                 />
@@ -145,6 +168,8 @@ const App = (props: Props) => {
                     element={
                         <JoannaAuthorPage
                             addArticleToFavorites={addArticleToFavorites}
+                            articlesLikeState={articlesLikeState}
+                            toggleLikeState={toggleLikeState}
                         />
                     }
                 />
@@ -153,6 +178,8 @@ const App = (props: Props) => {
                     element={
                         <ElliotAuthorPage
                             addArticleToFavorites={addArticleToFavorites}
+                            articlesLikeState={articlesLikeState}
+                            toggleLikeState={toggleLikeState}
                         />
                     }
                 />
@@ -164,6 +191,8 @@ const App = (props: Props) => {
                     element={
                         <ArticlePage
                             addArticleToFavorites={addArticleToFavorites}
+                            articlesLikeState={articlesLikeState}
+                            toggleLikeState={toggleLikeState}
                         />
                     }
                 />

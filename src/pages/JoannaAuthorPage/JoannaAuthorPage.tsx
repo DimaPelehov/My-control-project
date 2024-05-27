@@ -5,9 +5,17 @@ import SiteContentSidebar from 'components/SiteContentSidebar/SiteContentSidebar
 import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/SiteContentSidebarSubscribe'
 import JoannaPageLatest from 'components/JoannaPageLatest/JoannaPageLatest'
 
-type Props = { addArticleToFavorites: (id: number, count: number) => void }
+type Props = {
+    addArticleToFavorites: (id: number, count: number) => void
+    toggleLikeState: (id: number) => void
+    articlesLikeState: { [id: number]: boolean }
+}
 
-const JoannaAuthorPage = ({ addArticleToFavorites }: Props) => {
+const JoannaAuthorPage = ({
+    addArticleToFavorites,
+    toggleLikeState,
+    articlesLikeState,
+}: Props) => {
     return (
         <>
             <div className="page-fon">
@@ -57,6 +65,8 @@ const JoannaAuthorPage = ({ addArticleToFavorites }: Props) => {
                         <div className="site-post-arhive">
                             <JoannaArticles
                                 addArticleToFavorites={addArticleToFavorites}
+                                articlesLikeState={articlesLikeState}
+                                toggleLikeState={toggleLikeState}
                             />
                         </div>
                         <div className="site-post-navigation">

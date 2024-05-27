@@ -1,16 +1,22 @@
 import { Container } from '@mui/material'
 import '../JoannaAuthorPage/JoannaAuthorPage.scss'
-// import JoannaArticles from 'components/JoannaArticles/JoannaArticles'
 import SiteContentSidebar from 'components/SiteContentSidebar/SiteContentSidebar'
 import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/SiteContentSidebarSubscribe'
-// import JoannaPageLatest from 'components/JoannaPageLatest/JoannaPageLatest'
 import ElliotArticles from 'components/ElliotArticles/ElliotArticles'
 import SiteContentSidebarAuthor from 'components/SiteContentSidebarAuthor/SiteContentSidebarAuthor'
 import ElliotPageLatest from 'components/ElliotPageLatest/ElliotPageLatest'
 
-type Props = { addArticleToFavorites: (id: number, count: number) => void }
+type Props = {
+    addArticleToFavorites: (id: number, count: number) => void
+    toggleLikeState: (id: number) => void
+    articlesLikeState: { [id: number]: boolean }
+}
 
-const ElliotAuthorPage = ({ addArticleToFavorites }: Props) => {
+const ElliotAuthorPage = ({
+    addArticleToFavorites,
+    toggleLikeState,
+    articlesLikeState,
+}: Props) => {
     return (
         <>
             <div className="page-fon">
@@ -59,6 +65,8 @@ const ElliotAuthorPage = ({ addArticleToFavorites }: Props) => {
                         <div className="site-post-arhive">
                             <ElliotArticles
                                 addArticleToFavorites={addArticleToFavorites}
+                                articlesLikeState={articlesLikeState}
+                                toggleLikeState={toggleLikeState}
                             />
                         </div>
                         <div className="site-post-navigation">

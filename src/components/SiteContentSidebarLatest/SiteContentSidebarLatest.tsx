@@ -39,6 +39,7 @@ const SiteContentSidebarLatest = (props: Props) => {
                                     title={title}
                                     image={image}
                                     itemNumber={itemNumber}
+                                    id={id}
                                 />
                             </Grid>
                         )

@@ -15,11 +15,15 @@ import JoannaArticles from 'components/JoannaArticles/JoannaArticles'
 type Props = {
     articlesObject?: { [id: number]: Article }
     addArticleToFavorites: (id: number, count: number) => void
+    toggleLikeState: (id: number) => void
+    articlesLikeState: { [id: number]: boolean }
 }
 
 const ArticlePage = ({
     articlesObject = getArticlesObject(articlesArray),
     addArticleToFavorites,
+    toggleLikeState,
+    articlesLikeState,
 }: Props) => {
     const { id } = useParams()
     // useParams дозволяє витягти усю необхідну інформацію щодо статті з id
@@ -341,7 +345,7 @@ const ArticlePage = ({
                     </div>
 
                     <div className="article-page-reviews">
-                        <Reviews />
+                        <Reviews id={articlesObject[+id!].id} />
                     </div>
 
                     <div className="article-page-subscribe">
@@ -358,11 +362,15 @@ const ArticlePage = ({
                         'Joanna Wellick' ? (
                             <JoannaArticles
                                 addArticleToFavorites={addArticleToFavorites}
+                                articlesLikeState={articlesLikeState}
+                                toggleLikeState={toggleLikeState}
                             />
                         ) : articlesObject[+id!].authorName ===
                           'Elliot Anderson' ? (
                             <ElliotArticles
                                 addArticleToFavorites={addArticleToFavorites}
+                                articlesLikeState={articlesLikeState}
+                                toggleLikeState={toggleLikeState}
                             />
                         ) : (
                             ''

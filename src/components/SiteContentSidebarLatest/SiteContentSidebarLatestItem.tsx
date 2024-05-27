@@ -12,6 +12,7 @@ type SiteContentSidebarLatestItemType = {
     title: string
     image: string
     itemNumber?: string
+    id: number
 }
 
 const SiteContentSidebarLatestItem = ({
@@ -24,11 +25,12 @@ const SiteContentSidebarLatestItem = ({
     title,
     image,
     itemNumber,
+    id,
 }: SiteContentSidebarLatestItemType) => {
     return (
         <Card className="sidebar-latest-item">
             <CardContent sx={{ padding: '0' }}>
-                <a href={hrefArticle}>
+                <Link to={`/articles/${id}`}>
                     <div className="sidebar-latest-content">
                         <div className="sidebar-latest-content-header">
                             <div
@@ -48,7 +50,7 @@ const SiteContentSidebarLatestItem = ({
                     <div className="sidebar-latest-img">
                         <img src={image} alt={title} />
                     </div>
-                </a>
+                </Link>
             </CardContent>
         </Card>
     )

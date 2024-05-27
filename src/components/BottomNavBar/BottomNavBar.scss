@@ -351,6 +351,10 @@
             transition: 0.2s ease;
         }
     }
+
+    a.active {
+        color: #797a7c;
+    }
 }
 
 .category-img {
@@ -378,21 +382,19 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    gap: 5px;
 
     &:hover {
         .favorites-icon {
             filter: grayscale(0%);
         }
-        .favorites-count {
-            color: rgb(241, 88, 88);
-        }
     }
 }
 
 .favorites-icon {
-    width: 20px;
-    height: 20px;
-    background-image: url(./icons/like_icon.svg);
+    width: 25px;
+    height: 25px;
+    background-image: url(./icons/bookmarks_icon.svg);
     background-size: contain;
     filter: grayscale(100%);
 }

@@ -5,16 +5,19 @@ import SiteContentSidebar from 'components/SiteContentSidebar/SiteContentSidebar
 import SiteContentSidebarAuthor from 'components/SiteContentSidebarAuthor/SiteContentSidebarAuthor'
 import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/SiteContentSidebarSubscribe'
 import SiteContentSidebarLatest from 'components/SiteContentSidebarLatest/SiteContentSidebarLatest'
-import Reviews from 'components/Reviews/Reviews'
 
 type Props = {
     addArticleToFavorites: (id: number, count: number) => void
     removeArticleFromFavorites: (id: number) => void
+    articlesLikeState: { [id: number]: boolean }
+    toggleLikeState: (id: number) => void
 }
 
 const SiteContent = ({
     addArticleToFavorites,
     removeArticleFromFavorites,
+    articlesLikeState,
+    toggleLikeState,
 }: Props) => {
     return (
         <div className="site-content-margin">
@@ -28,6 +31,8 @@ const SiteContent = ({
                                 removeArticleFromFavorites={
                                     removeArticleFromFavorites
                                 }
+                                articlesLikeState={articlesLikeState}
+                                toggleLikeState={toggleLikeState}
                             />
                         </div>
                         <div className="site-post-navigation">
@@ -49,7 +54,6 @@ const SiteContent = ({
                         </div>
                     </div>
                 </div>
-                <Reviews />
             </Container>
         </div>
     )

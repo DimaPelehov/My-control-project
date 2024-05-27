@@ -7,9 +7,17 @@ import SiteContentSidebarAuthor from 'components/SiteContentSidebarAuthor/SiteCo
 import SiteContentSidebarLatest from 'components/SiteContentSidebarLatest/SiteContentSidebarLatest'
 import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/SiteContentSidebarSubscribe'
 
-type Props = { addArticleToFavorites: (id: number, count: number) => void }
+type Props = {
+    addArticleToFavorites: (id: number, count: number) => void
+    toggleLikeState: (id: number) => void
+    articlesLikeState: { [id: number]: boolean }
+}
 
-const AeneanCategoryPage = ({ addArticleToFavorites }: Props) => {
+const AeneanCategoryPage = ({
+    addArticleToFavorites,
+    toggleLikeState,
+    articlesLikeState,
+}: Props) => {
     return (
         <>
             <div className="category-page-fon">
@@ -46,6 +54,8 @@ const AeneanCategoryPage = ({ addArticleToFavorites }: Props) => {
                         <div className="site-post-arhive">
                             <AeneanCategoryArticles
                                 addArticleToFavorites={addArticleToFavorites}
+                                articlesLikeState={articlesLikeState}
+                                toggleLikeState={toggleLikeState}
                             />
                         </div>
                     </div>

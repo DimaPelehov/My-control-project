@@ -1,9 +1,9 @@
 import { Card, CardContent, Typography } from '@mui/material'
+import { Link, NavLink } from 'react-router-dom'
 
 type CategoryAeneanRowItemType = {
     id: number
     image: string
-    hrefArticle: string
     title: string
     views?: string
 }
@@ -11,16 +11,15 @@ type CategoryAeneanRowItemType = {
 const CategoryAeneanRowItem = ({
     id,
     image,
-    hrefArticle,
     title,
     views,
 }: CategoryAeneanRowItemType) => {
     return (
         <Card sx={{ borderRadius: '0', boxShadow: 'none' }}>
             <div className="category-img">
-                <a href={hrefArticle}>
+                <Link to={`/articles/${id}`}>
                     <img src={image} alt={title} />
-                </a>
+                </Link>
             </div>
             <CardContent sx={{ padding: '16px 0 24px' }}>
                 <Typography
@@ -31,11 +30,11 @@ const CategoryAeneanRowItem = ({
                         fontWeight: '800',
                     }}
                 >
-                    <a
-                        href={hrefArticle}
+                    <NavLink
+                        to={`/articles/${id}`}
                         dangerouslySetInnerHTML={{ __html: title }}
                         className="menu-category-link"
-                    ></a>
+                    ></NavLink>
                 </Typography>
                 <ul className="activity">
                     <li>

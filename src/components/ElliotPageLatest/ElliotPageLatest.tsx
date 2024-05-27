@@ -37,6 +37,7 @@ const ElliotPageLatest = (props: Props) => {
                                     title={title}
                                     image={image}
                                     itemNumber={itemNumber}
+                                    id={id}
                                 />
                             </Grid>
                         )

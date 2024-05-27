@@ -3,7 +3,7 @@ import React, { FormEvent, useState } from 'react'
 import '../SiteContent/SiteContent.scss'
 import { Article, articlesArray, getArticlesObject } from 'utils/articlesArray'
 
-type Props = { articlesObject?: { [id: number]: Article } }
+type Props = { articlesObject?: { [id: number]: Article }; id: number }
 
 type Review = {
     name: string
@@ -14,19 +14,22 @@ type Review = {
 
 const Reviews = ({
     articlesObject = getArticlesObject(articlesArray),
+    id,
 }: Props) => {
-    const arrReviews: Review[] = [
-        // {
-        //     name: 'Dima',
-        //     userImg: '/images/userImage.png',
-        //     text: 'It`s website so exciting!',
-        // },
-        // {
-        //     name: 'Dasha',
-        //     userImg: '/images/userImage.png',
-        //     text: 'All articles very interested.',
-        // },
-    ]
+    const arrReviews: Review[] = articlesObject[id].articleReviews!
+
+    // [
+    // {
+    //     name: 'Dima',
+    //     userImg: '/images/userImage.png',
+    //     text: 'It`s website so exciting!',
+    // },
+    // {
+    //     name: 'Dasha',
+    //     userImg: '/images/userImage.png',
+    //     text: 'All articles very interested.',
+    // },
+    // ]
 
     const [reviews, setReviews] = useState<Review[]>(arrReviews)
 

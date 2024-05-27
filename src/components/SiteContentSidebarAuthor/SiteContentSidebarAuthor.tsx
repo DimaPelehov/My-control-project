@@ -8,8 +8,10 @@ const SiteContentSidebarAuthor = (props: Props) => {
         <div className=" sidebar-item sidebar-author">
             <div className="sidebar-item-header">
                 <h5>AUTHOR</h5>
+
                 <div className="horizontal-line"></div>
             </div>
+
             <div className="sidebar-author-body">
                 <div className="sidebar-author-info">
                     <Link to="joanna_page">
@@ -26,6 +28,7 @@ const SiteContentSidebarAuthor = (props: Props) => {
                         </Link>
                     </h5>
                 </div>
+
                 <p>
                     Sed cras nec a nulla sapien adipiscing ut etiam. In sem
                     viverra mollis metus quam adipiscing…

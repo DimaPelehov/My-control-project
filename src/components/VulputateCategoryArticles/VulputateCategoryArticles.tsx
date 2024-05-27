@@ -2,9 +2,17 @@ import { Grid } from '@mui/material'
 import { articlesArray } from 'utils/articlesArray'
 import SiteContentArtickeColumnItem from '../SiteContentArticleColumn/SiteContentArtickeColumnItem'
 
-type Props = { addArticleToFavorites: (id: number, count: number) => void }
+type Props = {
+    addArticleToFavorites: (id: number, count: number) => void
+    toggleLikeState: (id: number) => void
+    articlesLikeState: { [id: number]: boolean }
+}
 
-const VulputateCategoryArticles = ({ addArticleToFavorites }: Props) => {
+const VulputateCategoryArticles = ({
+    addArticleToFavorites,
+    toggleLikeState,
+    articlesLikeState,
+}: Props) => {
     return (
         <Grid container columns={1}>
             {articlesArray
@@ -51,6 +59,8 @@ const VulputateCategoryArticles = ({ addArticleToFavorites }: Props) => {
                                 instaCount={instaCount}
                                 addArticleToFavorites={addArticleToFavorites}
                                 count={count}
+                                toggleLikeState={toggleLikeState}
+                                isLiked={articlesLikeState[id]}
                             />
                         </Grid>
                     )

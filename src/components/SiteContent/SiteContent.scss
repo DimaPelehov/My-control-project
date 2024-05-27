@@ -75,7 +75,17 @@ button {
     }
 }
 
-.like-active {
+// .like-active {
+//     filter: grayscale(0%);
+//     width: 20px;
+//     height: 20px;
+//     background-image: url(./icons/like_icon.svg);
+//     background-size: contain;
+//     cursor: pointer;
+// }
+
+//  like (через пропси)
+.like.active {
     filter: grayscale(0%);
     width: 20px;
     height: 20px;
@@ -99,6 +109,12 @@ button {
 
 .section-post-tile-share {
     font-size: 11px;
+}
+
+.sitecontent-article-btn {
+    margin-top: 30px;
+    width: 40%;
+    padding: 7px 15px;
 }
 
 .site-post-navigation {

@@ -1,7 +1,5 @@
 import { Grid } from '@mui/material'
-// import '../SectionPost/SectionPost.scss'
 import SectionPostArticleColumnItem from './SectionPostArticleColumnItem'
-// import { sectionColumnItemsArr } from 'utils/sectionPostColumnItemsArr'
 import { articlesArray } from 'utils/articlesArray'
 
 type Props = {}
@@ -33,6 +31,7 @@ const SectionPostArticleColumn = (props: Props) => {
                                 views={views}
                                 shares={shares}
                                 authorName={authorName}
+                                id={id}
                             />
                         </Grid>
                     )

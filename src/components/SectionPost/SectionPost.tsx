@@ -13,13 +13,14 @@ const SectionPost = (props: Props) => {
                 <div className="sec-post-tiles-big_column">
                     <article className="section-post-tile">
                         <div className="section-post-tile-img">
-                            <a href="Maecenas Tincidunt Eget Libero Massa Vitae">
+                            <Link to={`/articles/19`}>
                                 <img
                                     src="/images/image-1.jpg"
                                     alt=" first article"
                                 />
-                            </a>
+                            </Link>
                         </div>
+
                         <div className="section-post-tile-content">
                             <Link
                                 to="etiam_category"
@@ -28,14 +29,15 @@ const SectionPost = (props: Props) => {
                                 Etiam
                             </Link>
 
-                            <a
+                            <Link
+                                to={`/articles/19`}
                                 className="section-post-tile-title"
-                                href="Maecenas Tincidunt Eget Libero Massa Vitae"
                             >
                                 Maecenas Tincidunt Eget Libero Massa
                                 <br />
                                 <span>Vitae</span>
-                            </a>
+                            </Link>
+
                             <ul className="activity">
                                 <li>
                                     <span className="activity-icon views"></span>

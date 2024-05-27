@@ -5,11 +5,15 @@ import SiteContentArtickeColumnItem from './SiteContentArtickeColumnItem'
 type Props = {
     addArticleToFavorites: (id: number, count: number) => void
     removeArticleFromFavorites: (id: number) => void
+    articlesLikeState: { [id: number]: boolean }
+    toggleLikeState: (id: number) => void
 }
 
 const SiteContentArticleColumn = ({
     addArticleToFavorites,
     removeArticleFromFavorites,
+    articlesLikeState,
+    toggleLikeState,
 }: Props) => {
     return (
         <Grid container columns={1}>
@@ -60,6 +64,8 @@ const SiteContentArticleColumn = ({
                                     removeArticleFromFavorites
                                 }
                                 count={count}
+                                isLiked={articlesLikeState[id]}
+                                toggleLikeState={toggleLikeState}
                             />
                         </Grid>
                     )

@@ -12,6 +12,7 @@ type SectionPostArticleColumnItemType = {
     views?: string
     shares?: number
     authorName?: string
+    id: number
 }
 
 type State = {}
@@ -25,11 +26,11 @@ class SectionPostArticleColumnItem extends Component<
             image,
             category,
             title,
-            hrefArticle,
             hrefAuthor,
             views,
             shares,
             authorName,
+            id,
         } = this.props
         return (
             <Card className="sectionpost-article-column-item">
@@ -37,13 +38,14 @@ class SectionPostArticleColumnItem extends Component<
                     sx={{ padding: '0 ', display: 'flex', gap: '20px' }}
                 >
                     <div className="sectionpost-article-column-item-img">
-                        <a href={hrefArticle}>
+                        <Link to={`/articles/${id}`}>
                             <img src={image} alt={title} />
-                        </a>
+                        </Link>
                     </div>
+
                     <div className="sectionpost-article-column-item-content">
                         <h2 className="sectionpost-article-column-item-header">
-                            <a href={hrefArticle}>
+                            <Link to={`/articles/${id}`}>
                                 <span className="sectionpost-article-column-item-category">
                                     {category}
                                 </span>
@@ -51,8 +53,9 @@ class SectionPostArticleColumnItem extends Component<
                                     className="sectionpost-article-column-item-title"
                                     dangerouslySetInnerHTML={{ __html: title }}
                                 ></span>
-                            </a>
+                            </Link>
                         </h2>
+
                         <ul className="activity">
                             <li>
                                 <Link to={`${hrefAuthor}`}>{authorName}</Link>
@@ -72,9 +75,5 @@ class SectionPostArticleColumnItem extends Component<
         )
     }
 }
-
-// const SectionPostArticleColumnItem = (
-//     props: SectionPostArticleColumnItemType
-// ) => {}
 
 export default SectionPostArticleColumnItem

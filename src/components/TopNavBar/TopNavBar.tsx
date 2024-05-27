@@ -1,6 +1,4 @@
 import AppBar from '@mui/material/AppBar'
-// import Toolbar from '@mui/material/Toolbar'
-// import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 import Container from '@mui/material/Container'

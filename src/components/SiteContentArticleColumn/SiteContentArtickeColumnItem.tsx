@@ -1,6 +1,5 @@
 import { Card, CardContent } from '@mui/material'
 import '../SiteContent/SiteContent.scss'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 type SiteContentArtickeColumnItemType = {
@@ -24,12 +23,13 @@ type SiteContentArtickeColumnItemType = {
     addArticleToFavorites: (id: number, count: number) => void
     removeArticleFromFavorites?: (id: number) => void
     count: number
+    isLiked?: boolean
+    toggleLikeState?: (id: number) => void
 }
 
 const SiteContentArtickeColumnItem = ({
     id,
     image,
-    hrefArticle,
     hrefAuthor,
     imageAuthor,
     authorName,
@@ -47,16 +47,9 @@ const SiteContentArtickeColumnItem = ({
     addArticleToFavorites,
     removeArticleFromFavorites,
     count,
+    isLiked,
+    toggleLikeState,
 }: SiteContentArtickeColumnItemType) => {
-    // зміна кольору лайк
-    const [likeVariant, setLikeVariant] = useState<string>('like')
-
-    const changeColorLike = () => {
-        setLikeVariant((prevState) =>
-            prevState === 'like' ? 'like-active' : 'like'
-        )
-    }
-
     return (
         <Card className="sitecontent-article-item">
             <CardContent sx={{ padding: '0', display: 'flex', gap: '40px' }}>
@@ -78,11 +71,8 @@ const SiteContentArtickeColumnItem = ({
                         </div>
 
                         <div
-                            className={likeVariant}
-                            onClick={() => {
-                                addArticleToFavorites(id, count)
-                                changeColorLike()
-                            }}
+                            className={`like ${isLiked ? 'active' : ''}`}
+                            onClick={() => toggleLikeState!(id)}
                         ></div>
                     </div>
 
@@ -130,6 +120,13 @@ const SiteContentArtickeColumnItem = ({
                             </div>
                         </div>
                     </div>
+
+                    <button
+                        className="slide-btn sitecontent-article-btn"
+                        onClick={() => addArticleToFavorites(id, count)}
+                    >
+                        Add to favorite
+                    </button>
                 </div>
             </CardContent>
         </Card>

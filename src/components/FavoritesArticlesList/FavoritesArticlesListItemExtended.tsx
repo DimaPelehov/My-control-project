@@ -7,11 +7,15 @@ type Props = {
     article: Article
     articleCount: number
     removeArticleFromFavorites: (id: number) => void
+    isLiked?: boolean
+    toggleLikeState: (id: number) => void
 }
 
 const FavoritesArticlesListItemExtended = ({
     article,
     removeArticleFromFavorites,
+    isLiked,
+    toggleLikeState,
 }: Props) => {
     return (
         <div className="favorites-page-item">
@@ -37,6 +41,12 @@ const FavoritesArticlesListItemExtended = ({
                             {article.day},{article.year}
                         </div>
                     </div>
+
+                    <div
+                        className={`like ${isLiked ? 'active' : ''}`}
+                        onClick={() => toggleLikeState(article.id)}
+                    ></div>
+
                     <IconButton
                         aria-label="delete"
                         onClick={() => removeArticleFromFavorites(article.id)}
