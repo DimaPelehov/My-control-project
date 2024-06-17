@@ -34,6 +34,7 @@ export type Article = {
     isJoannaPageLatest?: boolean
     isElliotArticle?: boolean
     isElliotPageLatest?: boolean
+    isTrendingNow?: boolean
     articleReviews?: {
         name: string
         text: string
@@ -610,6 +611,7 @@ export const articlesArray: Article[] = [
         instaCount: 69,
         text: 'This is test text pulvinar  pede dis it`s just a text dolor pretium .Harry Potter Jack Daniels John Wick Vici consequat  justo enim.…',
         firstArticlePageImg: '/images/site-cont-article-col-img4.jpg',
+        isTrendingNow: true,
     },
     {
         id: 18,
@@ -647,6 +649,7 @@ export const articlesArray: Article[] = [
         isJoannaPageLatest: true,
         itemNumber: '03',
         firstArticlePageImg: '/images/site-cont-article-col-img1.jpg',
+        isTrendingNow: true,
     },
     // menuCategoryEtiam
     {
@@ -682,6 +685,7 @@ export const articlesArray: Article[] = [
         shares: 862,
         text: 'This is test text pulvinar  pede dis it`s just a text dolor pretium .Harry Potter Jack Daniels John Wick Vici consequat  justo enim.…',
         firstArticlePageImg: '/images/site-cont-article-col-img3.jpg',
+        isTrendingNow: true,
     },
 ]
 

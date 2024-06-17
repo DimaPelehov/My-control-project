@@ -122,8 +122,10 @@ const SiteContentArtickeColumnItem = ({
                     </div>
 
                     <button
-                        className="slide-btn sitecontent-article-btn"
-                        onClick={() => addArticleToFavorites(id, count)}
+                        className=" sitecontent-article-btn slide-btn"
+                        onClick={() => {
+                            addArticleToFavorites(id, count)
+                        }}
                     >
                         Add to favorite
                     </button>

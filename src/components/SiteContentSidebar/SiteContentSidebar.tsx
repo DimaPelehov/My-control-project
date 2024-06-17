@@ -1,5 +1,7 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import '../SiteContent/SiteContent.scss'
+import SiteContentSidebarCarousel from 'components/SiteContentSidebarCarousel/SiteContentSidebarCarousel'
+import { articlesArray } from 'utils/articlesArray'
 
 type Props = {}
 
@@ -12,39 +14,7 @@ const SiteContentSidebar = (props: Props) => {
                     <div className="horizontal-line"></div>
                 </div>
 
-                <div className="sidebar-trend-body">
-                    <h5>
-                        <a href="maecenas tincidunt">
-                            Maecenas Tincidunt Eget <br />
-                            <span>Libero Massa Vitae</span>
-                        </a>
-                    </h5>
-
-                    <ul className="activity">
-                        <li>
-                            <Link to="joanna_page">Joanna Wellick</Link>
-                        </li>
-                        <li>
-                            <span className="activity-icon read"></span>2 minute
-                            read
-                        </li>
-                    </ul>
-
-                    <div className="sidebar-trend-img">
-                        <a href="maecenas tincidunt">
-                            <img
-                                src="images/image-1.jpg"
-                                alt="maecenas tincidunt"
-                            />
-                        </a>
-                        {/* тимчасова пагінація */}
-                        <div className="test-dots">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
+                <SiteContentSidebarCarousel slides={articlesArray} />
             </div>
 
             <div className="sidebar-item sidebar-social">

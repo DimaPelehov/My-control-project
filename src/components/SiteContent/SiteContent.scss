@@ -191,7 +191,7 @@ button {
 }
 
 .sidebar-item {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .sidebar-item-header {
@@ -252,62 +252,62 @@ button {
 }
 
 // sidebar trend
-.sidebar-trend-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+// .sidebar-trend-body {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
 
-    h5 {
-        margin: 0;
-        text-align: center;
-        font-size: 20px;
+//     h5 {
+//         margin: 0;
+//         text-align: center;
+//         font-size: 20px;
 
-        &:hover {
-            text-decoration: underline;
-            text-decoration-color: #ccccac;
-        }
-    }
+//         &:hover {
+//             text-decoration: underline;
+//             text-decoration-color: #ccccac;
+//         }
+//     }
 
-    span {
-        font-weight: 200;
-    }
-}
+//     span {
+//         font-weight: 200;
+//     }
+// }
 
-.sidebar-trend-img {
-    margin-top: 16px;
-    width: 100%;
+// .sidebar-trend-img {
+//     margin-top: 16px;
+//     width: 100%;
 
-    img {
-        width: 100%;
-        height: 375px;
-        object-fit: cover;
-    }
+//     img {
+//         width: 100%;
+//         height: 375px;
+//         object-fit: cover;
+//     }
 
-    a {
-        display: flex;
-    }
-}
+//     a {
+//         display: flex;
+//     }
+// }
 
 // тимчасова пагінація
-.test-dots {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
+// .test-dots {
+//     margin-top: 10px;
+//     display: flex;
+//     justify-content: center;
+//     gap: 5px;
 
-    span {
-        width: 10px;
-        height: 10px;
-        background-color: #6c757d;
-        border-radius: 50%;
-        cursor: pointer;
+//     span {
+//         width: 10px;
+//         height: 10px;
+//         background-color: #6c757d;
+//         border-radius: 50%;
+//         cursor: pointer;
 
-        &:first-child {
-            border: 2px solid black;
-            background-color: white;
-        }
-    }
-}
+//         &:first-child {
+//             border: 2px solid black;
+//             background-color: white;
+//         }
+//     }
+// }
 
 // sidebar social
 .sidebar-social-items {

@@ -62,11 +62,13 @@ const ArticlePage = ({
                     >
                         {breadcrumbs}
                     </Breadcrumbs>
+
                     <h1
                         dangerouslySetInnerHTML={{
                             __html: articlesObject[+id!].title,
                         }}
                     ></h1>
+
                     <ul className="activity">
                         <li>
                             <span className="activity-icon views"></span>
@@ -77,6 +79,7 @@ const ArticlePage = ({
                             {articlesObject[+id!].shares} shares
                         </li>
                     </ul>
+
                     <div className="section-post-tile-details">
                         <div className="section-post-tile-author">
                             <Link to={`${articlesObject[+id!].hrefAuthor}`}>
@@ -95,8 +98,10 @@ const ArticlePage = ({
                                 {articlesObject[+id!].year}
                             </div>
                         </div>
+
                         <div className="section-post-tile-share">
                             <span>{articlesObject[+id!].shares} Shares</span>
+
                             <div className="section-post-tile-share-items">
                                 <div className="section-post-tile-share-item ">
                                     <a href="https://uk-ua.facebook.com/">
@@ -106,11 +111,13 @@ const ArticlePage = ({
                                         {articlesObject[+id!].facebookCount}
                                     </span>
                                 </div>
+
                                 <div className="section-post-tile-share-item ">
                                     <a href="https://twitter.com/?lang=ru">
                                         <span className="si-twitter"></span>
                                     </a>
                                 </div>
+
                                 <div className="section-post-tile-share-item ">
                                     <a href="https://www.instagram.com/">
                                         <span className="si-instagram"></span>
@@ -122,6 +129,7 @@ const ArticlePage = ({
                             </div>
                         </div>
                     </div>
+
                     <section className="article-page-content-body">
                         <div className="tile-share-sticky-wrap">
                             <div className="tile-share-sticky">
@@ -218,6 +226,7 @@ const ArticlePage = ({
                                 dolor reprehenderit
                             </p>
 
+                            {/* галерея */}
                             <div className="img-gallery">
                                 <figure className="img-gallery-item">
                                     <img
@@ -234,6 +243,7 @@ const ArticlePage = ({
                                         <span></span>
                                     </a>
                                 </figure>
+
                                 <figure className="img-gallery-item">
                                     <img
                                         src="/images/site-cont-article-col-img4.jpg"
@@ -247,6 +257,7 @@ const ArticlePage = ({
                                         <span></span>
                                     </a>
                                 </figure>
+
                                 <figure className="img-gallery-item">
                                     <img
                                         src="/images/site-cont-article-col-img5.jpg"
@@ -390,6 +401,7 @@ const ArticlePage = ({
                     </div>
                 </div>
             </Container>
+
             {/* збільшення 1 картинки */}
             <div className={`first-img-zoom ${firstImgZoom ? 'active' : ''}`}>
                 <button onClick={changeFirstImgZoom}></button>
