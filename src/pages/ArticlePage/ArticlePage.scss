@@ -392,8 +392,8 @@
     }
 }
 
-// збільшення першого малюнку
-.first-img-zoom {
+// збільшення  малюнків
+.img-zoom {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -404,8 +404,9 @@
     display: none;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 
-    button {
+    .btn-close {
         position: absolute;
         top: 30px;
         right: 30px;
@@ -415,6 +416,7 @@
         border: none;
         width: 20px;
         height: 20px;
+        z-index: 2;
     }
 
     img {
@@ -424,6 +426,6 @@
     }
 }
 
-.first-img-zoom.active {
+.img-zoom.active {
     display: flex;
 }

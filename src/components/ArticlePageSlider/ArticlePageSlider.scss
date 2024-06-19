@@ -1,0 +1,36 @@
+.slick-slider {
+    width: 100%;
+
+    button {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.slick-prev {
+    left: 0;
+    z-index: 2;
+}
+.slick-next {
+    right: 0;
+}
+
+.slick-list {
+    width: 100%;
+}
+
+.slider-item {
+    vertical-align: middle;
+
+    img {
+        width: 80%;
+        height: 80vh;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+
+    p {
+        color: ghostwhite;
+        text-align: center;
+    }
+}

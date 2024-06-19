@@ -11,6 +11,7 @@ import Reviews from 'components/Reviews/Reviews'
 import SectionSubscribe from 'components/SectionSubscribe/SectionSubscribe'
 import ElliotArticles from 'components/ElliotArticles/ElliotArticles'
 import JoannaArticles from 'components/JoannaArticles/JoannaArticles'
+import ArticlePageSlider from 'components/ArticlePageSlider/ArticlePageSlider'
 
 type Props = {
     articlesObject?: { [id: number]: Article }
@@ -40,6 +41,13 @@ const ArticlePage = ({
 
     const changeFirstImgZoom = () => {
         setFirstImgZoom(!firstImgZoom)
+    }
+
+    // збільшення галереї
+    const [galeryZoom, setGaleryZoom] = useState<boolean>(false)
+
+    const changeGaleryZoom = () => {
+        setGaleryZoom(!galeryZoom)
     }
 
     return (
@@ -232,6 +240,7 @@ const ArticlePage = ({
                                     <img
                                         src="/images/site-cont-article-col-img3.jpg"
                                         alt="img1"
+                                        onClick={changeGaleryZoom}
                                     />
                                     <figcaption>
                                         Quis in sapien tempus
@@ -248,6 +257,7 @@ const ArticlePage = ({
                                     <img
                                         src="/images/site-cont-article-col-img4.jpg"
                                         alt="img2"
+                                        onClick={changeGaleryZoom}
                                     />
                                     <figcaption>Semper condim entum</figcaption>
                                     <a
@@ -262,6 +272,7 @@ const ArticlePage = ({
                                     <img
                                         src="/images/site-cont-article-col-img5.jpg"
                                         alt="img3"
+                                        onClick={changeGaleryZoom}
                                     />
                                     <figcaption>
                                         Vici consequat justo
@@ -403,9 +414,21 @@ const ArticlePage = ({
             </Container>
 
             {/* збільшення 1 картинки */}
-            <div className={`first-img-zoom ${firstImgZoom ? 'active' : ''}`}>
-                <button onClick={changeFirstImgZoom}></button>
+            <div className={`img-zoom ${firstImgZoom ? 'active' : ''}`}>
+                <button
+                    className="btn-close"
+                    onClick={changeFirstImgZoom}
+                ></button>
                 <img src={articlesObject[+id!].firstArticlePageImg} alt="" />
+            </div>
+
+            {/* збільшення галереї */}
+            <div className={`img-zoom ${galeryZoom ? 'active' : ''}`}>
+                <button
+                    className="btn-close"
+                    onClick={changeGaleryZoom}
+                ></button>
+                <ArticlePageSlider />
             </div>
         </>
     )
