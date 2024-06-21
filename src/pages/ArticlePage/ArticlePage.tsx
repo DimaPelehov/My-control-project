@@ -18,6 +18,8 @@ type Props = {
     addArticleToFavorites: (id: number, count: number) => void
     toggleLikeState: (id: number) => void
     articlesLikeState: { [id: number]: boolean }
+    articlesAddState: { [id: number]: boolean }
+    toggleAddState: (id: number) => void
 }
 
 const ArticlePage = ({
@@ -25,6 +27,8 @@ const ArticlePage = ({
     addArticleToFavorites,
     toggleLikeState,
     articlesLikeState,
+    articlesAddState,
+    toggleAddState,
 }: Props) => {
     const { id } = useParams()
     // useParams дозволяє витягти усю необхідну інформацію щодо статті з id
@@ -386,6 +390,8 @@ const ArticlePage = ({
                                 addArticleToFavorites={addArticleToFavorites}
                                 articlesLikeState={articlesLikeState}
                                 toggleLikeState={toggleLikeState}
+                                articlesAddState={articlesAddState}
+                                toggleAddState={toggleAddState}
                             />
                         ) : articlesObject[+id!].authorName ===
                           'Elliot Anderson' ? (
@@ -393,6 +399,8 @@ const ArticlePage = ({
                                 addArticleToFavorites={addArticleToFavorites}
                                 articlesLikeState={articlesLikeState}
                                 toggleLikeState={toggleLikeState}
+                                articlesAddState={articlesAddState}
+                                toggleAddState={toggleAddState}
                             />
                         ) : (
                             ''

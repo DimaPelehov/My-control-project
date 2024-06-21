@@ -27,6 +27,8 @@ type ArticlesInFavoritesType = { [id: number]: number }
 
 type ArticlesLikeStateType = { [id: number]: boolean }
 
+type ArticlesAddStateType = { [id: number]: boolean }
+
 const App = (props: Props) => {
     // додавання до Favorite
     const [articlesInFavorites, setArticlesInFavorites] =
@@ -65,6 +67,11 @@ const App = (props: Props) => {
     // варіант 2
     const removeArticleFromFavorites = (id: number) => {
         setArticlesInFavorites((prevState) => omit(prevState, id))
+        // і прибираємо зміну кольору кнопки "add to favorite"
+        setArticlesAddState((prevState) => ({
+            ...prevState,
+            [id]: false,
+        }))
     }
 
     // виїзд header-sidebar
@@ -82,6 +89,17 @@ const App = (props: Props) => {
         setArticlesLikeState((prevState) => ({
             ...prevState,
             [id]: !prevState[id],
+        }))
+    }
+
+    // зміна кольору кнопки "add to favorite" при додаванні статті до улюблених
+    const [articlesAddState, setArticlesAddState] =
+        useState<ArticlesAddStateType>({})
+
+    const toggleAddState = (id: number) => {
+        setArticlesAddState((prevState) => ({
+            ...prevState,
+            [id]: true,
         }))
     }
 
@@ -105,6 +123,8 @@ const App = (props: Props) => {
                             }
                             articlesLikeState={articlesLikeState}
                             toggleLikeState={toggleLikeState}
+                            articlesAddState={articlesAddState}
+                            toggleAddState={toggleAddState}
                         />
                     }
                 />
@@ -128,6 +148,8 @@ const App = (props: Props) => {
                             addArticleToFavorites={addArticleToFavorites}
                             articlesLikeState={articlesLikeState}
                             toggleLikeState={toggleLikeState}
+                            articlesAddState={articlesAddState}
+                            toggleAddState={toggleAddState}
                         />
                     }
                 />
@@ -146,6 +168,8 @@ const App = (props: Props) => {
                             addArticleToFavorites={addArticleToFavorites}
                             articlesLikeState={articlesLikeState}
                             toggleLikeState={toggleLikeState}
+                            articlesAddState={articlesAddState}
+                            toggleAddState={toggleAddState}
                         />
                     }
                 />
@@ -156,6 +180,8 @@ const App = (props: Props) => {
                             addArticleToFavorites={addArticleToFavorites}
                             articlesLikeState={articlesLikeState}
                             toggleLikeState={toggleLikeState}
+                            articlesAddState={articlesAddState}
+                            toggleAddState={toggleAddState}
                         />
                     }
                 />
@@ -170,6 +196,8 @@ const App = (props: Props) => {
                             addArticleToFavorites={addArticleToFavorites}
                             articlesLikeState={articlesLikeState}
                             toggleLikeState={toggleLikeState}
+                            articlesAddState={articlesAddState}
+                            toggleAddState={toggleAddState}
                         />
                     }
                 />
@@ -180,6 +208,8 @@ const App = (props: Props) => {
                             addArticleToFavorites={addArticleToFavorites}
                             articlesLikeState={articlesLikeState}
                             toggleLikeState={toggleLikeState}
+                            articlesAddState={articlesAddState}
+                            toggleAddState={toggleAddState}
                         />
                     }
                 />
@@ -193,6 +223,8 @@ const App = (props: Props) => {
                             addArticleToFavorites={addArticleToFavorites}
                             articlesLikeState={articlesLikeState}
                             toggleLikeState={toggleLikeState}
+                            articlesAddState={articlesAddState}
+                            toggleAddState={toggleAddState}
                         />
                     }
                 />

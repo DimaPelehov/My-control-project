@@ -7,6 +7,8 @@ type Props = {
     removeArticleFromFavorites: (id: number) => void
     articlesLikeState: { [id: number]: boolean }
     toggleLikeState: (id: number) => void
+    articlesAddState: { [id: number]: boolean }
+    toggleAddState: (id: number) => void
 }
 
 const SiteContentArticleColumn = ({
@@ -14,6 +16,8 @@ const SiteContentArticleColumn = ({
     removeArticleFromFavorites,
     articlesLikeState,
     toggleLikeState,
+    articlesAddState,
+    toggleAddState,
 }: Props) => {
     return (
         <Grid container columns={1}>
@@ -66,6 +70,8 @@ const SiteContentArticleColumn = ({
                                 count={count}
                                 isLiked={articlesLikeState[id]}
                                 toggleLikeState={toggleLikeState}
+                                isAdd={articlesAddState[id]}
+                                toggleAddState={toggleAddState}
                             />
                         </Grid>
                     )

@@ -11,6 +11,8 @@ type Props = {
     removeArticleFromFavorites: (id: number) => void
     articlesLikeState: { [id: number]: boolean }
     toggleLikeState: (id: number) => void
+    articlesAddState: { [id: number]: boolean }
+    toggleAddState: (id: number) => void
 }
 
 const SiteContent = ({
@@ -18,6 +20,8 @@ const SiteContent = ({
     removeArticleFromFavorites,
     articlesLikeState,
     toggleLikeState,
+    articlesAddState,
+    toggleAddState,
 }: Props) => {
     return (
         <div className="site-content-margin">
@@ -33,6 +37,8 @@ const SiteContent = ({
                                 }
                                 articlesLikeState={articlesLikeState}
                                 toggleLikeState={toggleLikeState}
+                                articlesAddState={articlesAddState}
+                                toggleAddState={toggleAddState}
                             />
                         </div>
                         <div className="site-post-navigation">

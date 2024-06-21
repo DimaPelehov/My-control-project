@@ -159,6 +159,14 @@ button {
         width: 200%;
     }
 }
+
+.slide-btn.active {
+    background-color: #ccccac;
+    color: white;
+    border-color: #ccccac;
+    cursor: auto;
+}
+
 // кастомізую конкретно цю кнопку
 .load-more-btn {
     padding: 12px 95px;

@@ -1,5 +1,5 @@
 import { TextareaAutosize, Typography } from '@mui/material'
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useEffect, useState } from 'react'
 import '../SiteContent/SiteContent.scss'
 import { Article, articlesArray, getArticlesObject } from 'utils/articlesArray'
 
@@ -32,6 +32,9 @@ const Reviews = ({
     // ]
 
     const [reviews, setReviews] = useState<Review[]>(arrReviews)
+
+    // оновлення відгуків при переході на сторінку іншої статті
+    useEffect(() => {}, [reviews])
 
     // додавання відгуків
     const [newReview, setNewReview] = useState<Review>({

@@ -6,12 +6,16 @@ type Props = {
     addArticleToFavorites: (id: number, count: number) => void
     toggleLikeState: (id: number) => void
     articlesLikeState: { [id: number]: boolean }
+    articlesAddState: { [id: number]: boolean }
+    toggleAddState: (id: number) => void
 }
 
 const ElliotArticles = ({
     addArticleToFavorites,
     toggleLikeState,
     articlesLikeState,
+    articlesAddState,
+    toggleAddState,
 }: Props) => {
     return (
         <Grid container columns={1}>
@@ -61,6 +65,8 @@ const ElliotArticles = ({
                                 addArticleToFavorites={addArticleToFavorites}
                                 toggleLikeState={toggleLikeState}
                                 isLiked={articlesLikeState[id]}
+                                isAdd={articlesAddState[id]}
+                                toggleAddState={toggleAddState}
                             />
                         </Grid>
                     )

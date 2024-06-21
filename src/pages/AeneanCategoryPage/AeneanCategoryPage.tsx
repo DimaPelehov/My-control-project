@@ -11,12 +11,16 @@ type Props = {
     addArticleToFavorites: (id: number, count: number) => void
     toggleLikeState: (id: number) => void
     articlesLikeState: { [id: number]: boolean }
+    articlesAddState: { [id: number]: boolean }
+    toggleAddState: (id: number) => void
 }
 
 const AeneanCategoryPage = ({
     addArticleToFavorites,
     toggleLikeState,
     articlesLikeState,
+    articlesAddState,
+    toggleAddState,
 }: Props) => {
     return (
         <>
@@ -56,6 +60,8 @@ const AeneanCategoryPage = ({
                                 addArticleToFavorites={addArticleToFavorites}
                                 articlesLikeState={articlesLikeState}
                                 toggleLikeState={toggleLikeState}
+                                articlesAddState={articlesAddState}
+                                toggleAddState={toggleAddState}
                             />
                         </div>
                     </div>

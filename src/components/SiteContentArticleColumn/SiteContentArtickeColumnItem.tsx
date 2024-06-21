@@ -25,6 +25,8 @@ type SiteContentArtickeColumnItemType = {
     count: number
     isLiked?: boolean
     toggleLikeState?: (id: number) => void
+    isAdd?: boolean
+    toggleAddState?: (id: number) => void
 }
 
 const SiteContentArtickeColumnItem = ({
@@ -49,6 +51,8 @@ const SiteContentArtickeColumnItem = ({
     count,
     isLiked,
     toggleLikeState,
+    isAdd,
+    toggleAddState,
 }: SiteContentArtickeColumnItemType) => {
     return (
         <Card className="sitecontent-article-item">
@@ -122,9 +126,12 @@ const SiteContentArtickeColumnItem = ({
                     </div>
 
                     <button
-                        className=" sitecontent-article-btn slide-btn"
+                        className={`sitecontent-article-btn ${`slide-btn ${
+                            isAdd ? 'active' : ''
+                        }`}`}
                         onClick={() => {
                             addArticleToFavorites(id, count)
+                            toggleAddState!(id)
                         }}
                     >
                         Add to favorite

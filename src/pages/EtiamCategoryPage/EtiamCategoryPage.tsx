@@ -10,12 +10,16 @@ type Props = {
     addArticleToFavorites: (id: number, count: number) => void
     toggleLikeState: (id: number) => void
     articlesLikeState: { [id: number]: boolean }
+    articlesAddState: { [id: number]: boolean }
+    toggleAddState: (id: number) => void
 }
 
 const EtiamCategoryPage = ({
     addArticleToFavorites,
     toggleLikeState,
     articlesLikeState,
+    articlesAddState,
+    toggleAddState,
 }: Props) => {
     return (
         <>
@@ -47,6 +51,8 @@ const EtiamCategoryPage = ({
                                 addArticleToFavorites={addArticleToFavorites}
                                 articlesLikeState={articlesLikeState}
                                 toggleLikeState={toggleLikeState}
+                                articlesAddState={articlesAddState}
+                                toggleAddState={toggleAddState}
                             />
                         </div>
                     </div>

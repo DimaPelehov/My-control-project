@@ -7,6 +7,8 @@ type Props = {
     removeArticleFromFavorites: (id: number) => void
     articlesLikeState: { [id: number]: boolean }
     toggleLikeState: (id: number) => void
+    articlesAddState: { [id: number]: boolean }
+    toggleAddState: (id: number) => void
 }
 
 const Home = ({
@@ -14,6 +16,8 @@ const Home = ({
     removeArticleFromFavorites,
     articlesLikeState,
     toggleLikeState,
+    articlesAddState,
+    toggleAddState,
 }: Props) => {
     return (
         <>
@@ -24,6 +28,8 @@ const Home = ({
                 removeArticleFromFavorites={removeArticleFromFavorites}
                 articlesLikeState={articlesLikeState}
                 toggleLikeState={toggleLikeState}
+                articlesAddState={articlesAddState}
+                toggleAddState={toggleAddState}
             />
         </>
     )
