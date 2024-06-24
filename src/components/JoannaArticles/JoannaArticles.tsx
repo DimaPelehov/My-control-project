@@ -4,16 +4,16 @@ import { articlesArray } from 'utils/articlesArray'
 
 type Props = {
     addArticleToFavorites: (id: number, count: number) => void
-    toggleLikeState: (id: number) => void
-    articlesLikeState: { [id: number]: boolean }
+    // toggleLikeState: (id: number) => void
+    // articlesLikeState: { [id: number]: boolean }
     articlesAddState: { [id: number]: boolean }
     toggleAddState: (id: number) => void
 }
 
 const JoannaArticles = ({
     addArticleToFavorites,
-    toggleLikeState,
-    articlesLikeState,
+    // toggleLikeState,
+    // articlesLikeState,
     articlesAddState,
     toggleAddState,
 }: Props) => {
@@ -63,8 +63,8 @@ const JoannaArticles = ({
                                 instaCount={instaCount}
                                 count={count}
                                 addArticleToFavorites={addArticleToFavorites}
-                                toggleLikeState={toggleLikeState}
-                                isLiked={articlesLikeState[id]}
+                                // toggleLikeState={toggleLikeState}
+                                // isLiked={articlesLikeState[id]}
                                 isAdd={articlesAddState[id]}
                                 toggleAddState={toggleAddState}
                             />

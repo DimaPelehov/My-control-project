@@ -4,16 +4,16 @@ import SiteContentArtickeColumnItem from '../SiteContentArticleColumn/SiteConten
 
 type Props = {
     addArticleToFavorites: (id: number, count: number) => void
-    toggleLikeState: (id: number) => void
-    articlesLikeState: { [id: number]: boolean }
+    // toggleLikeState: (id: number) => void
+    // articlesLikeState: { [id: number]: boolean }
     articlesAddState: { [id: number]: boolean }
     toggleAddState: (id: number) => void
 }
 
 const AeneanCategoryArticles = ({
     addArticleToFavorites,
-    toggleLikeState,
-    articlesLikeState,
+    // toggleLikeState,
+    // articlesLikeState,
     articlesAddState,
     toggleAddState,
 }: Props) => {
@@ -63,8 +63,8 @@ const AeneanCategoryArticles = ({
                                 instaCount={instaCount}
                                 addArticleToFavorites={addArticleToFavorites}
                                 count={count}
-                                toggleLikeState={toggleLikeState}
-                                isLiked={articlesLikeState[id]}
+                                // toggleLikeState={toggleLikeState}
+                                // isLiked={articlesLikeState[id]}
                                 isAdd={articlesAddState[id]}
                                 toggleAddState={toggleAddState}
                             />

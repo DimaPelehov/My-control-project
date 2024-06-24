@@ -16,8 +16,8 @@ import ArticlePageSlider from 'components/ArticlePageSlider/ArticlePageSlider'
 type Props = {
     articlesObject?: { [id: number]: Article }
     addArticleToFavorites: (id: number, count: number) => void
-    toggleLikeState: (id: number) => void
-    articlesLikeState: { [id: number]: boolean }
+    // toggleLikeState: (id: number) => void
+    // articlesLikeState: { [id: number]: boolean }
     articlesAddState: { [id: number]: boolean }
     toggleAddState: (id: number) => void
 }
@@ -25,8 +25,8 @@ type Props = {
 const ArticlePage = ({
     articlesObject = getArticlesObject(articlesArray),
     addArticleToFavorites,
-    toggleLikeState,
-    articlesLikeState,
+    // toggleLikeState,
+    // articlesLikeState,
     articlesAddState,
     toggleAddState,
 }: Props) => {
@@ -388,8 +388,8 @@ const ArticlePage = ({
                         'Joanna Wellick' ? (
                             <JoannaArticles
                                 addArticleToFavorites={addArticleToFavorites}
-                                articlesLikeState={articlesLikeState}
-                                toggleLikeState={toggleLikeState}
+                                // articlesLikeState={articlesLikeState}
+                                // toggleLikeState={toggleLikeState}
                                 articlesAddState={articlesAddState}
                                 toggleAddState={toggleAddState}
                             />
@@ -397,8 +397,8 @@ const ArticlePage = ({
                           'Elliot Anderson' ? (
                             <ElliotArticles
                                 addArticleToFavorites={addArticleToFavorites}
-                                articlesLikeState={articlesLikeState}
-                                toggleLikeState={toggleLikeState}
+                                // articlesLikeState={articlesLikeState}
+                                // toggleLikeState={toggleLikeState}
                                 articlesAddState={articlesAddState}
                                 toggleAddState={toggleAddState}
                             />

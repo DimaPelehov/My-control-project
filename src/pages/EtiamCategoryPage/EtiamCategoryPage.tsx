@@ -8,16 +8,16 @@ import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/
 
 type Props = {
     addArticleToFavorites: (id: number, count: number) => void
-    toggleLikeState: (id: number) => void
-    articlesLikeState: { [id: number]: boolean }
+    // toggleLikeState: (id: number) => void
+    // articlesLikeState: { [id: number]: boolean }
     articlesAddState: { [id: number]: boolean }
     toggleAddState: (id: number) => void
 }
 
 const EtiamCategoryPage = ({
     addArticleToFavorites,
-    toggleLikeState,
-    articlesLikeState,
+    // toggleLikeState,
+    // articlesLikeState,
     articlesAddState,
     toggleAddState,
 }: Props) => {
@@ -49,8 +49,8 @@ const EtiamCategoryPage = ({
                         <div className="site-post-arhive">
                             <EtiamCategoryArticles
                                 addArticleToFavorites={addArticleToFavorites}
-                                articlesLikeState={articlesLikeState}
-                                toggleLikeState={toggleLikeState}
+                                // articlesLikeState={articlesLikeState}
+                                // toggleLikeState={toggleLikeState}
                                 articlesAddState={articlesAddState}
                                 toggleAddState={toggleAddState}
                             />

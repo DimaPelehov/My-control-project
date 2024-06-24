@@ -5,8 +5,8 @@ import SiteContent from 'components/SiteContent/SiteContent'
 type Props = {
     addArticleToFavorites: (id: number, count: number) => void
     removeArticleFromFavorites: (id: number) => void
-    articlesLikeState: { [id: number]: boolean }
-    toggleLikeState: (id: number) => void
+    // articlesLikeState: { [id: number]: boolean }
+    // toggleLikeState: (id: number) => void
     articlesAddState: { [id: number]: boolean }
     toggleAddState: (id: number) => void
 }
@@ -14,8 +14,8 @@ type Props = {
 const Home = ({
     addArticleToFavorites,
     removeArticleFromFavorites,
-    articlesLikeState,
-    toggleLikeState,
+    // articlesLikeState,
+    // toggleLikeState,
     articlesAddState,
     toggleAddState,
 }: Props) => {
@@ -26,8 +26,8 @@ const Home = ({
             <SiteContent
                 addArticleToFavorites={addArticleToFavorites}
                 removeArticleFromFavorites={removeArticleFromFavorites}
-                articlesLikeState={articlesLikeState}
-                toggleLikeState={toggleLikeState}
+                // articlesLikeState={articlesLikeState}
+                // toggleLikeState={toggleLikeState}
                 articlesAddState={articlesAddState}
                 toggleAddState={toggleAddState}
             />

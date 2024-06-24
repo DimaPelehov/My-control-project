@@ -7,15 +7,15 @@ import FavoritesTotal from 'components/FavoritesTotal/FavoritesTotal'
 type Props = {
     articlesInFavorites: { [id: number]: number }
     removeArticleFromFavorites: (id: number) => void
-    toggleLikeState: (id: number) => void
-    articlesLikeState: { [id: number]: boolean }
+    // toggleLikeState: (id: number) => void
+    // articlesLikeState: { [id: number]: boolean }
 }
 
 const FavoritesPage = ({
     articlesInFavorites,
     removeArticleFromFavorites,
-    toggleLikeState,
-    articlesLikeState,
+    // toggleLikeState,
+    // articlesLikeState,
 }: Props) => {
     return (
         <div className="favorites-fon">
@@ -37,8 +37,8 @@ const FavoritesPage = ({
                             removeArticleFromFavorites={
                                 removeArticleFromFavorites
                             }
-                            articlesLikeState={articlesLikeState}
-                            toggleLikeState={toggleLikeState}
+                            // articlesLikeState={articlesLikeState}
+                            // toggleLikeState={toggleLikeState}
                         />
                     ) : (
                         <div>

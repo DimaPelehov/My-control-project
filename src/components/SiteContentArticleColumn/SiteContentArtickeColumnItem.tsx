@@ -1,6 +1,8 @@
 import { Card, CardContent } from '@mui/material'
 import '../SiteContent/SiteContent.scss'
 import { Link } from 'react-router-dom'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
+import { toggleLikeState } from '../../redux/likeReducer'
 
 type SiteContentArtickeColumnItemType = {
     id: number
@@ -23,8 +25,8 @@ type SiteContentArtickeColumnItemType = {
     addArticleToFavorites: (id: number, count: number) => void
     removeArticleFromFavorites?: (id: number) => void
     count: number
-    isLiked?: boolean
-    toggleLikeState?: (id: number) => void
+    // isLiked?: boolean
+    // toggleLikeState?: (id: number) => void
     isAdd?: boolean
     toggleAddState?: (id: number) => void
 }
@@ -49,11 +51,16 @@ const SiteContentArtickeColumnItem = ({
     addArticleToFavorites,
     removeArticleFromFavorites,
     count,
-    isLiked,
-    toggleLikeState,
+    // isLiked,
+    // toggleLikeState,
     isAdd,
     toggleAddState,
 }: SiteContentArtickeColumnItemType) => {
+    // реалізація like через redux
+    const isLiked = useAppSelector((state) => state.articlesLikeState[id])
+
+    const dispatch = useAppDispatch()
+
     return (
         <Card className="sitecontent-article-item">
             <CardContent sx={{ padding: '0', display: 'flex', gap: '40px' }}>
@@ -76,7 +83,8 @@ const SiteContentArtickeColumnItem = ({
 
                         <div
                             className={`like ${isLiked ? 'active' : ''}`}
-                            onClick={() => toggleLikeState!(id)}
+                            onClick={() => dispatch(toggleLikeState(id))}
+                            // onClick={() => toggleLikeState!(id)}
                         ></div>
                     </div>
 

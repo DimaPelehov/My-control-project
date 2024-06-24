@@ -5,8 +5,8 @@ import SiteContentArtickeColumnItem from './SiteContentArtickeColumnItem'
 type Props = {
     addArticleToFavorites: (id: number, count: number) => void
     removeArticleFromFavorites: (id: number) => void
-    articlesLikeState: { [id: number]: boolean }
-    toggleLikeState: (id: number) => void
+    // articlesLikeState: { [id: number]: boolean }
+    // toggleLikeState: (id: number) => void
     articlesAddState: { [id: number]: boolean }
     toggleAddState: (id: number) => void
 }
@@ -14,8 +14,8 @@ type Props = {
 const SiteContentArticleColumn = ({
     addArticleToFavorites,
     removeArticleFromFavorites,
-    articlesLikeState,
-    toggleLikeState,
+    // articlesLikeState,
+    // toggleLikeState,
     articlesAddState,
     toggleAddState,
 }: Props) => {
@@ -68,8 +68,8 @@ const SiteContentArticleColumn = ({
                                     removeArticleFromFavorites
                                 }
                                 count={count}
-                                isLiked={articlesLikeState[id]}
-                                toggleLikeState={toggleLikeState}
+                                // isLiked={articlesLikeState[id]}
+                                // toggleLikeState={toggleLikeState}
                                 isAdd={articlesAddState[id]}
                                 toggleAddState={toggleAddState}
                             />

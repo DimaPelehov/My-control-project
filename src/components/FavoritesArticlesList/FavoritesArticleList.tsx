@@ -6,8 +6,8 @@ type Props = {
     articlesObject?: { [id: number]: Article }
     FavoritesItem?: any
     removeArticleFromFavorites?: (id: number) => void
-    toggleLikeState?: (id: number) => void
-    articlesLikeState?: { [id: number]: boolean }
+    // toggleLikeState?: (id: number) => void
+    // articlesLikeState?: { [id: number]: boolean }
 }
 
 const FavoritesArticleList = ({
@@ -16,8 +16,8 @@ const FavoritesArticleList = ({
     FavoritesItem = FavoritesArticlesListItem,
     // за замовчуванням FavoritesItem рендерить FavoritesArticlesListItem
     removeArticleFromFavorites,
-    toggleLikeState,
-    articlesLikeState,
+    // toggleLikeState,
+    // articlesLikeState,
 }: Props) => {
     return (
         <>
@@ -29,8 +29,8 @@ const FavoritesArticleList = ({
                     articleCount={articlesInFavorites[+articleId]}
                     // articleCount - кількість  (котра  = count:1)
                     removeArticleFromFavorites={removeArticleFromFavorites}
-                    isLiked={articlesLikeState![+articleId]}
-                    toggleLikeState={toggleLikeState}
+                    // isLiked={articlesLikeState![+articleId]}
+                    // toggleLikeState={toggleLikeState}
                 />
             ))}
         </>

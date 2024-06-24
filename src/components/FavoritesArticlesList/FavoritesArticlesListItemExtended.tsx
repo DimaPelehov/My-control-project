@@ -2,21 +2,30 @@ import { Article } from 'utils/articlesArray'
 import 'pages/FavoritesPage/FavoritesPage.scss'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { IconButton } from '@mui/material'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
+import { toggleLikeState } from '../../redux/likeReducer'
 
 type Props = {
     article: Article
     articleCount: number
     removeArticleFromFavorites: (id: number) => void
-    isLiked?: boolean
-    toggleLikeState: (id: number) => void
+    // isLiked?: boolean
+    // toggleLikeState: (id: number) => void
 }
 
 const FavoritesArticlesListItemExtended = ({
     article,
     removeArticleFromFavorites,
-    isLiked,
-    toggleLikeState,
+    // isLiked,
+    // toggleLikeState,
 }: Props) => {
+    // реалізація like через redux
+    const isLiked = useAppSelector(
+        (state) => state.articlesLikeState[article.id]
+    )
+
+    const dispatch = useAppDispatch()
+
     return (
         <div className="favorites-page-item">
             <div className="sitecontent-article-img">
@@ -44,7 +53,8 @@ const FavoritesArticlesListItemExtended = ({
 
                     <div
                         className={`like ${isLiked ? 'active' : ''}`}
-                        onClick={() => toggleLikeState(article.id)}
+                        onClick={() => dispatch(toggleLikeState(article.id))}
+                        // onClick={() => toggleLikeState(article.id)}
                     ></div>
 
                     <IconButton

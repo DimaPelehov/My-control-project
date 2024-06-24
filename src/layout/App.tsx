@@ -25,7 +25,7 @@ type Props = {}
 
 type ArticlesInFavoritesType = { [id: number]: number }
 
-type ArticlesLikeStateType = { [id: number]: boolean }
+// type ArticlesLikeStateType = { [id: number]: boolean }
 
 type ArticlesAddStateType = { [id: number]: boolean }
 
@@ -81,16 +81,16 @@ const App = (props: Props) => {
         setSidebarOpen(!sidebarOpen)
     }
 
-    // like
-    const [articlesLikeState, setArticlesLikeState] =
-        useState<ArticlesLikeStateType>({})
+    // like (без redux)
+    // const [articlesLikeState, setArticlesLikeState] =
+    //     useState<ArticlesLikeStateType>({})
 
-    const toggleLikeState = (id: number) => {
-        setArticlesLikeState((prevState) => ({
-            ...prevState,
-            [id]: !prevState[id],
-        }))
-    }
+    // const toggleLikeState = (id: number) => {
+    //     setArticlesLikeState((prevState) => ({
+    //         ...prevState,
+    //         [id]: !prevState[id],
+    //     }))
+    // }
 
     // зміна кольору кнопки "add to favorite" при додаванні статті до улюблених
     const [articlesAddState, setArticlesAddState] =
@@ -121,8 +121,8 @@ const App = (props: Props) => {
                             removeArticleFromFavorites={
                                 removeArticleFromFavorites
                             }
-                            articlesLikeState={articlesLikeState}
-                            toggleLikeState={toggleLikeState}
+                            // articlesLikeState={articlesLikeState}
+                            // toggleLikeState={toggleLikeState}
                             articlesAddState={articlesAddState}
                             toggleAddState={toggleAddState}
                         />
@@ -136,8 +136,8 @@ const App = (props: Props) => {
                             removeArticleFromFavorites={
                                 removeArticleFromFavorites
                             }
-                            articlesLikeState={articlesLikeState}
-                            toggleLikeState={toggleLikeState}
+                            // articlesLikeState={articlesLikeState}
+                            // toggleLikeState={toggleLikeState}
                         />
                     }
                 />
@@ -146,8 +146,8 @@ const App = (props: Props) => {
                     element={
                         <AeneanCategoryPage
                             addArticleToFavorites={addArticleToFavorites}
-                            articlesLikeState={articlesLikeState}
-                            toggleLikeState={toggleLikeState}
+                            // articlesLikeState={articlesLikeState}
+                            // toggleLikeState={toggleLikeState}
                             articlesAddState={articlesAddState}
                             toggleAddState={toggleAddState}
                         />
@@ -166,8 +166,8 @@ const App = (props: Props) => {
                     element={
                         <VulputateCategoryPage
                             addArticleToFavorites={addArticleToFavorites}
-                            articlesLikeState={articlesLikeState}
-                            toggleLikeState={toggleLikeState}
+                            // articlesLikeState={articlesLikeState}
+                            // toggleLikeState={toggleLikeState}
                             articlesAddState={articlesAddState}
                             toggleAddState={toggleAddState}
                         />
@@ -178,8 +178,8 @@ const App = (props: Props) => {
                     element={
                         <EtiamCategoryPage
                             addArticleToFavorites={addArticleToFavorites}
-                            articlesLikeState={articlesLikeState}
-                            toggleLikeState={toggleLikeState}
+                            // articlesLikeState={articlesLikeState}
+                            // toggleLikeState={toggleLikeState}
                             articlesAddState={articlesAddState}
                             toggleAddState={toggleAddState}
                         />
@@ -194,8 +194,8 @@ const App = (props: Props) => {
                     element={
                         <JoannaAuthorPage
                             addArticleToFavorites={addArticleToFavorites}
-                            articlesLikeState={articlesLikeState}
-                            toggleLikeState={toggleLikeState}
+                            // articlesLikeState={articlesLikeState}
+                            // toggleLikeState={toggleLikeState}
                             articlesAddState={articlesAddState}
                             toggleAddState={toggleAddState}
                         />
@@ -206,8 +206,8 @@ const App = (props: Props) => {
                     element={
                         <ElliotAuthorPage
                             addArticleToFavorites={addArticleToFavorites}
-                            articlesLikeState={articlesLikeState}
-                            toggleLikeState={toggleLikeState}
+                            // articlesLikeState={articlesLikeState}
+                            // toggleLikeState={toggleLikeState}
                             articlesAddState={articlesAddState}
                             toggleAddState={toggleAddState}
                         />
@@ -221,8 +221,8 @@ const App = (props: Props) => {
                     element={
                         <ArticlePage
                             addArticleToFavorites={addArticleToFavorites}
-                            articlesLikeState={articlesLikeState}
-                            toggleLikeState={toggleLikeState}
+                            // articlesLikeState={articlesLikeState}
+                            // toggleLikeState={toggleLikeState}
                             articlesAddState={articlesAddState}
                             toggleAddState={toggleAddState}
                         />
