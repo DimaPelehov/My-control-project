@@ -35,7 +35,7 @@ const ArticlePage = ({
 
     const breadcrumbs = [
         <Link to="/">Home</Link>,
-        <Link to={`${articlesObject[+id!].hrefCategory}`}>
+        <Link to={`/${articlesObject[+id!].hrefCategory}`}>
             {articlesObject[+id!].category}
         </Link>,
     ]
@@ -94,7 +94,7 @@ const ArticlePage = ({
 
                     <div className="section-post-tile-details">
                         <div className="section-post-tile-author">
-                            <Link to={`${articlesObject[+id!].hrefAuthor}`}>
+                            <Link to={`/${articlesObject[+id!].hrefAuthor}`}>
                                 <img
                                     src={articlesObject[+id!].imageAuthor}
                                     alt={articlesObject[+id!].authorName}
@@ -102,7 +102,9 @@ const ArticlePage = ({
                             </Link>
 
                             <div className="section-post-tile-author-info">
-                                <Link to={`${articlesObject[+id!].hrefAuthor}`}>
+                                <Link
+                                    to={`/${articlesObject[+id!].hrefAuthor}`}
+                                >
                                     {articlesObject[+id!].authorName}
                                 </Link>
                                 {articlesObject[+id!].months}
@@ -333,7 +335,7 @@ const ArticlePage = ({
                     </div>
                     <div className="post-author">
                         <div className="post-author-info">
-                            <Link to={`${articlesObject[+id!].hrefAuthor}`}>
+                            <Link to={`/${articlesObject[+id!].hrefAuthor}`}>
                                 <img
                                     src={articlesObject[+id!].imageAuthor}
                                     alt={articlesObject[+id!].authorName}
@@ -342,7 +344,9 @@ const ArticlePage = ({
 
                             <div className="post-author-name">
                                 <p>Post written by :</p>
-                                <Link to={`${articlesObject[+id!].hrefAuthor}`}>
+                                <Link
+                                    to={`/${articlesObject[+id!].hrefAuthor}`}
+                                >
                                     {articlesObject[+id!].authorName}
                                 </Link>
                             </div>

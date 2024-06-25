@@ -7,7 +7,6 @@ type SectionPostArticleColumnItemType = {
     image: string
     category?: string
     title: string
-    hrefArticle: string
     hrefAuthor?: string
     views?: string
     shares?: number
@@ -58,7 +57,7 @@ class SectionPostArticleColumnItem extends Component<
 
                         <ul className="activity">
                             <li>
-                                <Link to={`${hrefAuthor}`}>{authorName}</Link>
+                                <Link to={`/${hrefAuthor}`}>{authorName}</Link>
                             </li>
                             <li>
                                 <span className="activity-icon views"></span>

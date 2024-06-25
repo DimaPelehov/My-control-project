@@ -8,7 +8,7 @@ const CategoryEtiamRow = (props: Props) => {
         <Grid container sx={{ borderBottom: '1px solid #e9ecef' }}>
             {articlesArray
                 .filter((item) => item.isMenuCategoryEtiam === true)
-                .map(({ id, image, hrefArticle, title, views }) => (
+                .map(({ id, image, title, views }) => (
                     <Grid
                         item
                         xs={12}
@@ -20,7 +20,6 @@ const CategoryEtiamRow = (props: Props) => {
                         <CategoryEtiamRowItem
                             id={id}
                             image={image}
-                            hrefArticle={hrefArticle}
                             title={title}
                             views={views}
                         />

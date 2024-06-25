@@ -14,7 +14,7 @@ const SiteContentSidebarAuthor = (props: Props) => {
 
             <div className="sidebar-author-body">
                 <div className="sidebar-author-info">
-                    <Link to="joanna_page">
+                    <Link to={`/joanna_page`}>
                         <img
                             src="images/author-joanna.jpeg"
                             alt="joanna-author"
@@ -22,7 +22,7 @@ const SiteContentSidebarAuthor = (props: Props) => {
                     </Link>
 
                     <h5>
-                        <Link to="joanna_page">
+                        <Link to={`/joanna_page`}>
                             Hello, I`m
                             <span>Joanna Wellick</span>
                         </Link>

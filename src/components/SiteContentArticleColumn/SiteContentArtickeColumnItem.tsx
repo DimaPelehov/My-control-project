@@ -7,7 +7,6 @@ import { toggleLikeState } from '../../redux/likeReducer'
 type SiteContentArtickeColumnItemType = {
     id: number
     image: string
-    hrefArticle: string
     hrefAuthor?: string
     imageAuthor?: string
     authorName?: string
@@ -72,11 +71,11 @@ const SiteContentArtickeColumnItem = ({
                 <div className="sitecontent-article-content">
                     <div className="sitecontent-article-author-like">
                         <div className="section-post-tile-author">
-                            <Link className="author-img" to={`${hrefAuthor}`}>
+                            <Link className="author-img" to={`/${hrefAuthor}`}>
                                 <img src={imageAuthor} alt={authorName} />
                             </Link>
                             <div className="section-post-tile-author-info">
-                                <Link to={`${hrefAuthor}`}>{authorName}</Link>
+                                <Link to={`/${hrefAuthor}`}>{authorName}</Link>
                                 {months} {day}, {year}
                             </div>
                         </div>

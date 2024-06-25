@@ -27,7 +27,6 @@ const SiteContentArticleColumn = ({
                     ({
                         id,
                         image,
-                        hrefArticle,
                         hrefAuthor,
                         imageAuthor,
                         authorName,
@@ -48,7 +47,6 @@ const SiteContentArticleColumn = ({
                             <SiteContentArtickeColumnItem
                                 id={id}
                                 image={image}
-                                hrefArticle={hrefArticle}
                                 hrefAuthor={hrefAuthor}
                                 imageAuthor={imageAuthor}
                                 authorName={authorName}

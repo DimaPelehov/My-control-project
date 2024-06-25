@@ -25,7 +25,6 @@ const AeneanCategoryArticles = ({
                     ({
                         id,
                         image,
-                        hrefArticle,
                         hrefAuthor,
                         imageAuthor,
                         authorName,
@@ -46,7 +45,6 @@ const AeneanCategoryArticles = ({
                             <SiteContentArtickeColumnItem
                                 id={id}
                                 image={image}
-                                hrefArticle={hrefArticle}
                                 hrefAuthor={hrefAuthor}
                                 imageAuthor={imageAuthor}
                                 authorName={authorName}

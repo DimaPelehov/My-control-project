@@ -16,7 +16,6 @@ const ElliotPageLatest = (props: Props) => {
                     .map(
                         ({
                             id,
-                            hrefArticle,
                             hrefAuthor,
                             authorName,
                             months,
@@ -28,7 +27,6 @@ const ElliotPageLatest = (props: Props) => {
                         }) => (
                             <Grid item xs={1} key={id}>
                                 <SiteContentSidebarLatestItem
-                                    hrefArticle={hrefArticle}
                                     hrefAuthor={hrefAuthor}
                                     authorName={authorName}
                                     months={months}

@@ -25,7 +25,6 @@ const ElliotArticles = ({
                     ({
                         id,
                         image,
-                        hrefArticle,
                         hrefAuthor,
                         imageAuthor,
                         authorName,
@@ -46,7 +45,6 @@ const ElliotArticles = ({
                             <SiteContentArtickeColumnItem
                                 id={id}
                                 image={image}
-                                hrefArticle={hrefArticle}
                                 hrefAuthor={hrefAuthor}
                                 imageAuthor={imageAuthor}
                                 authorName={authorName}

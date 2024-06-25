@@ -45,7 +45,7 @@ const AeneanCategoryPage = ({
                     <div className="subcategories">
                         <p className="category-subtitle">Subcategories</p>
                         <div className="subcategories-items">
-                            <Link to="aliquam_subcategory"> Aliquam </Link>
+                            <Link to="/aliquam_subcategory"> Aliquam </Link>
                             <a href="Metus"> Metus Vidi </a>
                             <a href="Rhoncus"> Rhoncus </a>
                         </div>

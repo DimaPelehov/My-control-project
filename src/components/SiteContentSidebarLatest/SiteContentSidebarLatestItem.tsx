@@ -3,7 +3,6 @@ import '../SiteContent/SiteContent.scss'
 import { Link } from 'react-router-dom'
 
 type SiteContentSidebarLatestItemType = {
-    hrefArticle: string
     hrefAuthor?: string
     authorName?: string
     months?: string
@@ -21,7 +20,6 @@ const SiteContentSidebarLatestItem = ({
     months,
     day,
     year,
-    hrefArticle,
     title,
     image,
     itemNumber,
@@ -38,7 +36,7 @@ const SiteContentSidebarLatestItem = ({
                                 data-content={itemNumber}
                             ></div>
                             <div className="section-post-tile-author-info">
-                                <Link to={`${hrefAuthor}`}>{authorName}</Link>
+                                <Link to={`/${hrefAuthor}`}>{authorName}</Link>
                                 {months} {day}, {year}
                             </div>
                         </div>

@@ -77,7 +77,7 @@ const SiteContentSidebarCarousel = ({ slides }: Props) => {
 
                                     <ul className="activity">
                                         <li>
-                                            <Link to={`${hrefAuthor}`}>
+                                            <Link to={`/${hrefAuthor}`}>
                                                 {authorName}
                                             </Link>
                                         </li>

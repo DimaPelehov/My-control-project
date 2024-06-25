@@ -4,7 +4,6 @@ import { Link, NavLink } from 'react-router-dom'
 type CategoryEtiamRowItemType = {
     id: number
     image: string
-    hrefArticle: string
     title: string
     views?: string
 }
@@ -12,7 +11,6 @@ type CategoryEtiamRowItemType = {
 const CategoryEtiamRowItem = ({
     id,
     image,
-    hrefArticle,
     title,
     views,
 }: CategoryEtiamRowItemType) => {

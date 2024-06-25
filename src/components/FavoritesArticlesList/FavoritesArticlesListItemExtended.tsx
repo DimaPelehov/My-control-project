@@ -4,6 +4,7 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import { IconButton } from '@mui/material'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import { toggleLikeState } from '../../redux/likeReducer'
+import { Link } from 'react-router-dom'
 
 type Props = {
     article: Article
@@ -29,23 +30,23 @@ const FavoritesArticlesListItemExtended = ({
     return (
         <div className="favorites-page-item">
             <div className="sitecontent-article-img">
-                <a href={article.hrefArticle}>
+                <Link to={`/articles/${article.id}`}>
                     <img src={article.image} alt={article.title} />
-                </a>
+                </Link>
             </div>
             <div className="sitecontent-article-content">
                 <div className="favorites-page-author-delete">
                     <div className="section-post-tile-author">
-                        <a className="author-img" href={article.hrefAuthor}>
+                        <Link to={`/${article.hrefAuthor}`}>
                             <img
                                 src={article.imageAuthor}
                                 alt={article.authorName}
                             />
-                        </a>
+                        </Link>
                         <div className="section-post-tile-author-info">
-                            <a href={article.hrefAuthor}>
+                            <Link to={`/${article.hrefAuthor}`}>
                                 {article.authorName}
-                            </a>
+                            </Link>
                             {article.months}
                             {article.day},{article.year}
                         </div>
@@ -66,7 +67,7 @@ const FavoritesArticlesListItemExtended = ({
                 </div>
 
                 <h2 className="sitecontent-article-column-item-header">
-                    <a href={article.hrefArticle}>
+                    <Link to={`/articles/${article.id}`}>
                         <span className="sectionpost-article-column-item-category">
                             {article.category}
                         </span>
@@ -74,7 +75,7 @@ const FavoritesArticlesListItemExtended = ({
                             className="sectionpost-article-column-item-title"
                             dangerouslySetInnerHTML={{ __html: article.title }}
                         ></span>
-                    </a>
+                    </Link>
                 </h2>
                 <ul className="activity">
                     <li>

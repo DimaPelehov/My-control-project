@@ -4,7 +4,6 @@ import { Link, NavLink } from 'react-router-dom'
 type CategoryVulputateRowItemType = {
     id: number
     image: string
-    hrefArticle: string
     title: string
     views?: string
 }
@@ -12,7 +11,6 @@ type CategoryVulputateRowItemType = {
 const CategoryVulputateRowItem = ({
     id,
     image,
-    hrefArticle,
     title,
     views,
 }: CategoryVulputateRowItemType) => {
