@@ -20,6 +20,7 @@ type Props = {
     // articlesLikeState: { [id: number]: boolean }
     articlesAddState: { [id: number]: boolean }
     toggleAddState: (id: number) => void
+    // showMoreArticles: number
 }
 
 const ArticlePage = ({
@@ -29,6 +30,7 @@ const ArticlePage = ({
     // articlesLikeState,
     articlesAddState,
     toggleAddState,
+    // showMoreArticles,
 }: Props) => {
     const { id } = useParams()
     // useParams дозволяє витягти усю необхідну інформацію щодо статті з id
@@ -52,6 +54,14 @@ const ArticlePage = ({
 
     const changeGaleryZoom = () => {
         setGaleryZoom(!galeryZoom)
+    }
+
+    // реалізація роботи кнопки Load More
+    const [showMoreArticlePageArticles, setShowMoreArticlePageArticles] =
+        useState<number>(12)
+
+    const loadMoreArticlePageArticles = () => {
+        setShowMoreArticlePageArticles((prevState) => prevState + 5)
     }
 
     return (
@@ -396,18 +406,35 @@ const ArticlePage = ({
                                 // toggleLikeState={toggleLikeState}
                                 articlesAddState={articlesAddState}
                                 toggleAddState={toggleAddState}
+                                showMoreJoannaArticles={
+                                    showMoreArticlePageArticles
+                                }
                             />
-                        ) : articlesObject[+id!].authorName ===
-                          'Elliot Anderson' ? (
+                        ) : (
                             <ElliotArticles
                                 addArticleToFavorites={addArticleToFavorites}
                                 // articlesLikeState={articlesLikeState}
                                 // toggleLikeState={toggleLikeState}
                                 articlesAddState={articlesAddState}
                                 toggleAddState={toggleAddState}
+                                showMoreElliotArticles={
+                                    showMoreArticlePageArticles
+                                }
                             />
-                        ) : (
-                            ''
+                        )}
+                    </div>
+
+                    <div className="site-post-navigation">
+                        {showMoreArticlePageArticles >=
+                        articlesArray.filter(
+                            (item) => item.isJoannaArticle === true
+                        ).length ? null : (
+                            <button
+                                className="slide-btn load-more-btn"
+                                onClick={loadMoreArticlePageArticles}
+                            >
+                                LOAD MORE
+                            </button>
                         )}
                     </div>
                 </div>

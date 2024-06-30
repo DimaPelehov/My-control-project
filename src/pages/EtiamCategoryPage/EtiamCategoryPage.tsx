@@ -5,6 +5,7 @@ import EtiamCategoryArticles from 'components/EtiamCategoryArticles/EtiamCategor
 import SiteContentSidebarAuthor from 'components/SiteContentSidebarAuthor/SiteContentSidebarAuthor'
 import SiteContentSidebarLatest from 'components/SiteContentSidebarLatest/SiteContentSidebarLatest'
 import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/SiteContentSidebarSubscribe'
+import { articlesArray } from 'utils/articlesArray'
 
 type Props = {
     addArticleToFavorites: (id: number, count: number) => void
@@ -27,7 +28,14 @@ const EtiamCategoryPage = ({
                 <Container maxWidth="lg">
                     <p className="category-subtitle">Browsing Category</p>
                     <h1>Etiam</h1>
-                    <p className="article-count">11 posts</p>
+                    <p className="article-count">
+                        {
+                            articlesArray.filter(
+                                (item) => item.isEtiam === true
+                            ).length
+                        }{' '}
+                        posts
+                    </p>
                     <div className="category-description">
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing

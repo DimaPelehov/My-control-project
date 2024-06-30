@@ -5,6 +5,8 @@ import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/
 import ElliotArticles from 'components/ElliotArticles/ElliotArticles'
 import SiteContentSidebarAuthor from 'components/SiteContentSidebarAuthor/SiteContentSidebarAuthor'
 import ElliotPageLatest from 'components/ElliotPageLatest/ElliotPageLatest'
+import { articlesArray } from 'utils/articlesArray'
+import { useState } from 'react'
 
 type Props = {
     addArticleToFavorites: (id: number, count: number) => void
@@ -21,6 +23,14 @@ const ElliotAuthorPage = ({
     articlesAddState,
     toggleAddState,
 }: Props) => {
+    // реалізація роботи кнопки Load More
+    const [showMoreElliotArticles, setShowMoreElliotArticles] =
+        useState<number>(12)
+
+    const loadMoreElliotArticles = () => {
+        setShowMoreElliotArticles((prevState) => prevState + 5)
+    }
+
     return (
         <>
             <div className="page-fon">
@@ -51,7 +61,14 @@ const ElliotAuthorPage = ({
                         </div>
                         <div className="author-page-info">
                             <h1>Elliot Anderson</h1>
-                            <p className="author-page-count">20 posts</p>
+                            <p className="author-page-count">
+                                {
+                                    articlesArray.filter(
+                                        (item) => item.isElliotArticle === true
+                                    ).length
+                                }{' '}
+                                posts
+                            </p>
                             <p>
                                 Bla-bla-bla-bla sit amet consectetur adipisicing
                                 elit. Amet nihil quis nisi odio ab porro dolor
@@ -73,14 +90,25 @@ const ElliotAuthorPage = ({
                                 // toggleLikeState={toggleLikeState}
                                 articlesAddState={articlesAddState}
                                 toggleAddState={toggleAddState}
+                                showMoreElliotArticles={showMoreElliotArticles}
                             />
                         </div>
+
                         <div className="site-post-navigation">
-                            <button className="slide-btn load-more-btn">
-                                LOAD MORE
-                            </button>
+                            {showMoreElliotArticles >=
+                            articlesArray.filter(
+                                (item) => item.isJoannaArticle === true
+                            ).length ? null : (
+                                <button
+                                    className="slide-btn load-more-btn"
+                                    onClick={loadMoreElliotArticles}
+                                >
+                                    LOAD MORE
+                                </button>
+                            )}
                         </div>
                     </div>
+
                     <div className="sidebar-column">
                         <SiteContentSidebarAuthor />
                         <SiteContentSidebar />

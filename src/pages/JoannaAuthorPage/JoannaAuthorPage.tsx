@@ -4,6 +4,8 @@ import JoannaArticles from 'components/JoannaArticles/JoannaArticles'
 import SiteContentSidebar from 'components/SiteContentSidebar/SiteContentSidebar'
 import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/SiteContentSidebarSubscribe'
 import JoannaPageLatest from 'components/JoannaPageLatest/JoannaPageLatest'
+import { articlesArray } from 'utils/articlesArray'
+import { useState } from 'react'
 
 type Props = {
     addArticleToFavorites: (id: number, count: number) => void
@@ -20,6 +22,14 @@ const JoannaAuthorPage = ({
     articlesAddState,
     toggleAddState,
 }: Props) => {
+    // реалізація роботи кнопки Load More
+    const [showMoreJoannaArticles, setShowMoreJoannaArticles] =
+        useState<number>(12)
+
+    const loadMoreJoannaArticles = () => {
+        setShowMoreJoannaArticles((prevState) => prevState + 5)
+    }
+
     return (
         <>
             <div className="page-fon">
@@ -50,7 +60,14 @@ const JoannaAuthorPage = ({
                         </div>
                         <div className="author-page-info">
                             <h1>Joanna Wellick</h1>
-                            <p className="author-page-count">11 posts</p>
+                            <p className="author-page-count">
+                                {
+                                    articlesArray.filter(
+                                        (item) => item.isJoannaArticle === true
+                                    ).length
+                                }{' '}
+                                posts
+                            </p>
                             <p>
                                 Lorem, ipsum dolor sit amet consectetur
                                 adipisicing elit. Amet nihil quis nisi odio ab
@@ -73,14 +90,25 @@ const JoannaAuthorPage = ({
                                 // toggleLikeState={toggleLikeState}
                                 articlesAddState={articlesAddState}
                                 toggleAddState={toggleAddState}
+                                showMoreJoannaArticles={showMoreJoannaArticles}
                             />
                         </div>
+
                         <div className="site-post-navigation">
-                            <button className="slide-btn load-more-btn">
-                                LOAD MORE
-                            </button>
+                            {showMoreJoannaArticles >=
+                            articlesArray.filter(
+                                (item) => item.isJoannaArticle === true
+                            ).length ? null : (
+                                <button
+                                    className="slide-btn load-more-btn"
+                                    onClick={loadMoreJoannaArticles}
+                                >
+                                    LOAD MORE
+                                </button>
+                            )}
                         </div>
                     </div>
+
                     <div className="sidebar-column">
                         <SiteContentSidebar />
                         <JoannaPageLatest />
