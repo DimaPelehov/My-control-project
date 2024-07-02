@@ -35,8 +35,10 @@ const Reviews = ({
 
     // оновлення відгуків при переході на сторінку іншої статті
     useEffect(() => {
-        return () => {}
-    }, [reviews])
+        setReviews(() => {
+            return arrReviews
+        })
+    }, [arrReviews])
 
     // додавання відгуків
     const [newReview, setNewReview] = useState<Review>({

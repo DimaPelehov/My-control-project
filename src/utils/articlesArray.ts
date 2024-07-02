@@ -763,6 +763,7 @@ export const articlesArray: Article[] = [
             },
         ],
         hrefAuthor: 'elliot_page',
+        imageAuthor: '/images/author-eliot.jpeg',
         authorName: 'Elliot Anderson',
         authorDescription:
             'Etiam vitae dapibus rhoncus. Eget etiam aenean nisi montes felis pretium donec veni. Pede vidi condimentum et aenean hendrerit. Quis sem justo nisi varius tincidunt nec aliquam arcu tempus vel laoreet lorem.',

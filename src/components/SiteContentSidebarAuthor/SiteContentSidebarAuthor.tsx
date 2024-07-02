@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import '../SiteContent/SiteContent.scss'
+import joannaImg from 'assets/author-joanna.jpeg'
 
 type Props = {}
 
@@ -15,10 +16,7 @@ const SiteContentSidebarAuthor = (props: Props) => {
             <div className="sidebar-author-body">
                 <div className="sidebar-author-info">
                     <Link to={`/joanna_page`}>
-                        <img
-                            src="images/author-joanna.jpeg"
-                            alt="joanna-author"
-                        />
+                        <img src={joannaImg} alt="joanna-author" />
                     </Link>
 
                     <h5>
