@@ -9,8 +9,8 @@ import { useState } from 'react'
 import { articlesArray } from 'utils/articlesArray'
 
 type Props = {
-    addArticleToFavorites: (id: number, count: number) => void
-    removeArticleFromFavorites: (id: number) => void
+    // addArticleToFavorites: (id: number, count: number) => void
+    // removeArticleFromFavorites: (id: number) => void
     // articlesLikeState: { [id: number]: boolean }
     // toggleLikeState: (id: number) => void
     articlesAddState: { [id: number]: boolean }
@@ -18,8 +18,8 @@ type Props = {
 }
 
 const SiteContent = ({
-    addArticleToFavorites,
-    removeArticleFromFavorites,
+    // addArticleToFavorites,
+    // removeArticleFromFavorites,
     // articlesLikeState,
     // toggleLikeState,
     articlesAddState,
@@ -40,10 +40,10 @@ const SiteContent = ({
                     <div className="site-content-area">
                         <div className="site-post-arhive">
                             <SiteContentArticleColumn
-                                addArticleToFavorites={addArticleToFavorites}
-                                removeArticleFromFavorites={
-                                    removeArticleFromFavorites
-                                }
+                                // addArticleToFavorites={addArticleToFavorites}
+                                // removeArticleFromFavorites={
+                                //     removeArticleFromFavorites
+                                // }
                                 // articlesLikeState={articlesLikeState}
                                 // toggleLikeState={toggleLikeState}
                                 articlesAddState={articlesAddState}

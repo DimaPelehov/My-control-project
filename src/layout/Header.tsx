@@ -5,14 +5,14 @@ import '../components/BottomNavBar/BottomNavBar.scss'
 import HeaderSidebar from 'components/HeaderSidebar/HeaderSidebar'
 
 type Props = {
-    articlesInFavorites: { [id: number]: number }
+    // articlesInFavorites: { [id: number]: number }
     changeOverlay: () => void
     sidebarOpen: boolean
     openCloseSidebar: () => void
 }
 
 const Header = ({
-    articlesInFavorites,
+    // articlesInFavorites,
     changeOverlay,
     sidebarOpen,
     openCloseSidebar,
@@ -26,7 +26,7 @@ const Header = ({
             />
             <TopNavBar />
             <BottomNavBar
-                articlesInFavorites={articlesInFavorites}
+                // articlesInFavorites={articlesInFavorites}
                 changeOverlay={changeOverlay}
                 openCloseSidebar={openCloseSidebar}
             />

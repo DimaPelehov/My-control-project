@@ -1,16 +1,17 @@
-import { articlesArray, getArticlesObject, Article } from 'utils/articlesArray'
+import { useAppSelector } from 'store/hooks'
 import '../BottomNavBar/BottomNavBar.scss'
 import FavoritesTotal from 'components/FavoritesTotal/FavoritesTotal'
 
 type Props = {
-    articlesInFavorites: { [id: number]: number }
-    articlesObject?: { [id: number]: Article }
+    // articlesInFavorites: { [id: number]: number }
 }
 
-const FavoritesHeader = ({
-    articlesInFavorites,
-    articlesObject = getArticlesObject(articlesArray),
-}: Props) => {
+const FavoritesHeader = (props: Props) => {
+    // додавання статей до favorites через redux
+    const articlesInFavorites = useAppSelector(
+        (state) => state.articlesInFavorites
+    )
+
     return (
         <div className="favoritesheader">
             <div className="favorites-icon"></div>

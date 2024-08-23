@@ -24,8 +24,42 @@
     width: 75%;
 }
 
-.favorites-page-author-delete {
+.favorites-page-top-row {
     display: flex;
     align-items: center;
     gap: 90px;
+}
+
+.delete-control {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.delete-control.visible {
+    visibility: visible;
+}
+
+.delete-control-form {
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.delete-control-btns-group {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+
+.delete-control-btn {
+    width: 40%;
+    height: 40px;
 }

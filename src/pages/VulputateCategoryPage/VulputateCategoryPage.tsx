@@ -8,7 +8,7 @@ import SiteContentSidebarSubscribe from 'components/SiteContentSidebarSubscribe/
 import { articlesArray } from 'utils/articlesArray'
 
 type Props = {
-    addArticleToFavorites: (id: number, count: number) => void
+    // addArticleToFavorites: (id: number, count: number) => void
     // toggleLikeState: (id: number) => void
     // articlesLikeState: { [id: number]: boolean }
     articlesAddState: { [id: number]: boolean }
@@ -16,7 +16,7 @@ type Props = {
 }
 
 const VulputateCategoryPage = ({
-    addArticleToFavorites,
+    // addArticleToFavorites,
     // toggleLikeState,
     // articlesLikeState,
     articlesAddState,
@@ -56,7 +56,7 @@ const VulputateCategoryPage = ({
                     <div className="site-content-area">
                         <div className="site-post-arhive">
                             <VulputateCategoryArticles
-                                addArticleToFavorites={addArticleToFavorites}
+                                // addArticleToFavorites={addArticleToFavorites}
                                 // articlesLikeState={articlesLikeState}
                                 // toggleLikeState={toggleLikeState}
                                 articlesAddState={articlesAddState}

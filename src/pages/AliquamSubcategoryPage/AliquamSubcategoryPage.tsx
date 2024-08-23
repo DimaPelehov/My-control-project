@@ -1,6 +1,6 @@
-type Props = { addArticleToFavorites: (id: number, count: number) => void }
+type Props = {}
 
-const AliquamSubcategoryPage = ({ addArticleToFavorites }: Props) => {
+const AliquamSubcategoryPage = (props: Props) => {
     return <div>AliquamSubcategoryPage</div>
 }
 

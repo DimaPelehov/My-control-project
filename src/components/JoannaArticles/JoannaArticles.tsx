@@ -3,7 +3,7 @@ import SiteContentArtickeColumnItem from 'components/SiteContentArticleColumn/Si
 import { articlesArray } from 'utils/articlesArray'
 
 type Props = {
-    addArticleToFavorites: (id: number, count: number) => void
+    // addArticleToFavorites: (id: number, count: number) => void
     // toggleLikeState: (id: number) => void
     // articlesLikeState: { [id: number]: boolean }
     articlesAddState: { [id: number]: boolean }
@@ -12,7 +12,7 @@ type Props = {
 }
 
 const JoannaArticles = ({
-    addArticleToFavorites,
+    // addArticleToFavorites,
     // toggleLikeState,
     // articlesLikeState,
     articlesAddState,
@@ -63,9 +63,9 @@ const JoannaArticles = ({
                                     facebookCount={facebookCount}
                                     instaCount={instaCount}
                                     count={count}
-                                    addArticleToFavorites={
-                                        addArticleToFavorites
-                                    }
+                                    // addArticleToFavorites={
+                                    //     addArticleToFavorites
+                                    // }
                                     // toggleLikeState={toggleLikeState}
                                     // isLiked={articlesLikeState[id]}
                                     isAdd={articlesAddState[id]}

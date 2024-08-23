@@ -3,20 +3,28 @@ import { Container } from '@mui/material'
 import FavoritesArticleList from 'components/FavoritesArticlesList/FavoritesArticleList'
 import FavoritesArticlesListItemExtended from 'components/FavoritesArticlesList/FavoritesArticlesListItemExtended'
 import FavoritesTotal from 'components/FavoritesTotal/FavoritesTotal'
+import { useAppSelector } from 'store/hooks'
 
 type Props = {
-    articlesInFavorites: { [id: number]: number }
-    removeArticleFromFavorites: (id: number) => void
+    // articlesInFavorites: { [id: number]: number }
+    // removeArticleFromFavorites: (id: number) => void
     // toggleLikeState: (id: number) => void
     // articlesLikeState: { [id: number]: boolean }
+    setArticlesAddState: (e: any) => void
 }
 
 const FavoritesPage = ({
-    articlesInFavorites,
-    removeArticleFromFavorites,
+    // articlesInFavorites,
+    // removeArticleFromFavorites,
     // toggleLikeState,
     // articlesLikeState,
+    setArticlesAddState,
 }: Props) => {
+    // додавання статей до favorites через redux
+    const articlesInFavorites = useAppSelector(
+        (state) => state.articlesInFavorites
+    )
+
     return (
         <div className="favorites-fon">
             <Container maxWidth="lg">
@@ -34,14 +42,15 @@ const FavoritesPage = ({
                             articlesInFavorites={articlesInFavorites}
                             FavoritesItem={FavoritesArticlesListItemExtended}
                             // виводимо розширену версію FavoritesArticlesList
-                            removeArticleFromFavorites={
-                                removeArticleFromFavorites
-                            }
+                            // removeArticleFromFavorites={
+                            //     removeArticleFromFavorites
+                            // }
                             // articlesLikeState={articlesLikeState}
                             // toggleLikeState={toggleLikeState}
+                            setArticlesAddState={setArticlesAddState}
                         />
                     ) : (
-                        <div>
+                        <div style={{ height: '100vh' }}>
                             <p>У вас немає вподобаних статей</p>
                         </div>
                     )}

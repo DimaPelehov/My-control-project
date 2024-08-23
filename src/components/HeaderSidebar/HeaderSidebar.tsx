@@ -1,3 +1,5 @@
+import axios from 'axios'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 type Props = {
@@ -6,11 +8,54 @@ type Props = {
     changeOverlay: () => void
 }
 
+type HeaderSidebarFormType = {
+    email: string
+}
+
 const HeaderSidebar = ({
     sidebarOpen,
     openCloseSidebar,
     changeOverlay,
 }: Props) => {
+    const [isChecked, setIsChecked] = useState<boolean>(false)
+
+    const [isFormSend, setIsFormSend] = useState<boolean>(false)
+
+    const [sendData, setSendData] = useState<HeaderSidebarFormType>({
+        email: '',
+    })
+
+    const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSendData((prevState) => ({ ...prevState, email: e.target.value }))
+    }
+
+    const onSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        try {
+            const { data } = await axios.post(
+                'https://my-json-server.typicode.com/kznkv-skillup/server/orders',
+                {
+                    email: sendData.email,
+                }
+            )
+            setSendData({
+                email: data.email,
+            })
+            setIsFormSend(true)
+        } catch (e) {
+            alert(e)
+        }
+        setSendData({
+            email: '',
+        })
+        setIsChecked(false)
+    }
+
+    const renderMessage = () => {
+        return <div className="subscribe-message">Дані надіслано</div>
+    }
+
     return (
         <div className={`header-sidebar ${sidebarOpen ? 'active' : ''}`}>
             <div className="sidebar-title">
@@ -74,35 +119,67 @@ const HeaderSidebar = ({
                         <span className="social-count">112</span>
                     </a>
                 </div>
+
                 {/* subscribe */}
                 <div className="sidebar-subscribe">
                     <div className="sidebar-item-header">
                         <h5>SUBSCRIBE</h5>
                         <div className="horizontal-line"></div>
                     </div>
+
                     <div className="sidebar-subscribe-title">
                         <h3>
                             Subscribe to Our <br />
                             <span>Newsletter</span>
                         </h3>
                     </div>
-                    <div className="sidebar-subscribe-form">
-                        <form action="" className="subscribe-form">
-                            <input
-                                type="email"
-                                name="mail"
-                                placeholder="Enter your mail"
-                            />
-                            <button>Subscribe</button>
+
+                    <div className="header-sidebar-subscribe-body">
+                        <form
+                            onSubmit={onSubscribe}
+                            className="header-sidebar-subscribe-form"
+                        >
+                            <div className="form-first-row">
+                                <input
+                                    type="email"
+                                    name="mail"
+                                    placeholder="Your mail"
+                                    value={sendData.email}
+                                    onChange={handleEmail}
+                                    required={true}
+                                />
+
+                                <button
+                                    className={`header-sidebar-subscribe-btn ${
+                                        isChecked ? '' : 'disabled'
+                                    }`}
+                                    disabled={isChecked ? false : true}
+                                >
+                                    Subscribe
+                                </button>
+
+                                <div className="header-sidebar-error">
+                                    Не всі поля заповнено
+                                </div>
+                            </div>
                         </form>
-                    </div>
-                    <div className="subscribe-privacy">
-                        <input type="checkbox" id="header_sidebar-privacy" />
-                        <label htmlFor="header_sidebar-privacy">
-                            By checking this box, you confirm that you have read
-                            and are agreeing to our terms of use regarding the
-                            storage of the data submitted through this form.
-                        </label>
+
+                        {isFormSend ? renderMessage() : ''}
+
+                        <div className="subscribe-privacy">
+                            <input
+                                type="checkbox"
+                                id="header_sidebar-privacy"
+                                checked={isChecked}
+                                onChange={() => setIsChecked(!isChecked)}
+                            />
+                            <label htmlFor="header_sidebar-privacy">
+                                By checking this box, you confirm that you have
+                                read and are agreeing to our terms of use
+                                regarding the storage of the data submitted
+                                through this form.
+                            </label>
+                        </div>
                     </div>
                 </div>
                 {/* ads */}

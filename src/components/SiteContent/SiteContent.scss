@@ -562,6 +562,7 @@ button {
 .sidebar-subscribe {
     background-color: #f7f7f2;
     padding: 35px;
+    // position: relative;
 }
 
 .sidebar-subscribe-title {
@@ -572,7 +573,8 @@ button {
     }
 }
 
-.sidebar-subscribe-form {
+.sidebar-subscribe-body {
+    padding-top: 20px;
     width: 100%;
     display: flex;
 
@@ -581,6 +583,17 @@ button {
         flex: 1 1 auto;
         width: 1%;
     }
+}
+
+.sidebar-subscribe-error-message {
+    border-left: 2px solid red;
+    font-size: 12px;
+    padding: 12px;
+    background-color: white;
+    position: absolute;
+    top: -47px;
+    display: none;
+    width: 100%;
 }
 
 // sidebar ads

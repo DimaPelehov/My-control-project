@@ -14,7 +14,7 @@ import JoannaAuthorPage from 'pages/JoannaAuthorPage/JoannaAuthorPage'
 import '../components/BottomNavBar/BottomNavBar.scss'
 import AboutMePage from 'pages/AboutMePage/AboutMePage'
 import ContactForm from 'pages/ContactForm/ContactForm'
-import { omit } from 'lodash'
+// import { omit } from 'lodash'
 import AliquamSubcategoryPage from 'pages/AliquamSubcategoryPage/AliquamSubcategoryPage'
 import SubscribePage from 'pages/SubscribePage/SubscribePage'
 import ElliotAuthorPage from 'pages/ElliotAuthorPage/ElliotAuthorPage'
@@ -23,7 +23,7 @@ import MaecenasCategoryPage from 'pages/MaecenasCategoryPage/MaecenasCategoryPag
 
 type Props = {}
 
-type ArticlesInFavoritesType = { [id: number]: number }
+// type ArticlesInFavoritesType = { [id: number]: number }
 
 // type ArticlesLikeStateType = { [id: number]: boolean }
 
@@ -31,15 +31,15 @@ type ArticlesAddStateType = { [id: number]: boolean }
 
 const App = (props: Props) => {
     // додавання до Favorite
-    const [articlesInFavorites, setArticlesInFavorites] =
-        useState<ArticlesInFavoritesType>({})
+    // const [articlesInFavorites, setArticlesInFavorites] =
+    //     useState<ArticlesInFavoritesType>({})
 
-    const addArticleToFavorites = (id: number, count: number) => {
-        setArticlesInFavorites((prevState) => ({
-            ...prevState,
-            [id]: (prevState[id] || 0) + count,
-        }))
-    }
+    // const addArticleToFavorites = (id: number, count: number) => {
+    //     setArticlesInFavorites((prevState) => ({
+    //         ...prevState,
+    //         [id]: (prevState[id] || 0) + count,
+    //     }))
+    // }
 
     // затемнення екрану
     const [overlayVariant, setOverlayVariant] = useState<string>('overlay-none')
@@ -65,14 +65,14 @@ const App = (props: Props) => {
     // }
 
     // варіант 2
-    const removeArticleFromFavorites = (id: number) => {
-        setArticlesInFavorites((prevState) => omit(prevState, id))
-        // і прибираємо зміну кольору кнопки "add to favorite"
-        setArticlesAddState((prevState) => ({
-            ...prevState,
-            [id]: false,
-        }))
-    }
+    // const removeArticleFromFavorites = (id: number) => {
+    //     setArticlesInFavorites((prevState) => omit(prevState, id))
+    //     // і прибираємо зміну кольору кнопки "add to favorite"
+    //     setArticlesAddState((prevState) => ({
+    //         ...prevState,
+    //         [id]: false,
+    //     }))
+    // }
 
     // виїзд header-sidebar
     const [sidebarOpen, setSidebarOpen] = useState<boolean>(false)
@@ -107,7 +107,7 @@ const App = (props: Props) => {
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header
-                articlesInFavorites={articlesInFavorites}
+                // articlesInFavorites={articlesInFavorites}
                 changeOverlay={changeOverlay}
                 sidebarOpen={sidebarOpen}
                 openCloseSidebar={openCloseSidebar}
@@ -117,10 +117,10 @@ const App = (props: Props) => {
                     path="/"
                     element={
                         <Home
-                            addArticleToFavorites={addArticleToFavorites}
-                            removeArticleFromFavorites={
-                                removeArticleFromFavorites
-                            }
+                            // addArticleToFavorites={addArticleToFavorites}
+                            // removeArticleFromFavorites={
+                            //     removeArticleFromFavorites
+                            // }
                             // articlesLikeState={articlesLikeState}
                             // toggleLikeState={toggleLikeState}
                             articlesAddState={articlesAddState}
@@ -132,10 +132,11 @@ const App = (props: Props) => {
                     path="favorites"
                     element={
                         <FavoritesPage
-                            articlesInFavorites={articlesInFavorites}
-                            removeArticleFromFavorites={
-                                removeArticleFromFavorites
-                            }
+                            // articlesInFavorites={articlesInFavorites}
+                            // removeArticleFromFavorites={
+                            //     removeArticleFromFavorites
+                            // }
+                            setArticlesAddState={setArticlesAddState}
                             // articlesLikeState={articlesLikeState}
                             // toggleLikeState={toggleLikeState}
                         />
@@ -145,7 +146,7 @@ const App = (props: Props) => {
                     path="aenean_category"
                     element={
                         <AeneanCategoryPage
-                            addArticleToFavorites={addArticleToFavorites}
+                            // addArticleToFavorites={addArticleToFavorites}
                             // articlesLikeState={articlesLikeState}
                             // toggleLikeState={toggleLikeState}
                             articlesAddState={articlesAddState}
@@ -155,17 +156,13 @@ const App = (props: Props) => {
                 />
                 <Route
                     path="aliquam_subcategory"
-                    element={
-                        <AliquamSubcategoryPage
-                            addArticleToFavorites={addArticleToFavorites}
-                        />
-                    }
+                    element={<AliquamSubcategoryPage />}
                 />
                 <Route
                     path="vulputate_category"
                     element={
                         <VulputateCategoryPage
-                            addArticleToFavorites={addArticleToFavorites}
+                            // addArticleToFavorites={addArticleToFavorites}
                             // articlesLikeState={articlesLikeState}
                             // toggleLikeState={toggleLikeState}
                             articlesAddState={articlesAddState}
@@ -177,7 +174,7 @@ const App = (props: Props) => {
                     path="etiam_category"
                     element={
                         <EtiamCategoryPage
-                            addArticleToFavorites={addArticleToFavorites}
+                            // addArticleToFavorites={addArticleToFavorites}
                             // articlesLikeState={articlesLikeState}
                             // toggleLikeState={toggleLikeState}
                             articlesAddState={articlesAddState}
@@ -193,7 +190,7 @@ const App = (props: Props) => {
                     path="joanna_page"
                     element={
                         <JoannaAuthorPage
-                            addArticleToFavorites={addArticleToFavorites}
+                            // addArticleToFavorites={addArticleToFavorites}
                             // articlesLikeState={articlesLikeState}
                             // toggleLikeState={toggleLikeState}
                             articlesAddState={articlesAddState}
@@ -205,7 +202,7 @@ const App = (props: Props) => {
                     path="elliot_page"
                     element={
                         <ElliotAuthorPage
-                            addArticleToFavorites={addArticleToFavorites}
+                            // addArticleToFavorites={addArticleToFavorites}
                             // articlesLikeState={articlesLikeState}
                             // toggleLikeState={toggleLikeState}
                             articlesAddState={articlesAddState}
@@ -220,7 +217,7 @@ const App = (props: Props) => {
                     path="/articles/:id"
                     element={
                         <ArticlePage
-                            addArticleToFavorites={addArticleToFavorites}
+                            // addArticleToFavorites={addArticleToFavorites}
                             // articlesLikeState={articlesLikeState}
                             // toggleLikeState={toggleLikeState}
                             articlesAddState={articlesAddState}

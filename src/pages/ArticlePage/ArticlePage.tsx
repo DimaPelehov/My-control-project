@@ -15,7 +15,7 @@ import ArticlePageSlider from 'components/ArticlePageSlider/ArticlePageSlider'
 
 type Props = {
     articlesObject?: { [id: number]: Article }
-    addArticleToFavorites: (id: number, count: number) => void
+    // addArticleToFavorites: (id: number, count: number) => void
     // toggleLikeState: (id: number) => void
     // articlesLikeState: { [id: number]: boolean }
     articlesAddState: { [id: number]: boolean }
@@ -25,7 +25,7 @@ type Props = {
 
 const ArticlePage = ({
     articlesObject = getArticlesObject(articlesArray),
-    addArticleToFavorites,
+    // addArticleToFavorites,
     // toggleLikeState,
     // articlesLikeState,
     articlesAddState,
@@ -401,7 +401,7 @@ const ArticlePage = ({
                         {articlesObject[+id!].authorName ===
                         'Joanna Wellick' ? (
                             <JoannaArticles
-                                addArticleToFavorites={addArticleToFavorites}
+                                // addArticleToFavorites={addArticleToFavorites}
                                 // articlesLikeState={articlesLikeState}
                                 // toggleLikeState={toggleLikeState}
                                 articlesAddState={articlesAddState}
@@ -412,7 +412,7 @@ const ArticlePage = ({
                             />
                         ) : (
                             <ElliotArticles
-                                addArticleToFavorites={addArticleToFavorites}
+                                // addArticleToFavorites={addArticleToFavorites}
                                 // articlesLikeState={articlesLikeState}
                                 // toggleLikeState={toggleLikeState}
                                 articlesAddState={articlesAddState}

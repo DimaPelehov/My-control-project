@@ -18,19 +18,6 @@ const Reviews = ({
 }: Props) => {
     const arrReviews: Review[] = articlesObject[id].articleReviews!
 
-    // [
-    // {
-    //     name: 'Dima',
-    //     userImg: '/images/userImage.png',
-    //     text: 'It`s website so exciting!',
-    // },
-    // {
-    //     name: 'Dasha',
-    //     userImg: '/images/userImage.png',
-    //     text: 'All articles very interested.',
-    // },
-    // ]
-
     const [reviews, setReviews] = useState<Review[]>(arrReviews)
 
     // оновлення відгуків при переході на сторінку іншої статті

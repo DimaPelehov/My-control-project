@@ -1,8 +1,4 @@
 import AppBar from '@mui/material/AppBar'
-// ---
-// import Toolbar from '@mui/material/Toolbar'
-// import Button from '@mui/material/Button'
-// ---
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
@@ -12,13 +8,13 @@ import FavoritesHeader from 'components/FavoritesHeader/FavoritesHeader'
 import { Link } from 'react-router-dom'
 
 type Props = {
-    articlesInFavorites: { [id: number]: number }
+    // articlesInFavorites: { [id: number]: number }
     changeOverlay: () => void
     openCloseSidebar: () => void
 }
 
 const BottomNavBar = ({
-    articlesInFavorites,
+    // articlesInFavorites,
     changeOverlay,
     openCloseSidebar,
 }: Props) => {
@@ -52,7 +48,7 @@ const BottomNavBar = ({
                         <Menu />
                         <Link to="favorites">
                             <FavoritesHeader
-                                articlesInFavorites={articlesInFavorites}
+                            // articlesInFavorites={articlesInFavorites}
                             />
                         </Link>
                     </div>

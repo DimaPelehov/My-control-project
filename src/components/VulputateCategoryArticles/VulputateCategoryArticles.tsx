@@ -3,7 +3,7 @@ import { articlesArray } from 'utils/articlesArray'
 import SiteContentArtickeColumnItem from '../SiteContentArticleColumn/SiteContentArtickeColumnItem'
 
 type Props = {
-    addArticleToFavorites: (id: number, count: number) => void
+    // addArticleToFavorites: (id: number, count: number) => void
     // toggleLikeState: (id: number) => void
     // articlesLikeState: { [id: number]: boolean }
     articlesAddState: { [id: number]: boolean }
@@ -11,7 +11,7 @@ type Props = {
 }
 
 const VulputateCategoryArticles = ({
-    addArticleToFavorites,
+    // addArticleToFavorites,
     // toggleLikeState,
     // articlesLikeState,
     articlesAddState,
@@ -59,7 +59,7 @@ const VulputateCategoryArticles = ({
                                 shares={shares}
                                 facebookCount={facebookCount}
                                 instaCount={instaCount}
-                                addArticleToFavorites={addArticleToFavorites}
+                                // addArticleToFavorites={addArticleToFavorites}
                                 count={count}
                                 // toggleLikeState={toggleLikeState}
                                 // isLiked={articlesLikeState[id]}

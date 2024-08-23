@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-import likeReducer from './likeReducer'
+import likeSlice from './likeSlice'
+import favoriteSlice from './favoriteSlice'
+import addSlice from './addSlice'
 
 export const store = configureStore({
     reducer: {
-        articlesLikeState: likeReducer,
+        articlesLikeState: likeSlice,
+        articlesInFavorites: favoriteSlice,
+        articlesAddState: addSlice,
     },
 })
 

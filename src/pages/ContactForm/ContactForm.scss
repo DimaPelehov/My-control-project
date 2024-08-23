@@ -111,13 +111,17 @@
 .download {
     width: 20px;
     height: 20px;
-    display: inline-block;
     border: 2px solid rgba(168, 170, 178, 0.25);
     margin-left: 20px;
     border-top-color: #495057;
     border-radius: 50%;
     vertical-align: middle;
     animation: loader-rotate 1s linear infinite;
+    display: none;
+}
+
+.download.active {
+    display: inline-block;
 }
 
 @keyframes loader-rotate {

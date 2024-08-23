@@ -28,11 +28,15 @@ button {
 
 .subscribe-content {
     width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .subscribe-form {
     display: flex;
     width: 100%;
+    position: relative;
 
     input {
         border: transparent;
@@ -51,37 +55,70 @@ button {
             color: #8e8f91;
         }
     }
+}
 
-    button {
-        border: none;
-        background-color: inherit;
-        text-transform: uppercase;
+.subscribe-btn {
+    border: none;
+    background-color: inherit;
+    text-transform: uppercase;
+    transition: all 0.4s ease 0s;
+    display: flex;
+
+    &::after {
+        content: '';
+        background-image: url(icons/down_arrow_icon.svg);
+        background-size: contain;
+        width: 15px;
+        height: 15px;
+        transform: rotate(270deg);
         transition: all 0.4s ease 0s;
-        display: flex;
-
-        &::after {
-            content: '';
-            background-image: url(icons/down_arrow_icon.svg);
-            background-size: contain;
-            width: 15px;
-            height: 15px;
-            transform: rotate(270deg);
-            transition: all 0.4s ease 0s;
-        }
-
-        &:hover:after {
-            background-image: url(icons/grey_down_arrow_icon.svg);
-        }
-
-        &:hover {
-            color: #8e8f91;
-        }
     }
+
+    &:hover:after {
+        background-image: url(icons/grey_down_arrow_icon.svg);
+    }
+
+    &:hover {
+        font-weight: bold;
+    }
+}
+
+.subscribe-btn.disabled {
+    cursor: auto;
+
+    &:hover {
+        font-weight: normal;
+    }
+
+    &:hover ~ .error-message {
+        display: flex;
+    }
+
+    &:hover ~ .sidebar-subscribe-error-message {
+        display: flex;
+    }
+}
+
+.error-message {
+    position: absolute;
+    right: 0px;
+    top: -51px;
+    background-color: white;
+    border-left: 2px solid red;
+    display: none;
+    font-size: 12px;
+    padding: 12px;
+}
+
+.subscribe-message {
+    background-color: white;
+    border-left: 2px solid green;
+    padding: 12px;
+    font-size: 12px;
 }
 
 .subscribe-privacy {
     display: flex;
-    margin-top: 24px;
     gap: 10px;
 
     label {

@@ -1,8 +1,10 @@
 import { Card, CardContent } from '@mui/material'
 import '../SiteContent/SiteContent.scss'
 import { Link } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from '../../redux/hooks'
-import { toggleLikeState } from '../../redux/likeReducer'
+import { useAppDispatch, useAppSelector } from 'store/hooks'
+import { toggleLikeState } from 'store/likeSlice'
+import { addArticleToFavorites } from 'store/favoriteSlice'
+// import { toggleAddState } from 'store/addSlice'
 
 type SiteContentArtickeColumnItemType = {
     id: number
@@ -21,13 +23,13 @@ type SiteContentArtickeColumnItemType = {
     shares?: number
     facebookCount?: number
     instaCount?: number
-    addArticleToFavorites: (id: number, count: number) => void
-    removeArticleFromFavorites?: (id: number) => void
+    // addArticleToFavorites: (id: number, count: number) => void
+    // removeArticleFromFavorites: (id: number) => void
     count: number
     // isLiked?: boolean
     // toggleLikeState?: (id: number) => void
     isAdd?: boolean
-    toggleAddState?: (id: number) => void
+    toggleAddState: (id: number) => void
 }
 
 const SiteContentArtickeColumnItem = ({
@@ -47,16 +49,17 @@ const SiteContentArtickeColumnItem = ({
     shares,
     facebookCount,
     instaCount,
-    addArticleToFavorites,
-    removeArticleFromFavorites,
+    // addArticleToFavorites,
+    // removeArticleFromFavorites,
     count,
     // isLiked,
     // toggleLikeState,
     isAdd,
     toggleAddState,
 }: SiteContentArtickeColumnItemType) => {
-    // реалізація like через redux
+    // реалізація like, (зміни кольору кнопки add???) через redux
     const isLiked = useAppSelector((state) => state.articlesLikeState[id])
+    // const isAdd = useAppSelector((state) => state.articlesAddState[id])
 
     const dispatch = useAppDispatch()
 
@@ -137,8 +140,8 @@ const SiteContentArtickeColumnItem = ({
                             isAdd ? 'active' : ''
                         }`}`}
                         onClick={() => {
-                            addArticleToFavorites(id, count)
-                            toggleAddState!(id)
+                            dispatch(addArticleToFavorites({ id, count }))
+                            toggleAddState(id)
                         }}
                     >
                         Add to favorite

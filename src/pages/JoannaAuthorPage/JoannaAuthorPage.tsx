@@ -8,7 +8,7 @@ import { articlesArray } from 'utils/articlesArray'
 import { useState } from 'react'
 
 type Props = {
-    addArticleToFavorites: (id: number, count: number) => void
+    // addArticleToFavorites: (id: number, count: number) => void
     // toggleLikeState: (id: number) => void
     // articlesLikeState: { [id: number]: boolean }
     articlesAddState: { [id: number]: boolean }
@@ -16,7 +16,7 @@ type Props = {
 }
 
 const JoannaAuthorPage = ({
-    addArticleToFavorites,
+    // addArticleToFavorites,
     // toggleLikeState,
     // articlesLikeState,
     articlesAddState,
@@ -85,7 +85,7 @@ const JoannaAuthorPage = ({
                     <div className="site-content-area">
                         <div className="site-post-arhive">
                             <JoannaArticles
-                                addArticleToFavorites={addArticleToFavorites}
+                                // addArticleToFavorites={addArticleToFavorites}
                                 // articlesLikeState={articlesLikeState}
                                 // toggleLikeState={toggleLikeState}
                                 articlesAddState={articlesAddState}
